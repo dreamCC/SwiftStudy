@@ -1,0 +1,277 @@
+2019.12.20
+1、swift中，全局变量是懒加载的。（这个特性好像其他语言也是。比如java、dart等）。当然该特性也会使得并不会因为创建了全局变量而导致加载变慢的情况。
+2、swift 并没有abstract、factory关键字。
+3、不管什么语言，对象初始化，就必须要给对象赋值。 像oc、java、dart这些语言，对象初始化的时候，如果我们不初始化默认值，
+那么就会使nil或者null。但是swift，如果定义的非必选属性，那么就一定需要赋值（因为系统没法赋值nil，这也是因为swift语法的特殊性。nil也是一种类型）
+4、Swift中，构造方法不用写func。
+    当没有父类时：
+        如果我们不定义构造方法，那么默认系统会提供一个无参构造方法。
+    当有父类的时候：
+        如果我们不定义构造方法，那么就会继承父类定义的构造方法。并且系统不会默认提供构造方法。
+
+    默认的构造方法都是指定构造方法。 指定构造方法必须要调动父类的指定构造方法。
+    convenience修饰的是便利构造方法。
+
+5、Swift中strong和weak。默认，声明的属性就是strong类型。
+    siwft中没有assign关键字，但是引入了unowned，其实和assign很类似，也会造成野指针（主要原因是像weak，对象引用计数器为0的时候，会将对象释放，并且将对象置空，如果再向该一些后续操作也是可以移动。）。
+
+6、swift中的关键字。默认我们是不能声明一些名和关键字重名。如果有需要用重音符（`）进行包裹。
+
+
+7、swift中的结构体，相对于其他语言的结构体更加灵活。有点类似迷你版class。和类不同的是，结构体是值类似，保存在栈中。
+
+8、Swift中的枚举enum相对于，其他语言也是更加丰富。 一般enum，其他语言都是int类型。但是swift中的enum是可以设置类型的，比如Int、String、Float、Double、Bool。
+    只有设置了类型，我们才能通过rawValue来获取其值。 
+enum Week {
+    case one
+    case two
+    case three
+} // 这样是无法通过rawValue获取其值的。 当然也可以写一个case one, two, three
+
+enum Week: Int {
+    case one
+    case two = 50
+    case three
+}// 这样是可以通过rawValue来获取其值。而且，如果我们不复制，默认是从0开始。 如上，那么Week.on.rawValue = 0,
+    Week.two.rawValue = 50, Week.three.rawValue = 51
+
+enum Week: String {
+    case one
+    case two = "hello，wrold"
+    case three
+}// 这种写法。默认Week.one.rawValue = one。
+
+Swift中原始值的比较很简单。
+if one == .one {
+    //---
+}
+swift one {
+case .one:
+    //---
+}
+
+
+
+枚举的关联值。 注意上述的是默认值。 如果有关联值，那么就不能默认值。关联值和默认值不同，关联值更像是增加了一个绑定。
+enum Year {
+    case month(String)
+    case secnod(Int, String)
+}
+上述，初始化 let m = Year.month("Month")。关联值没有rawValue，只能通过类型绑定来进行解包。
+switch m {
+case .month(let a):
+ // 此时 a = Month
+}
+if case let Year.month(value) = m {
+pinrt(value)
+} // 此时，value = Month。 这也是枚举中，关联值解包的两种方式。
+
+很显然枚举中，如果有关联值就不能有原始值。关联值相当于原始值的扩展，是不同的case有不同的原始值。关联值解包的方式通过c
+case let Year.Month(x) = value  进行解包，可以用在if和switch中。
+
+9、swift中的结构体。 首先回顾下oc中的结构体。
+struct Person {
+    NSString *name;
+};
+
+struct Person per = {@"David"}; // oc只能这样进行结构体初始化。 通过per.name 进行修改。 这也解释了为什么oc引入了typedefy 关键字。而且CGRect frame = {} 可以通过这种形式来进行赋值的原因。
+
+但是如果结构体当做属性的时候。如
+@interface CMClass: NSObject
+
+@propert(noatomic, assign) Person son;
+
+@end
+
+CMlass a = [CMClass new];
+a.son = {@"Lili"};
+--------- a.son.name = @"Lucy" 会报错。主要原因是因为，struct是值类型，当时属性的时候，我们通过.语法实际上是调用了set、get方法，而set、get的时候，相当于进行了赋值，那么值类型赋值相当于内存中拷贝了一份新的地址，所以再进行赋值就相当于另外一块内存赋值，没必要哎呀。 这也解释了为什么直接设置self.frame.x = 11.0;
+
+
+2019.12.22
+1、switch。我们知道在其他语言中，switch中的条件只能是 int类型或者是bool（int类型的一种）类型。但是swift中switch的条件语句可以是，
+
+2019.12.23
+1、Any和AnyObject。 AnyObject可以用来表示任意类，本质是一个协议。Any用来表示任意类型。
+    AnyClass元类型。其实就是AnyObject.Type。用于表示类型，类似oc中Class(结构体指针)，通过.self(oc中通过.class)来获取。
+
+    注意.self用在Class后面，表示元类型。用在object后面表示对象本身。
+
+2、关于SnpKit中可以使用 view.safeAreaGuide.snp.top 来获取安全区域。
+    注意SnpKit中优先级的用法。
+
+3、关于Swift懒加载。lazy var xxxxxx。懒加载，和oc中一样，代码块使用的使用加载，而且代码块只会执行一次。
+
+2019.12.24
+1、Swift已不再使用单引号这种写法。char类型，改为了Characetor类型。用双引号表示。
+2、Swift中Range的使用。Range可以通过NSRange来生成。或者是通过区间来生成。 
+3、Swift中set、get表示属性是计算属性，如果只重写get那么表示是只读属性。willSet、didSet属性监听器
+
+
+2019.12.26
+1、Swift中，很多一些枚举，都设计成内部结构体或者枚举，比如JSONSerialization序列化的，JSONSerialization.WritingOptions。
+
+
+
+2019.12.28
+1、@objc的使用。其实就是说明，我们声明的类、协议等可以让oc调用。 当然如果我们的类直接或间接的继承了NSObject，那么系统会自动给我们增加@objc。
+
+这个关键字，设计出来的原因是因为，swift是一门静态语言，也就是说，在编译完成后，swift就会确定使用到的类，以及使用到的swift函数，然后优化删除没用到的类和函数，这样的好处就是可以很好的减少应用的包大小。
+但是oc是一门动态语言特性。这也是oc中有runtime的根本原因。
+那么这就会出现一个问题，就是，swift在优化包大小的时候（删除swift中没有没有用到的函数），不知道swift中没有用到的函数，是否oc用到了。所以就引入@objc 让我们告诉编译器，该方法oc会调用，不要删除。
+
+dynamic关键字。在oc中，是告诉编译器，不要动态添加set、get方法。
+在swift中的含义完全不一样，dynamic修饰属性或者方法后，会隐式的加上@objc，表示该方法可以让oc使用，而且是动态属性和方法。
+
+2019.12.30
+1、关于闭包（函数类型）的语法糖。
+    如果闭包作为函数参数那么，如果闭包是最后一个参数，那么我们可以将闭包的到括号提到（）的外面。但是如果是第一个参数，就不行。
+
+    如果就一个参数，而且是闭包。那么（）可以省略。
+
+闭包里面的语法糖。 如果闭包是（）->() 即没有参数，也没有返回值。那么 {} 里面的in和前面的部分可以省略。
+如果有参数，那么我们可以将参数外面的() 去掉。
+
+2、关于swift中kvc和kvo以及runtime。首先我们需要知道的是，kvc和kvo以及runtime是oc语言的动态特性。也就是只有oc才有，swift是静态语言，是不具备该特性的。
+    而且kvc和kvo是NSObjct的方法。所以，swift中的类，必须要继承NSObject，不然根本编译不通过。
+
+而且swift4.0之后，由于swift考虑到静态语言的优势。所以，继承自NSObject类，不再自动桥接到oc上面（也就是不会默认给属性和方法前面加@objc关键字），所以我们需要在需要的时候手动加上。
+    cl.setValue("enha1", forKey: #keyPath(SwiftClass.name)) // 这个是swift 4.0之后引入的#keyPath的写法
+        其实也是为了不再出错。
+    cl.setValue("enha1", forKey: "name"))
+    像上面这两种写法进行kvc的时候，如果获取值，cl.valuexxxx那么返回的是Any？类型，就很不方便。
+    所以Swift 4.0之后引入了更加智能的kvc。通过曾霞subscript的语法来设置。subscript必须有返回值。然后，我们就可以使用下标语法。
+
+subscrpit(name:Type) ->Type {
+    set {
+
+    }
+    get {
+
+    }
+}
+
+
+3、@objc和dynamic。@objc只是标记方法或者属性，可以编译成oc代码，供oc使用，并不代表就会使用oc的动态派发的形式。但是如果想要使用其动态特性，比如kvc还需要配合dynamic使用。 因为swft 4.0将dynamic和@objc分开使用。
+
+2019.12.31
+1、关于kvo的原理。其实就是通过runtime，当我们调用， obj.addObserxxxx时候， 这个时候obj的isa指针就会指向一个OBJClass的子类NSKVONotifying_xxx，这个时候，当我们调用obj.name = xxx的时候，就会监听到该方法，同时调用回调，触发observValuChange方法。
+
+2、json的本质，其实就是数组或者字典。
+
+3、关于浅拷贝和深拷贝。 在oc中，这个概念比较多。因为oc中是对象是引用类型。 而swift中是值类型，赋值即代表深拷贝。
+    浅拷贝和深拷贝：
+    对于immutable对象，NSString、NSArray、NSDictionnary进行copy都是浅拷贝，mutableCopy都是深拷贝。
+    对于mutable对象，NSMutableString、NSMutableArrary、NSMutableDictionary都是深拷贝。
+
+    当然还有完全拷贝和不完全拷贝。主要是针对容器对象比如NSArray的。因为正常copy和mutableCopy都是不完全拷贝。要实现完全
+    拷贝可以使用初始化的时候，copyItems:YES, 或者通过归档实现。
+
+2019.1.3
+1、关于mvc的解耦问题。 mvc存在的弊端：
+    a、控制器任务繁重，比如传统mvc、我们会做一些网络请求、数据处理、甚至UI处理、懒加载等一些列问题。导致控制器代码量大。
+    b、view层无法完全脱离model层显示。比如UITableViewCell经常会做的一个问题就是增加一个 model属性，通过setModel
+        来进行UI的赋值。 其实这是我们不想看到的，我们的理想就是view层，只做界面展示。
+
+2、所以就有了后来MVP设计模式的引入。Model-View-Presenter。
+
+
+2019.1.9
+关于可选类型Option和Any的关系。  Any类似id，
+
+OptionSet的使用。我们在oc中如果一个枚举可能有多种情况的话，我们可以使用NS_Options来进行创建。然后通过 | 以及 & 等c标识来进行。
+但是swift中，| 和 & 是不能使用的。因为这是c语言的表示。所以Swift就引入了OptionSet。
+
+2019.1.13
+1、Swift中的类型。  type包括named和compound。
+    其中named有protocol、enum、struct、class。
+    compound有tuple和function。
+
+2、关于存储属性和计算属性的理解。  其实存储属性，有点像我们oc中的属性。 计算属性则更像是给类添加的方法。
+    关于存储属性的属性监听。 写法很多。
+var name:String {
+    willSet {
+
+    }
+}
+
+var name: String = "enha" {
+    willSet {
+        // 监听到属性变化。
+    }
+}
+而且监听到属性变化，必须要等struct或者class 初始化完后才可以。
+
+计算属性其实并不是属性。 我们可以理解为是方法的一种简写，我们调用计算属性，其实就是调用相应的方法。 我们通过runtime获取成员变量列表，
+    就会发现，其实计算属性并不在成员变量中。 这种带有set、get关键字的语言，其实都有这个特性。
+var age: Int {
+    get{
+        return 12
+    }
+}
+上面的代码其实就相当于。
+func age() -> Int{
+    return 12
+}
+
+2019.1.14
+1、关于FileHandle和FileManager的使用场景。 FileHandle的初始化， 
+
+
+2020.4.20
+1、关于cocoapod 1.8之后，由将CDN作为spec的仓储来源。其实是一个去中心化的过程。1.8之前，我们知道
+    执行pod setup 之后，会将github上面Spec.git的整个仓储下载到本地电脑.cocoapod/repos/Specs/
+    master下面，而整个Specs有1个多G的大小，所以速度很慢，而且我们执行pod instal还好，但是执行pod
+    update会重新更新该Specs(这也是我们一般加上
+    --verbose--no-repo-update的原因)，导致很慢。因为pod install 会访问podfile.lock文件来找
+    自己的历史安装版本，而pod update不会。
+    
+    本质工作原理：master/repos/specs是一个Git仓库。这个仓库里面内容是所有提交到cocopods的库的索引
+        比如AFNetworking/3.2.0/AFNetworking.podspec.json文件。该文件就是库的索引文件，这也是
+        我们一般将自己写的库上传到cocopods上面需要些的一个文件xxx.podspec文件，里面有我们对库的描述
+        比如名字、简介、作者等。其实.podspec.json和库的作者上传时创建的.podspec文件的内容是一样的
+        当库的作者提交一个新的版本，cocopods会将改版本打上一个tag，并且会把该文件放在Git上面的Specs
+        仓库下面。当我们执行pod udpate的时候，就会将Git上面的Specs目录更新到本地目录，然后会根据
+        Specs库中找最新的版本同时下载。
+        所以：
+        1、pod update很慢的原因，因为specs库很大有一个多G的大小。
+        2、pod search搜索的比我们所需要的小，因为pod search 所有的是本地spec库，而本地不是最新的
+            所以会出现搜索不到最新的库的情况。
+    
+    1.8之前Podfile默认增加 source 'https://github.com/CocoaPods/Specs.git'
+    1.8之后Podfile默认增加 source 'https://cdn.cocoapods.org/'
+            
+    
+    在1.8之后，会依赖CDN，也就是不会将Specs下载下来，而是创建了trunk目录来记录需要版本源podspec
+    文件，所以速度会快很多。
+
+2020.4.23
+1、swift中去掉了，dispathOnce，采用static let 这样类属性的写法，这种写法其实是保存在内存的常量区中
+    但是对象的let xx这种写法就是在内存的栈中。
+    
+    关于内存分配问题。内存从低到高：代码区->常量区->堆区（程序员分配）->栈区（系统分配）
+    如下：
+    int tmpAge;//栈
+    NSString *tmpName = @"Dely";//栈
+    NSString *number = @"123456"; //123456\\\\0在常量区，number在栈上。
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:1];//分配而来的8字节的区域就在堆中，array在栈中，指向堆区的地址
+    NSInteger total = [self getTotalNumber:1 number2:1];
+
+2020.5.15
+1、对于url的拆分。
+https://johnny:p4ssw0rd@www.example.com:443/script.ext;param=value?query=value#ref
+上面这个url的组成部分：
+scheme              https
+user                johnny
+password            p4ssw0rd
+host                www.example.com
+port                443
+path                /script.ext
+pathExtension       ext
+pathComponents      ["/", "script.ext"]
+parameterString     param=value
+query               query=value
+fragment            ref
+
+URLComponts可以很好的拆解url。其中，提供了获取url各个部分的参数。需要注意的是，URLComponts是可以初始化失败的，主要和url的格式和是否携带中文有关系。
+    
