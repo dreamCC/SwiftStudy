@@ -10,6 +10,8 @@
 #import "SwiftStudy-Swift.h"
 #import <objc/runtime.h>
 
+
+
 // oc中的协议也是可以定义，属性和方法的。
 @protocol CustomOCProtocol <NSObject>
 
@@ -26,6 +28,8 @@
     if (self) {
        
     
+
+      
     }
     return self;
 }

@@ -67,10 +67,6 @@ extension SSSystermUtilVC: UITableViewDelegate, UITableViewDataSource {
         }else if indexPath.row == 3 {
             navigationController?.pushViewController(SSUserInterfaceStyleVC(), animated: true)
             
-            let vc = SSUserInterfaceStyleVC()
-            vc.modalPresentationStyle = .custom
-            vc.transitioningDelegate  = self
-            present(vc, animated: true, completion: nil)
         }else {
             print(SSSystermUtilVC.self, type(of: self))
         }

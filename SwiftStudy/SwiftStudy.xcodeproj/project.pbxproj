@@ -25,6 +25,7 @@
 		A618A1CF23B2F94700C97FD9 /* SSAlamofireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618A1CE23B2F94700C97FD9 /* SSAlamofireVC.swift */; };
 		A618A1D223B306E300C97FD9 /* SSKeyWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618A1D123B306E300C97FD9 /* SSKeyWordVC.swift */; };
 		A618A1D523B346BE00C97FD9 /* SSNotifycationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A618A1D423B346BE00C97FD9 /* SSNotifycationVC.swift */; };
+		A61B9C3024872DC500289351 /* SSHitTestAndPointInsideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B9C2F24872DC500289351 /* SSHitTestAndPointInsideVC.swift */; };
 		A628387F23C705FF00D14308 /* SSOptionSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A628387E23C705FF00D14308 /* SSOptionSetVC.swift */; };
 		A62C405623BADF5A001584CF /* SSJsonModelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C405523BADF5A001584CF /* SSJsonModelVC.swift */; };
 		A62C405A23BB23C4001584CF /* SSHandyJsonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C405823BB23C4001584CF /* SSHandyJsonVC.swift */; };
@@ -36,14 +37,39 @@
 		A6333E2C23AF137700774E5A /* AppDelegate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333E2B23AF137700774E5A /* AppDelegate+extension.swift */; };
 		A6333E3123AF14D300774E5A /* SSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333E3023AF14D300774E5A /* SSTabBarController.swift */; };
 		A6333E3323AF16A500774E5A /* SSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333E3223AF16A500774E5A /* SSNavigationController.swift */; };
+		A63CE77A2489D1EB00041D22 /* summary-one-build in Resources */ = {isa = PBXBuildFile; fileRef = A63CE7792489D1EB00041D22 /* summary-one-build */; };
+		A63CE77C248A2DF400041D22 /* SSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63CE77B248A2DF400041D22 /* SSButton.swift */; };
 		A64184972470ACDC007C4434 /* SSAppInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64184962470ACDC007C4434 /* SSAppInit.swift */; };
+		A6433368248F317500D8C919 /* SSSnapKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6433367248F317500D8C919 /* SSSnapKitVC.swift */; };
+		A643336C248F605900D8C919 /* SSAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643336B248F605900D8C919 /* SSAnimationVC.swift */; };
+		A64333BF248F699300D8C919 /* QMUIConfigurationTemplateDark.m in Sources */ = {isa = PBXBuildFile; fileRef = A643339D248F699200D8C919 /* QMUIConfigurationTemplateDark.m */; };
+		A64333C0248F699300D8C919 /* QDThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A643339F248F699200D8C919 /* QDThemeManager.m */; };
+		A64333C1248F699300D8C919 /* QMUIConfigurationTemplatePinkRose.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333A0248F699200D8C919 /* QMUIConfigurationTemplatePinkRose.m */; };
+		A64333C2248F699300D8C919 /* QMUIConfigurationTemplateGrass.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333A2248F699200D8C919 /* QMUIConfigurationTemplateGrass.m */; };
+		A64333C3248F699300D8C919 /* QMUIConfigurationTemplateGrapefruit.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333A5248F699200D8C919 /* QMUIConfigurationTemplateGrapefruit.m */; };
+		A64333C4248F699300D8C919 /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333A8248F699200D8C919 /* QMUIConfigurationTemplate.m */; };
+		A64333C5248F699300D8C919 /* QDUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333AC248F699200D8C919 /* QDUIHelper.m */; };
+		A64333C6248F699300D8C919 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333AD248F699200D8C919 /* UIImageEffects.m */; };
+		A64333C7248F699300D8C919 /* QDCommonUI.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333AE248F699200D8C919 /* QDCommonUI.m */; };
+		A64333C8248F699300D8C919 /* QDCommonGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333B1248F699200D8C919 /* QDCommonGroupListViewController.m */; };
+		A64333C9248F699300D8C919 /* QDCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333B4248F699200D8C919 /* QDCommonViewController.m */; };
+		A64333CA248F699300D8C919 /* QDCommonGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333B7248F699300D8C919 /* QDCommonGridViewController.m */; };
+		A64333CB248F699300D8C919 /* QDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333B8248F699300D8C919 /* QDTabBarViewController.m */; };
+		A64333CC248F699300D8C919 /* QDCommonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333BA248F699300D8C919 /* QDCommonListViewController.m */; };
+		A64333CD248F699300D8C919 /* QDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333BD248F699300D8C919 /* QDNavigationController.m */; };
+		A64333CE248F699300D8C919 /* QDCommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A64333BE248F699300D8C919 /* QDCommonTableViewController.m */; };
 		A656F8632463B87300B7A8B5 /* SSKvcKvoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A656F8622463B87300B7A8B5 /* SSKvcKvoVC.xib */; };
 		A656F86524653D8500B7A8B5 /* SSRuntimeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A656F86424653D8500B7A8B5 /* SSRuntimeVC.xib */; };
 		A657A87E245531B900571E82 /* SSUserInterfaceStyleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657A87D245531B900571E82 /* SSUserInterfaceStyleVC.swift */; };
 		A65B7D0C23C492C8002312EA /* SSProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B7D0A23C492C8002312EA /* SSProgressVC.swift */; };
 		A65B7D0D23C492C8002312EA /* SSProgressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65B7D0B23C492C8002312EA /* SSProgressVC.xib */; };
 		A668036124570F8000A0D335 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A668036024570F8000A0D335 /* SwiftUIView.swift */; };
+		A672A796247F445E005AC5F5 /* SSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A672A795247F445E005AC5F5 /* SSSingleton.m */; };
+		A672A799247F46C6005AC5F5 /* SSXiuShiFu.m in Sources */ = {isa = PBXBuildFile; fileRef = A672A798247F46C6005AC5F5 /* SSXiuShiFu.m */; };
+		A673F29824868A1D00CC35FA /* SSQMUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673F29724868A1D00CC35FA /* SSQMUIViewController.swift */; };
+		A673F29A2486946000CC35FA /* SSQMUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673F2992486946000CC35FA /* SSQMUIView.swift */; };
 		A6755CC123CEF6540041C753 /* manifest.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6755CC023CEF6540041C753 /* manifest.plist */; };
+		A67C0C4D247610320009531A /* SSNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C0C4C247610320009531A /* SSNetworkManager.swift */; };
 		A67DCD91246BA3A20079C5FA /* SSTuplesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67DCD90246BA3A20079C5FA /* SSTuplesVC.swift */; };
 		A681F00523C87909002574E2 /* SSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681F00423C87909002574E2 /* SSNetwork.swift */; };
 		A697A24723AB8F3A00B16AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697A24623AB8F3A00B16AEA /* AppDelegate.swift */; };
@@ -54,7 +80,7 @@
 		A697A25923AB927800B16AEA /* CJShareInstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A697A25823AB927800B16AEA /* CJShareInstant.swift */; };
 		A6983D3E23CD6EE6006F720F /* SSMoyaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6983D3C23CD6EE6006F720F /* SSMoyaVC.swift */; };
 		A6983D3F23CD6EE6006F720F /* SSMoyaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6983D3D23CD6EE6006F720F /* SSMoyaVC.xib */; };
-		A6983D4123CD996B006F720F /* SSNetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6983D4023CD996B006F720F /* SSNetworkAPI.swift */; };
+		A6983D4123CD996B006F720F /* SSUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6983D4023CD996B006F720F /* SSUserAPI.swift */; };
 		A69FDA6A23D198CD000F3568 /* SSMvvmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FDA6923D198CD000F3568 /* SSMvvmVC.swift */; };
 		A69FDA6F23D1A119000F3568 /* SSMvvmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FDA6E23D1A119000F3568 /* SSMvvmView.swift */; };
 		A69FDA7123D1A78E000F3568 /* SSMvvmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FDA7023D1A78E000F3568 /* SSMvvmViewModel.swift */; };
@@ -62,6 +88,7 @@
 		A69FDA7523D1ABAA000F3568 /* SSVMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69FDA7423D1ABAA000F3568 /* SSVMModel.swift */; };
 		A6A1C68623CE071D00167BE2 /* SSErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A1C68423CE071D00167BE2 /* SSErrorVC.swift */; };
 		A6A1C68723CE071D00167BE2 /* SSErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A1C68523CE071D00167BE2 /* SSErrorVC.xib */; };
+		A6A234FE248E0DA800CB81AD /* SSAppearanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A234FD248E0DA800CB81AD /* SSAppearanceVC.swift */; };
 		A6ACD5FE23B1E09D009533DC /* SSArraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ACD5FD23B1E09D009533DC /* SSArraryVC.swift */; };
 		A6ACD60123B2001F009533DC /* SSGCDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ACD60023B2001F009533DC /* SSGCDVC.swift */; };
 		A6B8029C23CCB3D700DED3CB /* SSPointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B8029B23CCB3D700DED3CB /* SSPointVC.swift */; };
@@ -100,6 +127,7 @@
 		A618A1CE23B2F94700C97FD9 /* SSAlamofireVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAlamofireVC.swift; sourceTree = "<group>"; };
 		A618A1D123B306E300C97FD9 /* SSKeyWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSKeyWordVC.swift; sourceTree = "<group>"; };
 		A618A1D423B346BE00C97FD9 /* SSNotifycationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNotifycationVC.swift; sourceTree = "<group>"; };
+		A61B9C2F24872DC500289351 /* SSHitTestAndPointInsideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHitTestAndPointInsideVC.swift; sourceTree = "<group>"; };
 		A628387E23C705FF00D14308 /* SSOptionSetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSOptionSetVC.swift; sourceTree = "<group>"; };
 		A62C405523BADF5A001584CF /* SSJsonModelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSJsonModelVC.swift; sourceTree = "<group>"; };
 		A62C405823BB23C4001584CF /* SSHandyJsonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHandyJsonVC.swift; sourceTree = "<group>"; };
@@ -111,14 +139,59 @@
 		A6333E2B23AF137700774E5A /* AppDelegate+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+extension.swift"; sourceTree = "<group>"; };
 		A6333E3023AF14D300774E5A /* SSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTabBarController.swift; sourceTree = "<group>"; };
 		A6333E3223AF16A500774E5A /* SSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNavigationController.swift; sourceTree = "<group>"; };
+		A63CE7792489D1EB00041D22 /* summary-one-build */ = {isa = PBXFileReference; lastKnownFileType = text; path = "summary-one-build"; sourceTree = "<group>"; };
+		A63CE77B248A2DF400041D22 /* SSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSButton.swift; sourceTree = "<group>"; };
 		A64184962470ACDC007C4434 /* SSAppInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppInit.swift; sourceTree = "<group>"; };
+		A6433367248F317500D8C919 /* SSSnapKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSnapKitVC.swift; sourceTree = "<group>"; };
+		A643336B248F605900D8C919 /* SSAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAnimationVC.swift; sourceTree = "<group>"; };
+		A643339C248F699200D8C919 /* QMUIConfigurationTemplateGrass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplateGrass.h; sourceTree = "<group>"; };
+		A643339D248F699200D8C919 /* QMUIConfigurationTemplateDark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplateDark.m; sourceTree = "<group>"; };
+		A643339E248F699200D8C919 /* QMUIConfigurationTemplateGrapefruit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplateGrapefruit.h; sourceTree = "<group>"; };
+		A643339F248F699200D8C919 /* QDThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDThemeManager.m; sourceTree = "<group>"; };
+		A64333A0248F699200D8C919 /* QMUIConfigurationTemplatePinkRose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplatePinkRose.m; sourceTree = "<group>"; };
+		A64333A1248F699200D8C919 /* QMUIConfigurationTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplate.h; sourceTree = "<group>"; };
+		A64333A2248F699200D8C919 /* QMUIConfigurationTemplateGrass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplateGrass.m; sourceTree = "<group>"; };
+		A64333A3248F699200D8C919 /* QMUIConfigurationTemplateDark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplateDark.h; sourceTree = "<group>"; };
+		A64333A4248F699200D8C919 /* QDThemeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeProtocol.h; sourceTree = "<group>"; };
+		A64333A5248F699200D8C919 /* QMUIConfigurationTemplateGrapefruit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplateGrapefruit.m; sourceTree = "<group>"; };
+		A64333A6248F699200D8C919 /* QDThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeManager.h; sourceTree = "<group>"; };
+		A64333A7248F699200D8C919 /* QMUIConfigurationTemplatePinkRose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplatePinkRose.h; sourceTree = "<group>"; };
+		A64333A8248F699200D8C919 /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
+		A64333AA248F699200D8C919 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		A64333AB248F699200D8C919 /* QDCommonUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonUI.h; sourceTree = "<group>"; };
+		A64333AC248F699200D8C919 /* QDUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDUIHelper.m; sourceTree = "<group>"; };
+		A64333AD248F699200D8C919 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		A64333AE248F699200D8C919 /* QDCommonUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonUI.m; sourceTree = "<group>"; };
+		A64333AF248F699200D8C919 /* QDUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDUIHelper.h; sourceTree = "<group>"; };
+		A64333B1248F699200D8C919 /* QDCommonGroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonGroupListViewController.m; sourceTree = "<group>"; };
+		A64333B2248F699200D8C919 /* QDTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDTabBarViewController.h; sourceTree = "<group>"; };
+		A64333B3248F699200D8C919 /* QDCommonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonListViewController.h; sourceTree = "<group>"; };
+		A64333B4248F699200D8C919 /* QDCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonViewController.m; sourceTree = "<group>"; };
+		A64333B5248F699200D8C919 /* QDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDNavigationController.h; sourceTree = "<group>"; };
+		A64333B6248F699200D8C919 /* QDCommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonTableViewController.h; sourceTree = "<group>"; };
+		A64333B7248F699300D8C919 /* QDCommonGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonGridViewController.m; sourceTree = "<group>"; };
+		A64333B8248F699300D8C919 /* QDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDTabBarViewController.m; sourceTree = "<group>"; };
+		A64333B9248F699300D8C919 /* QDCommonGroupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonGroupListViewController.h; sourceTree = "<group>"; };
+		A64333BA248F699300D8C919 /* QDCommonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonListViewController.m; sourceTree = "<group>"; };
+		A64333BB248F699300D8C919 /* QDCommonGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonGridViewController.h; sourceTree = "<group>"; };
+		A64333BC248F699300D8C919 /* QDCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDCommonViewController.h; sourceTree = "<group>"; };
+		A64333BD248F699300D8C919 /* QDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNavigationController.m; sourceTree = "<group>"; };
+		A64333BE248F699300D8C919 /* QDCommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDCommonTableViewController.m; sourceTree = "<group>"; };
+		A64333CF248F69FF00D8C919 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A656F8622463B87300B7A8B5 /* SSKvcKvoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSKvcKvoVC.xib; sourceTree = "<group>"; };
 		A656F86424653D8500B7A8B5 /* SSRuntimeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSRuntimeVC.xib; sourceTree = "<group>"; };
 		A657A87D245531B900571E82 /* SSUserInterfaceStyleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUserInterfaceStyleVC.swift; sourceTree = "<group>"; };
 		A65B7D0A23C492C8002312EA /* SSProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProgressVC.swift; sourceTree = "<group>"; };
 		A65B7D0B23C492C8002312EA /* SSProgressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSProgressVC.xib; sourceTree = "<group>"; };
 		A668036024570F8000A0D335 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		A672A794247F445E005AC5F5 /* SSSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSingleton.h; sourceTree = "<group>"; };
+		A672A795247F445E005AC5F5 /* SSSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSingleton.m; sourceTree = "<group>"; };
+		A672A797247F46C6005AC5F5 /* SSXiuShiFu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSXiuShiFu.h; sourceTree = "<group>"; };
+		A672A798247F46C6005AC5F5 /* SSXiuShiFu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSXiuShiFu.m; sourceTree = "<group>"; };
+		A673F29724868A1D00CC35FA /* SSQMUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSQMUIViewController.swift; sourceTree = "<group>"; };
+		A673F2992486946000CC35FA /* SSQMUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSQMUIView.swift; sourceTree = "<group>"; };
 		A6755CC023CEF6540041C753 /* manifest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = manifest.plist; sourceTree = "<group>"; };
+		A67C0C4C247610320009531A /* SSNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNetworkManager.swift; sourceTree = "<group>"; };
 		A67DCD90246BA3A20079C5FA /* SSTuplesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTuplesVC.swift; sourceTree = "<group>"; };
 		A681F00423C87909002574E2 /* SSNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNetwork.swift; sourceTree = "<group>"; };
 		A697A24323AB8F3A00B16AEA /* SwiftStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +204,7 @@
 		A697A25823AB927800B16AEA /* CJShareInstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CJShareInstant.swift; sourceTree = "<group>"; };
 		A6983D3C23CD6EE6006F720F /* SSMoyaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMoyaVC.swift; sourceTree = "<group>"; };
 		A6983D3D23CD6EE6006F720F /* SSMoyaVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSMoyaVC.xib; sourceTree = "<group>"; };
-		A6983D4023CD996B006F720F /* SSNetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNetworkAPI.swift; sourceTree = "<group>"; };
+		A6983D4023CD996B006F720F /* SSUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUserAPI.swift; sourceTree = "<group>"; };
 		A69FDA6923D198CD000F3568 /* SSMvvmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMvvmVC.swift; sourceTree = "<group>"; };
 		A69FDA6E23D1A119000F3568 /* SSMvvmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMvvmView.swift; sourceTree = "<group>"; };
 		A69FDA7023D1A78E000F3568 /* SSMvvmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMvvmViewModel.swift; sourceTree = "<group>"; };
@@ -139,6 +212,7 @@
 		A69FDA7423D1ABAA000F3568 /* SSVMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSVMModel.swift; sourceTree = "<group>"; };
 		A6A1C68423CE071D00167BE2 /* SSErrorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSErrorVC.swift; sourceTree = "<group>"; };
 		A6A1C68523CE071D00167BE2 /* SSErrorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSErrorVC.xib; sourceTree = "<group>"; };
+		A6A234FD248E0DA800CB81AD /* SSAppearanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppearanceVC.swift; sourceTree = "<group>"; };
 		A6ACD5FD23B1E09D009533DC /* SSArraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSArraryVC.swift; sourceTree = "<group>"; };
 		A6ACD60023B2001F009533DC /* SSGCDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSGCDVC.swift; sourceTree = "<group>"; };
 		A6B8029B23CCB3D700DED3CB /* SSPointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSPointVC.swift; sourceTree = "<group>"; };
@@ -184,6 +258,7 @@
 		A60113D523B0537C00E6E5EF /* SystermUtil */ = {
 			isa = PBXGroup;
 			children = (
+				A643339A248F699200D8C919 /* Common */,
 				A657A87C2455319100571E82 /* UserInterfaceStyle */,
 				A610626424507708004B9A9A /* KnowledgePoint */,
 				A610625F24507394004B9A9A /* CoreFoundation */,
@@ -273,6 +348,7 @@
 		A610625F24507394004B9A9A /* CoreFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				A643336A248F604500D8C919 /* Animation */,
 				A67DCD8F246BA3840079C5FA /* Tuples */,
 				A6C6D5E023B49004000370C4 /* URLComponents */,
 				A6A1C68323CE070000167BE2 /* Error */,
@@ -293,6 +369,9 @@
 		A610626424507708004B9A9A /* KnowledgePoint */ = {
 			isa = PBXGroup;
 			children = (
+				A6433369248F602F00D8C919 /* New Group */,
+				A6A234FC248E0D6800CB81AD /* Appearance */,
+				A61B9C2E24872D6A00289351 /* HitTestAndPointInsid */,
 				A6C6D5E823B4A13E000370C4 /* Range */,
 				A60598E52458759D007B71CB /* KvcKvo */,
 				A6B8029A23CCB39C00DED3CB /* UnsafePoint */,
@@ -310,6 +389,8 @@
 		A618A1CA23B2F8A900C97FD9 /* ThirdFramework */ = {
 			isa = PBXGroup;
 			children = (
+				A6433366248F315B00D8C919 /* SnapKit */,
+				A64C2D5024789F0F00C07A5D /* Qmui */,
 				A6983D3B23CD6EBB006F720F /* Moya */,
 				A62C406123BB2F7A001584CF /* ObjectMapper */,
 				A62C405C23BB2965001584CF /* SwiftJson */,
@@ -344,6 +425,15 @@
 				A618A1D423B346BE00C97FD9 /* SSNotifycationVC.swift */,
 			);
 			path = Notifycation;
+			sourceTree = "<group>";
+		};
+		A61B9C2E24872D6A00289351 /* HitTestAndPointInsid */ = {
+			isa = PBXGroup;
+			children = (
+				A61B9C2F24872DC500289351 /* SSHitTestAndPointInsideVC.swift */,
+				A673F2992486946000CC35FA /* SSQMUIView.swift */,
+			);
+			path = HitTestAndPointInsid;
 			sourceTree = "<group>";
 		};
 		A628387D23C705EB00D14308 /* OptionSet */ = {
@@ -416,6 +506,10 @@
 				A6DAFE3823ACB397007E02EA /* OCClass.m */,
 				A60BD7B423CC7999007E753B /* OCClass+Category.h */,
 				A60BD7B523CC7999007E753B /* OCClass+Category.m */,
+				A672A794247F445E005AC5F5 /* SSSingleton.h */,
+				A672A795247F445E005AC5F5 /* SSSingleton.m */,
+				A672A797247F46C6005AC5F5 /* SSXiuShiFu.h */,
+				A672A798247F46C6005AC5F5 /* SSXiuShiFu.m */,
 			);
 			path = oc;
 			sourceTree = "<group>";
@@ -436,6 +530,102 @@
 				A6C6D5E123B49029000370C4 /* SSBaseViewController.swift */,
 			);
 			path = main;
+			sourceTree = "<group>";
+		};
+		A6433366248F315B00D8C919 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				A6433367248F317500D8C919 /* SSSnapKitVC.swift */,
+			);
+			path = SnapKit;
+			sourceTree = "<group>";
+		};
+		A6433369248F602F00D8C919 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A643336A248F604500D8C919 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A643336B248F605900D8C919 /* SSAnimationVC.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		A643339A248F699200D8C919 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A643339B248F699200D8C919 /* Configuration */,
+				A64333A9248F699200D8C919 /* Utils */,
+				A64333B0248F699200D8C919 /* Controllers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A643339B248F699200D8C919 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A64333A4248F699200D8C919 /* QDThemeProtocol.h */,
+				A64333A6248F699200D8C919 /* QDThemeManager.h */,
+				A643339F248F699200D8C919 /* QDThemeManager.m */,
+				A64333A1248F699200D8C919 /* QMUIConfigurationTemplate.h */,
+				A64333A8248F699200D8C919 /* QMUIConfigurationTemplate.m */,
+				A64333A3248F699200D8C919 /* QMUIConfigurationTemplateDark.h */,
+				A643339D248F699200D8C919 /* QMUIConfigurationTemplateDark.m */,
+				A64333A0248F699200D8C919 /* QMUIConfigurationTemplatePinkRose.m */,
+				A64333A7248F699200D8C919 /* QMUIConfigurationTemplatePinkRose.h */,
+				A643339C248F699200D8C919 /* QMUIConfigurationTemplateGrass.h */,
+				A64333A2248F699200D8C919 /* QMUIConfigurationTemplateGrass.m */,
+				A64333A5248F699200D8C919 /* QMUIConfigurationTemplateGrapefruit.m */,
+				A643339E248F699200D8C919 /* QMUIConfigurationTemplateGrapefruit.h */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A64333A9248F699200D8C919 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A64333AA248F699200D8C919 /* UIImageEffects.h */,
+				A64333AB248F699200D8C919 /* QDCommonUI.h */,
+				A64333AC248F699200D8C919 /* QDUIHelper.m */,
+				A64333AD248F699200D8C919 /* UIImageEffects.m */,
+				A64333AE248F699200D8C919 /* QDCommonUI.m */,
+				A64333AF248F699200D8C919 /* QDUIHelper.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A64333B0248F699200D8C919 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A64333B1248F699200D8C919 /* QDCommonGroupListViewController.m */,
+				A64333B2248F699200D8C919 /* QDTabBarViewController.h */,
+				A64333B3248F699200D8C919 /* QDCommonListViewController.h */,
+				A64333B4248F699200D8C919 /* QDCommonViewController.m */,
+				A64333B5248F699200D8C919 /* QDNavigationController.h */,
+				A64333B6248F699200D8C919 /* QDCommonTableViewController.h */,
+				A64333B7248F699300D8C919 /* QDCommonGridViewController.m */,
+				A64333B8248F699300D8C919 /* QDTabBarViewController.m */,
+				A64333B9248F699300D8C919 /* QDCommonGroupListViewController.h */,
+				A64333BA248F699300D8C919 /* QDCommonListViewController.m */,
+				A64333BB248F699300D8C919 /* QDCommonGridViewController.h */,
+				A64333BC248F699300D8C919 /* QDCommonViewController.h */,
+				A64333BD248F699300D8C919 /* QDNavigationController.m */,
+				A64333BE248F699300D8C919 /* QDCommonTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A64C2D5024789F0F00C07A5D /* Qmui */ = {
+			isa = PBXGroup;
+			children = (
+				A673F29724868A1D00CC35FA /* SSQMUIViewController.swift */,
+				A63CE77B248A2DF400041D22 /* SSButton.swift */,
+			);
+			path = Qmui;
 			sourceTree = "<group>";
 		};
 		A657A87C2455319100571E82 /* UserInterfaceStyle */ = {
@@ -503,7 +693,9 @@
 				A697A24D23AB8F3B00B16AEA /* Assets.xcassets */,
 				A697A24F23AB8F3B00B16AEA /* LaunchScreen.storyboard */,
 				A697A25223AB8F3B00B16AEA /* Info.plist */,
+				A64333CF248F69FF00D8C919 /* PrefixHeader.pch */,
 				A6DAFE3423AC71AA007E02EA /* summary */,
+				A63CE7792489D1EB00041D22 /* summary-one-build */,
 				A6DAFE3623ACB397007E02EA /* SwiftStudy-Bridging-Header.h */,
 			);
 			path = SwiftStudy;
@@ -514,7 +706,8 @@
 			children = (
 				A6983D3C23CD6EE6006F720F /* SSMoyaVC.swift */,
 				A6983D3D23CD6EE6006F720F /* SSMoyaVC.xib */,
-				A6983D4023CD996B006F720F /* SSNetworkAPI.swift */,
+				A6983D4023CD996B006F720F /* SSUserAPI.swift */,
+				A67C0C4C247610320009531A /* SSNetworkManager.swift */,
 			);
 			path = Moya;
 			sourceTree = "<group>";
@@ -570,6 +763,14 @@
 				A6A1C68523CE071D00167BE2 /* SSErrorVC.xib */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		A6A234FC248E0D6800CB81AD /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				A6A234FD248E0DA800CB81AD /* SSAppearanceVC.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 		A6ACD5FC23B1E088009533DC /* Array */ = {
@@ -742,6 +943,7 @@
 				A6B8029E23CCB41D00DED3CB /* SSPointVC.xib in Resources */,
 				A697A24E23AB8F3B00B16AEA /* Assets.xcassets in Resources */,
 				A6755CC123CEF6540041C753 /* manifest.plist in Resources */,
+				A63CE77A2489D1EB00041D22 /* summary-one-build in Resources */,
 				A697A24C23AB8F3A00B16AEA /* Main.storyboard in Resources */,
 				A6A1C68723CE071D00167BE2 /* SSErrorVC.xib in Resources */,
 			);
@@ -798,19 +1000,30 @@
 			files = (
 				A60564EE23C6B7C500720AC3 /* SSUniversalLinksVC.swift in Sources */,
 				A618A1D223B306E300C97FD9 /* SSKeyWordVC.swift in Sources */,
+				A64333C9248F699300D8C919 /* QDCommonViewController.m in Sources */,
+				A64333CE248F699300D8C919 /* QDCommonTableViewController.m in Sources */,
 				A610625A244FF4A9004B9A9A /* SSThreadVC.swift in Sources */,
 				A67DCD91246BA3A20079C5FA /* SSTuplesVC.swift in Sources */,
 				A6333E2C23AF137700774E5A /* AppDelegate+extension.swift in Sources */,
 				A6BE7BA623B4458F00F82DC5 /* SSFunctionVC.swift in Sources */,
 				A681F00523C87909002574E2 /* SSNetwork.swift in Sources */,
 				A6DAFE3923ACB397007E02EA /* OCClass.m in Sources */,
+				A64333C4248F699300D8C919 /* QMUIConfigurationTemplate.m in Sources */,
+				A64333CC248F699300D8C919 /* QDCommonListViewController.m in Sources */,
 				A6333E3323AF16A500774E5A /* SSNavigationController.swift in Sources */,
 				A60113DE23B05BB300E6E5EF /* SSAnyAnyObjectVC.swift in Sources */,
+				A64333C7248F699300D8C919 /* QDCommonUI.m in Sources */,
 				A697A24923AB8F3A00B16AEA /* HomeViewController.swift in Sources */,
+				A63CE77C248A2DF400041D22 /* SSButton.swift in Sources */,
+				A64333BF248F699300D8C919 /* QMUIConfigurationTemplateDark.m in Sources */,
 				A60113DB23B0558400E6E5EF /* SSEnumVC.swift in Sources */,
+				A61B9C3024872DC500289351 /* SSHitTestAndPointInsideVC.swift in Sources */,
+				A64333CA248F699300D8C919 /* QDCommonGridViewController.m in Sources */,
 				A69FDA6F23D1A119000F3568 /* SSMvvmView.swift in Sources */,
 				A6B8029C23CCB3D700DED3CB /* SSPointVC.swift in Sources */,
+				A673F29A2486946000CC35FA /* SSQMUIView.swift in Sources */,
 				A69FDA7323D1A8D1000F3568 /* SSMvvmTableCell.swift in Sources */,
+				A64333CD248F699300D8C919 /* QDNavigationController.m in Sources */,
 				A64184972470ACDC007C4434 /* SSAppInit.swift in Sources */,
 				A6A1C68623CE071D00167BE2 /* SSErrorVC.swift in Sources */,
 				A60598E7245875B2007B71CB /* SSKvcKvoVC.swift in Sources */,
@@ -819,32 +1032,47 @@
 				A62C405F23BB297A001584CF /* SSSwiftJsonVC.swift in Sources */,
 				A610625D245072AD004B9A9A /* SSOperationVC.swift in Sources */,
 				A60113D823B053F100E6E5EF /* SSSystermUtilVC.swift in Sources */,
+				A64333CB248F699300D8C919 /* QDTabBarViewController.m in Sources */,
 				A6C6D5E223B49029000370C4 /* SSBaseViewController.swift in Sources */,
 				A6106263245075B4004B9A9A /* SSCoreFoundationVC.swift in Sources */,
 				A6C6D5E423B49195000370C4 /* SSURLComponentsVC.swift in Sources */,
 				A618A1CC23B2F8D300C97FD9 /* SSThirdFrameworkVC.swift in Sources */,
 				A6983D3E23CD6EE6006F720F /* SSMoyaVC.swift in Sources */,
 				A6333E3123AF14D300774E5A /* SSTabBarController.swift in Sources */,
+				A64333C3248F699300D8C919 /* QMUIConfigurationTemplateGrapefruit.m in Sources */,
 				A6D5850423BD792500F11F14 /* SSGenericityVC.swift in Sources */,
 				A628387F23C705FF00D14308 /* SSOptionSetVC.swift in Sources */,
+				A672A796247F445E005AC5F5 /* SSSingleton.m in Sources */,
 				A610626624507826004B9A9A /* SSKnowledgePointVC.swift in Sources */,
+				A64333C2248F699300D8C919 /* QMUIConfigurationTemplateGrass.m in Sources */,
 				A657A87E245531B900571E82 /* SSUserInterfaceStyleVC.swift in Sources */,
 				A618A1D523B346BE00C97FD9 /* SSNotifycationVC.swift in Sources */,
+				A67C0C4D247610320009531A /* SSNetworkManager.swift in Sources */,
 				A697A24723AB8F3A00B16AEA /* AppDelegate.swift in Sources */,
 				A69FDA7523D1ABAA000F3568 /* SSVMModel.swift in Sources */,
 				A618A1CF23B2F94700C97FD9 /* SSAlamofireVC.swift in Sources */,
-				A6983D4123CD996B006F720F /* SSNetworkAPI.swift in Sources */,
+				A6983D4123CD996B006F720F /* SSUserAPI.swift in Sources */,
 				A62C405A23BB23C4001584CF /* SSHandyJsonVC.swift in Sources */,
+				A643336C248F605900D8C919 /* SSAnimationVC.swift in Sources */,
 				A6106261245074CA004B9A9A /* SSMultithreadingVC.swift in Sources */,
+				A64333C1248F699300D8C919 /* QMUIConfigurationTemplatePinkRose.m in Sources */,
+				A672A799247F46C6005AC5F5 /* SSXiuShiFu.m in Sources */,
 				A60BD7B623CC7999007E753B /* OCClass+Category.m in Sources */,
+				A64333C8248F699300D8C919 /* QDCommonGroupListViewController.m in Sources */,
 				A6C6D5EA23B4A14C000370C4 /* SSRangeVC.swift in Sources */,
+				A64333C0248F699300D8C919 /* QDThemeManager.m in Sources */,
 				A69FDA7123D1A78E000F3568 /* SSMvvmViewModel.swift in Sources */,
+				A6433368248F317500D8C919 /* SSSnapKitVC.swift in Sources */,
 				A60113E123B06E7600E6E5EF /* SSStringVC.swift in Sources */,
 				A6ACD60123B2001F009533DC /* SSGCDVC.swift in Sources */,
 				A62C405623BADF5A001584CF /* SSJsonModelVC.swift in Sources */,
 				A697A25923AB927800B16AEA /* CJShareInstant.swift in Sources */,
 				A668036124570F8000A0D335 /* SwiftUIView.swift in Sources */,
+				A6A234FE248E0DA800CB81AD /* SSAppearanceVC.swift in Sources */,
+				A64333C6248F699300D8C919 /* UIImageEffects.m in Sources */,
 				A6ACD5FE23B1E09D009533DC /* SSArraryVC.swift in Sources */,
+				A64333C5248F699300D8C919 /* QDUIHelper.m in Sources */,
+				A673F29824868A1D00CC35FA /* SSQMUIViewController.swift in Sources */,
 				A65B7D0C23C492C8002312EA /* SSProgressVC.swift in Sources */,
 				A69FDA6A23D198CD000F3568 /* SSMvvmVC.swift in Sources */,
 				A6C6D5E723B49EEC000370C4 /* SSCharacterSetVC.swift in Sources */,
@@ -998,6 +1226,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EYF7S6R84B;
+				GCC_PREFIX_HEADER = SwiftStudy/PrefixHeader.pch;
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1020,6 +1249,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EYF7S6R84B;
+				GCC_PREFIX_HEADER = SwiftStudy/PrefixHeader.pch;
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

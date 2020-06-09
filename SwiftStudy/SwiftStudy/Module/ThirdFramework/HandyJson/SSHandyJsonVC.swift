@@ -32,6 +32,10 @@ class SSHandyJsonVC: SSBaseViewController {
         model.age = 18
         print(model.toJSONString(prettyPrint: true) ?? "")
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+
+    }
 }
 
 
@@ -61,6 +65,8 @@ class HandyJsonModel: HandyJSON {
     func didFinishMapping() {
         print("you can fill some observing logic here")
     }
+    
+
 }
 
 

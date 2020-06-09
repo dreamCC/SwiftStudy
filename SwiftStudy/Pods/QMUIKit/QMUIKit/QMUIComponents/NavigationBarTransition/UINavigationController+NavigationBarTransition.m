@@ -121,10 +121,13 @@ QMUISynthesizeIdStrongProperty(qmui_specifiedTextColor, setQmui_specifiedTextCol
 
 #pragma mark - 主流程
 
+
+
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
+       
         OverrideImplementation([UIViewController class], @selector(viewWillAppear:), ^id(__unsafe_unretained Class originClass, SEL originCMD, IMP (^originalIMPProvider)(void)) {
             return ^(UIViewController *selfObject, BOOL firstArgv) {
                 
@@ -224,6 +227,7 @@ QMUISynthesizeIdStrongProperty(qmui_specifiedTextColor, setQmui_specifiedTextCol
         });
     });
 }
+
 
 - (void)addTransitionNavigationBarIfNeeded {
     

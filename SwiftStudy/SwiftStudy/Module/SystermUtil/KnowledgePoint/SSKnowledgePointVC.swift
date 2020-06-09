@@ -11,7 +11,7 @@ import UIKit
 class SSKnowledgePointVC: UIViewController {
     
     let datas = ["KeyWords","Function","Range","Runtime","JsonModel","Progress",
-    "UniversalLinks","UnsafePoint","KVcKvo"]
+    "UniversalLinks","UnsafePoint","KVcKvo","HitTestAndPointInside","Appearance"]
     
 
     
@@ -70,6 +70,10 @@ extension SSKnowledgePointVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSPointVC(), animated: true)
         }else if indexPath.row == 8 {
             navigationController?.pushViewController(SSKvcKvoVC(), animated: true)
+        }else if indexPath.row == 9 {
+            navigationController?.pushViewController(SSHitTestAndPointInsideVC(), animated: true)
+        }else if indexPath.row == 10 {
+            navigationController?.pushViewController(SSAppearanceVC(), animated: true)
         }
     }
     

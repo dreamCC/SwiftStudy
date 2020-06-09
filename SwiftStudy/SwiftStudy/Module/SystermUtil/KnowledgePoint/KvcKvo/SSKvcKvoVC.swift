@@ -110,7 +110,6 @@ class KvoClass: NSObject {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         print("observeValue", keyPath ?? "嗯哈")
         
-        
     }
     
     

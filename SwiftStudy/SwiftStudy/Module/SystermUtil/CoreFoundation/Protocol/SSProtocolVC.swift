@@ -142,7 +142,9 @@ extension SSProtocol {
         其特点：1、startIndex、endIndex。第一个和最后一个元素。
         2、subScript。通过下标访问集合。
         3、indices：集合的索引。
+ 7、RangeExpression。常用的Range是遵循该协议的。
  */
+
 
 
 class SystermProtocolClass {
@@ -150,6 +152,9 @@ class SystermProtocolClass {
     
     static let a:String = ""
     static func staticFunc() {
+        
+       
+        
         
     }
     

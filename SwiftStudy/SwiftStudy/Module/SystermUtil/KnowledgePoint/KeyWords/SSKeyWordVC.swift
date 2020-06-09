@@ -74,6 +74,10 @@ import Alamofire
     1、首先oc中有Category和extention两种，Category是基于runtime实现的，本质是objc_category结构体，extention其实就是在原类的基础上增加方法属性的。但是Category是基于runtime在dylb链接的时候加载到objc_class的ivars和methodList中的，这也是其不能添加属性的原因。
     2、swift中其实没有Category概念，但是引入了extension扩展。
  
+ typedefine、typeof和define的区别。
+ typedefine将一种类型转换成另一种类型。
+ typeof(xxx)获取xxx类型。比如__weak typeof(self)weakSelf = self; 等价于 __weak UIViewController *weakSelf = self;
+ define定义宏。
  */
 
 class SSKeyWordVC: UIViewController {

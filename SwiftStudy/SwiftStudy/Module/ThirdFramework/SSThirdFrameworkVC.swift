@@ -12,7 +12,7 @@ import SnapKit
 
 class SSThirdFrameworkVC: UIViewController {
 
-    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya"]
+    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,8 @@ extension SSThirdFrameworkVC : UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSObjectMapperVC(), animated: true)
         }else if indexPath.row == 4{
             navigationController?.pushViewController(SSMoyaVC(), animated: true)
+        }else if indexPath.row == 5{
+            navigationController?.pushViewController(SSQMUIViewController(), animated: true)
         }
     }
 }

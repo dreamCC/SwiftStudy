@@ -18,6 +18,14 @@ extension TargetType {
     var sampleData: Data {
         return "".data(using: .utf8)!
     }
+    
+    var method: Moya.Method {
+        return .post
+    }
+    
+    var headers: [String : String]? {
+        return nil
+    }
 }
 
 // 增加私有方法
@@ -28,21 +36,21 @@ private extension String {
     
 }
 
-let networkProvider = MoyaProvider<SSNetworkAPI>()
+let networkProvider = MoyaProvider<SSUserAPI>()
 // 多个TargetType的时候。
 let multiProvider = MoyaProvider<MultiTarget>()
 
-enum SSNetworkAPI {
+enum SSUserAPI {
 
-    case login(telNumber: String, code: String)
+    case login(_ telNumber: String,_ code: String)
     case mineInfo
 }
 
-extension SSNetworkAPI {
+extension SSUserAPI {
     
     var parames: [String: Any]? {
         switch self {
-        case .login(telNumber: let phone, code: let code):
+        case .login(let phone, let code):
             return [
                 "telNumber":phone ,
                 "code":code ]
@@ -53,7 +61,7 @@ extension SSNetworkAPI {
 }
 
 
-extension SSNetworkAPI: TargetType {
+extension SSUserAPI: TargetType {
    
     var path: String {
         switch self {
@@ -87,6 +95,50 @@ extension SSNetworkAPI: TargetType {
     var headers: [String : String]? {
         return nil
     }
+    
+}
+
+//MARK: -----------
+enum SSHomeAPI {
+   
+    var parameters: [String:Any] {
+           switch self {
+           case let .list(page: page, token: token):
+               return ["page":page, "token": token]
+           case .info(id: let id):
+               return ["id": id]
+           }
+       }
+    
+    case list(page: String, token: String)
+    case info(id: String)
+}
+
+extension SSHomeAPI: TargetType {
+   
+    
+    var path: String {
+        if case .list = self {
+            return "/list"
+        }
+        if case .info = self {
+            return "/info"
+        }
+        return ""
+    }
+       
+    
+    var task: Task {
+        switch self {
+        case .list:
+            
+            return .requestPlain
+        default:
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+        }
+    }
+       
+    
     
 }
 

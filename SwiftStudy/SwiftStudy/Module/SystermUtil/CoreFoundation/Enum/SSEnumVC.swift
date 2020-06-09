@@ -13,6 +13,8 @@ import SnapKit
 /*
  
  枚举enum是不具有构造方法的。而且没有存储属性（也就是没有成员变量）。
+ 
+ 枚举的关联值是不能相等的。
  */
 class SSEnumVC: UIViewController {
 

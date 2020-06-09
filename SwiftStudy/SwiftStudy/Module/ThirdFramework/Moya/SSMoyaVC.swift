@@ -22,6 +22,8 @@ import Moya
     provider.request(MultiTargetType(.loginxxx))
  
  */
+
+
 class SSMoyaVC: SSBaseViewController {
 
     
@@ -29,15 +31,16 @@ class SSMoyaVC: SSBaseViewController {
         super.viewDidLoad()
 
         titleName = "Moya"
+      
         
-    
         
     }
 
     
     @IBAction func moyaBtnClick(_ sender: UIButton) {
         
-        networkProvider.request(.login(telNumber: "17720501596", code: "xxxx")) { (result) in
+        let login: SSUserAPI = .login("", "")
+        networkProvider.request(login) { (result) in
             switch result {
             case .success(let response):
             
@@ -47,9 +50,46 @@ class SSMoyaVC: SSBaseViewController {
             }
         }
         
+        SSNetworkManager.request(login, success: { (response) in
+            print(response)
+        }) { (error) in
+            print(error)
+        }
+       
     }
     
     @IBAction func multiTargetTypeClick(_ sender: UIButton) {
+        
+        let login: SSUserAPI = .login("", "")
+
+
+        let moyaProvider = MoyaProvider<SSUserAPI>(endpointClosure: { (target) -> Endpoint in
+            return MoyaProvider<SSUserAPI>.defaultEndpointMapping(for: target)
+        })
+        moyaProvider.request(login) { (result) in
+            print(result)
+        }
+        
+        let moyaProvider2 = MoyaProvider<SSUserAPI>(requestClosure: { (endPoint, requesResultCloseSure) in
+            
+            do {
+                let urlRequest = try endPoint.urlRequest()
+                requesResultCloseSure(.success(urlRequest))
+            } catch MoyaError.requestMapping(let url) {
+                requesResultCloseSure(.failure(MoyaError.requestMapping(url)))
+            } catch MoyaError.parameterEncoding(let error) {
+                requesResultCloseSure(.failure(MoyaError.parameterEncoding(error)))
+            } catch {
+                requesResultCloseSure(.failure(MoyaError.underlying(error, nil)))
+            }
+            
+        })
+        
+        moyaProvider2.request(login) { (result) in
+            
+            print(result)
+        }
+        
         
     }
 }
