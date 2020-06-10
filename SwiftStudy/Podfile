@@ -12,11 +12,12 @@ target 'SwiftStudy' do
 
   # model。
   pod 'HandyJSON'
-
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
   
   pod 'QMUIKit'
   pod 'iVersion'
   
+  # facebook动画
+  pod 'pop'
 end

@@ -8,6 +8,7 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
   - ObjectMapper (3.5.1)
+  - pop (1.0.12)
   - QMUIKit (4.0.3):
     - QMUIKit/QMUIComponents (= 4.0.3)
     - QMUIKit/QMUICore (= 4.0.3)
@@ -307,6 +308,7 @@ DEPENDENCIES:
   - iVersion
   - Moya
   - ObjectMapper
+  - pop
   - QMUIKit
   - SnapKit
   - SwiftyJSON
@@ -316,6 +318,7 @@ SPEC REPOS:
     - Alamofire
     - iVersion
     - Moya
+    - pop
     - Result
   trunk:
     - HandyJSON
@@ -330,11 +333,12 @@ SPEC CHECKSUMS:
   iVersion: 3a93a89259eb3b52b0a8ba52c46a0027fa6b4d30
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   QMUIKit: 92b1ac5112562aa4a788d786940c3e84f054aa1e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: e51560b00bf41e909dbc46140940c0cbecc66688
+PODFILE CHECKSUM: 9b909b49c22028c98a052d61c68331957ceedaf6
 
 COCOAPODS: 1.9.1

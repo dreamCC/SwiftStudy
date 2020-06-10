@@ -8,18 +8,22 @@
 //
 
 import UIKit
+import pop
 
 class SSAnimationVC: QMUICommonViewController {
 
+    
   
-    private var animationView: UIView = {
-        let v = UIView()
-        v.backgroundColor = UIColor.red
+    private var animationView: SSView = {
+        let v = SSView()
+        v.backgroundColor = UIColor.qmui_random()
         return v
     }()
-    private var animationView2: UIView = {
-        let v = UIView()
-        v.backgroundColor = UIColor.purple
+    
+    private var animationLayer: CALayer = {
+        let v = CALayer()
+        v.frame = CGRect(x: 100, y: 300, width: 50, height: 50)
+        v.backgroundColor = UIColor.qmui_random().cgColor
         return v
     }()
     override func initSubviews() {
@@ -27,21 +31,19 @@ class SSAnimationVC: QMUICommonViewController {
         
         view.addSubview(animationView)
         animationView.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
+            make.left.equalTo(100)
             make.top.equalTo(100)
             make.width.height.equalTo(50)
         }
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureStart))
+        view.addGestureRecognizer(tapGesture)
         
-        view.addSubview(animationView2)
-        animationView2.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
-            make.top.equalTo(100)
-            make.width.height.equalTo(50)
-        }
+        view.layer.addSublayer(animationLayer)
+    
         
         let functionBtn = QMUIButton(type: .custom)
         functionBtn.setTitle("函数动画", for: .normal)
-        functionBtn.addTarget(self, action: #selector(functionAnimation), for: .touchUpInside)
+        functionBtn.addTarget(self, action: #selector(functionAnimationClick), for: .touchUpInside)
         view.addSubview(functionBtn)
         functionBtn.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -50,21 +52,68 @@ class SSAnimationVC: QMUICommonViewController {
         
         let blockAnimation = QMUIButton(type: .custom)
         blockAnimation.setTitle("block动画", for: .normal)
-        blockAnimation.addTarget(self, action: #selector(blockAniamtion), for: .touchUpInside)
+        blockAnimation.addTarget(self, action: #selector(blockAniamtionClick), for: .touchUpInside)
         view.addSubview(blockAnimation)
         blockAnimation.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(functionBtn.snp.bottom).offset(10)
         }
         
+        let coreAnimation = QMUIButton(type: .custom)
+        coreAnimation.setTitle("coreAniamtion动画", for: .normal)
+        coreAnimation.addTarget(self, action: #selector(coreAnimationClick), for: .touchUpInside)
+        view.addSubview(coreAnimation)
+        coreAnimation.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(blockAnimation.snp.bottom).offset(10)
+        }
         
+        let dynamicAnimation = QMUIButton(type: .custom)
+        dynamicAnimation.setTitle("dynamicAnimation动画", for: .normal)
+        dynamicAnimation.addTarget(self, action: #selector(dynamicAnimationClick), for: .touchUpInside)
+        view.addSubview(dynamicAnimation)
+        dynamicAnimation.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(coreAnimation.snp.bottom).offset(10)
+        }
+        
+        let layerFunc = QMUIButton(type: .custom)
+        layerFunc.setTitle("layer", for: .normal)
+        layerFunc.addTarget(self, action: #selector(layerClick), for: .touchUpInside)
+        view.addSubview(layerFunc)
+        layerFunc.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(dynamicAnimation.snp.bottom).offset(10)
+        }
+        
+        let basicAnimation = CABasicAnimation(keyPath: "transform")
+        // CAAnimation的属性
+        //basicAnimation.beginTime = CACurrentMediaTime()
+        //basicAnimation.timeOffset = 1.0
+        basicAnimation.duration = 2.0
+        basicAnimation.repeatCount  = 1
+        basicAnimation.speed = 1.0
+        basicAnimation.fillMode = .forwards
+        // basicAnimation.repeatDuration = 1.0
+        
+        // CABasicAnimation的属性
+        // 起始值不设置，默认是初始值。CATransform3DIdentity
+        // basicAnimation.fromValue = CATransform3DIdentity
+        // basicAnimation.fromValue = CATransform3DMakeTranslation(100, 100, 0)
+        basicAnimation.fromValue = CATransform3DMakeTranslation(200, 50, 0)
+        animationView.layer.add(basicAnimation, forKey: nil)
+     
     }
 
 }
 
 extension SSAnimationVC {
     
-    @objc func functionAnimation()  {
+    @objc func tapGestureStart() {
+        
+    }
+    
+    @objc func functionAnimationClick()  {
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(1.0)
         UIView.setAnimationCurve(.linear)
@@ -77,7 +126,7 @@ extension SSAnimationVC {
         
     }
     
-    @objc func blockAniamtion() {
+    @objc func blockAniamtionClick() {
         
         /*
          frame //大小变化：改变视图框架（frame）和边界。
@@ -139,7 +188,6 @@ extension SSAnimationVC {
         // 过渡动画
         UIView.transition(with: view, duration: 1.0, options: .transitionCrossDissolve, animations: {
 
-            self.animationView2.isHidden = true
         }, completion: nil)
         
        
@@ -147,6 +195,9 @@ extension SSAnimationVC {
     
     /*
      CoreAnimation类关系。
+     CAAniamtion遵循CAMediaTiming协议。
+        该协议有几个重要属性主要是：
+     
      CAAnimation基类。
         CAPropertyAnimation
             CABasicAnimation
@@ -156,10 +207,70 @@ extension SSAnimationVC {
         CAAnimationGroup
      
      */
-    @objc func coreAnimation() {
+    @objc func coreAnimationClick() {
      
-        let basicAnimation = CABasicAnimation(keyPath: "")
+            
+          /* - `fromValue' non-nil. Interpolates between `fromValue' and the
+          * current presentation value of the property.
+          *
+          * - `toValue' non-nil. Interpolates between the layer's current value
+          * of the property in the render tree and `toValue'.
+            如果不设置fromValue那么fromValue就是起始位置。
+            如果不设置toValue，那么其实位置就是toValue。
+         */
+        
+        // keyPath是CAProperty的属性。
+        let basicAnimation = CABasicAnimation(keyPath: "transform")
+        // CAAnimation的属性
+        //basicAnimation.beginTime = CACurrentMediaTime()
+        //basicAnimation.timeOffset = 1.0
+        basicAnimation.duration = 2.0
+        basicAnimation.repeatCount  = 1
+        basicAnimation.speed = 1.0
+        // basicAnimation.repeatDuration = 1.0
+        
+        // CABasicAnimation的属性
+        // 起始值不设置，默认是初始值。CATransform3DIdentity
+        // basicAnimation.fromValue = CATransform3DIdentity
+        // basicAnimation.fromValue = CATransform3DMakeTranslation(100, 100, 0)
+        basicAnimation.fromValue = CATransform3DMakeTranslation(200, 50, 0)
+        //animationView.layer.add(basicAnimation, forKey: nil)
+        
+        
+        // CASpringAnimation 弹性动画。
+        // 心跳动画
+        let keyFrameAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        keyFrameAnimation.values = [1, 0.5, 1, 1.5, 1]
+        keyFrameAnimation.keyTimes = [NSNumber(value: 0),NSNumber(value: 0.5) ,NSNumber(value: 1)]
+        keyFrameAnimation.repeatCount = MAXFLOAT
+        keyFrameAnimation.duration = 2.0
+        keyFrameAnimation.autoreverses = true
+        keyFrameAnimation.isRemovedOnCompletion = false // 是否移动对layer的控制
         
         animationView.layer.add(basicAnimation, forKey: nil)
+        
+    }
+    
+    
+    // 只有遵循了UIDynamicItem协议的才能进行仿真力学动画，UIView已遵循
+    // CAEmitterLayer粒子动画
+    @objc func dynamicAnimationClick() {
+        let dynamicAnimatior = UIDynamicAnimator(referenceView: animationView)
+    
+        let grative = UIGravityBehavior(items: [view])
+        dynamicAnimatior.addBehavior(grative)
+        
+        let collision = UICollisionBehavior(items: [view])
+        collision.translatesReferenceBoundsIntoBoundary = true
+        dynamicAnimatior.addBehavior(collision)
+        
+    }
+    
+    @objc func layerClick() {
+        animationLayer.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
+        UIView.animate(withDuration: 5.0) {
+            self.animationView.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
+        }
+
     }
 }

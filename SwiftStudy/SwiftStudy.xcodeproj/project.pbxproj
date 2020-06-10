@@ -105,6 +105,8 @@
 		A6D5850823BD9A7600F11F14 /* SSProtocolVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D5850723BD9A7600F11F14 /* SSProtocolVC.xib */; };
 		A6DAFE3523AC71AA007E02EA /* summary in Resources */ = {isa = PBXBuildFile; fileRef = A6DAFE3423AC71AA007E02EA /* summary */; };
 		A6DAFE3923ACB397007E02EA /* OCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DAFE3823ACB397007E02EA /* OCClass.m */; };
+		A6DC03FB24907E40002E72E4 /* SSLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC03FA24907E40002E72E4 /* SSLayer.swift */; };
+		A6DC03FD2490CFB8002E72E4 /* SSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC03FC2490CFB8002E72E4 /* SSView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -231,6 +233,8 @@
 		A6DAFE3623ACB397007E02EA /* SwiftStudy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftStudy-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6DAFE3723ACB397007E02EA /* OCClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCClass.h; sourceTree = "<group>"; };
 		A6DAFE3823ACB397007E02EA /* OCClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCClass.m; sourceTree = "<group>"; };
+		A6DC03FA24907E40002E72E4 /* SSLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLayer.swift; sourceTree = "<group>"; };
+		A6DC03FC2490CFB8002E72E4 /* SSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSView.swift; sourceTree = "<group>"; };
 		BD9B04D9ADF254DF4D40086C /* Pods_SwiftStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E357573A5D5D16FF7EF32BA2 /* Pods-SwiftStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftStudy.release.xcconfig"; path = "Target Support Files/Pods-SwiftStudy/Pods-SwiftStudy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -551,6 +555,8 @@
 			isa = PBXGroup;
 			children = (
 				A643336B248F605900D8C919 /* SSAnimationVC.swift */,
+				A6DC03FA24907E40002E72E4 /* SSLayer.swift */,
+				A6DC03FC2490CFB8002E72E4 /* SSView.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -1025,6 +1031,8 @@
 				A69FDA7323D1A8D1000F3568 /* SSMvvmTableCell.swift in Sources */,
 				A64333CD248F699300D8C919 /* QDNavigationController.m in Sources */,
 				A64184972470ACDC007C4434 /* SSAppInit.swift in Sources */,
+				A6DC03FD2490CFB8002E72E4 /* SSView.swift in Sources */,
+				A6DC03FB24907E40002E72E4 /* SSLayer.swift in Sources */,
 				A6A1C68623CE071D00167BE2 /* SSErrorVC.swift in Sources */,
 				A60598E7245875B2007B71CB /* SSKvcKvoVC.swift in Sources */,
 				A62C406423BB2F9A001584CF /* SSObjectMapperVC.swift in Sources */,
