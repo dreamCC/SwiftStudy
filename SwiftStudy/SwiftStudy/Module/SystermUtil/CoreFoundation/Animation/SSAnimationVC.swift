@@ -267,10 +267,10 @@ extension SSAnimationVC {
     }
     
     @objc func layerClick() {
+        
         animationLayer.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
-        UIView.animate(withDuration: 5.0) {
-            self.animationView.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
-        }
+        self.animationView.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
+
 
     }
 }

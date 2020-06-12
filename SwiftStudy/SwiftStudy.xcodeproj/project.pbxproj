@@ -100,6 +100,7 @@
 		A6C6D5E423B49195000370C4 /* SSURLComponentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C6D5E323B49195000370C4 /* SSURLComponentsVC.swift */; };
 		A6C6D5E723B49EEC000370C4 /* SSCharacterSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C6D5E623B49EEC000370C4 /* SSCharacterSetVC.swift */; };
 		A6C6D5EA23B4A14C000370C4 /* SSRangeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C6D5E923B4A14C000370C4 /* SSRangeVC.swift */; };
+		A6CF74CA249317E300F2B5F0 /* SSAddChirldControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CF74C9249317E300F2B5F0 /* SSAddChirldControllerVC.swift */; };
 		A6D5850423BD792500F11F14 /* SSGenericityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D5850323BD792500F11F14 /* SSGenericityVC.swift */; };
 		A6D5850623BD826F00F11F14 /* SSGenericityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D5850523BD826F00F11F14 /* SSGenericityVC.xib */; };
 		A6D5850823BD9A7600F11F14 /* SSProtocolVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D5850723BD9A7600F11F14 /* SSProtocolVC.xib */; };
@@ -107,6 +108,7 @@
 		A6DAFE3923ACB397007E02EA /* OCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DAFE3823ACB397007E02EA /* OCClass.m */; };
 		A6DC03FB24907E40002E72E4 /* SSLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC03FA24907E40002E72E4 /* SSLayer.swift */; };
 		A6DC03FD2490CFB8002E72E4 /* SSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC03FC2490CFB8002E72E4 /* SSView.swift */; };
+		A6EABB2524920240006B7EB1 /* SSModalPresentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EABB2424920240006B7EB1 /* SSModalPresentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,6 +228,7 @@
 		A6C6D5E323B49195000370C4 /* SSURLComponentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSURLComponentsVC.swift; sourceTree = "<group>"; };
 		A6C6D5E623B49EEC000370C4 /* SSCharacterSetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCharacterSetVC.swift; sourceTree = "<group>"; };
 		A6C6D5E923B4A14C000370C4 /* SSRangeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRangeVC.swift; sourceTree = "<group>"; };
+		A6CF74C9249317E300F2B5F0 /* SSAddChirldControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAddChirldControllerVC.swift; sourceTree = "<group>"; };
 		A6D5850323BD792500F11F14 /* SSGenericityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSGenericityVC.swift; sourceTree = "<group>"; };
 		A6D5850523BD826F00F11F14 /* SSGenericityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSGenericityVC.xib; sourceTree = "<group>"; };
 		A6D5850723BD9A7600F11F14 /* SSProtocolVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSProtocolVC.xib; sourceTree = "<group>"; };
@@ -235,6 +238,7 @@
 		A6DAFE3823ACB397007E02EA /* OCClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCClass.m; sourceTree = "<group>"; };
 		A6DC03FA24907E40002E72E4 /* SSLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLayer.swift; sourceTree = "<group>"; };
 		A6DC03FC2490CFB8002E72E4 /* SSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSView.swift; sourceTree = "<group>"; };
+		A6EABB2424920240006B7EB1 /* SSModalPresentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSModalPresentVC.swift; sourceTree = "<group>"; };
 		BD9B04D9ADF254DF4D40086C /* Pods_SwiftStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E357573A5D5D16FF7EF32BA2 /* Pods-SwiftStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftStudy.release.xcconfig"; path = "Target Support Files/Pods-SwiftStudy/Pods-SwiftStudy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -373,7 +377,8 @@
 		A610626424507708004B9A9A /* KnowledgePoint */ = {
 			isa = PBXGroup;
 			children = (
-				A6433369248F602F00D8C919 /* New Group */,
+				A6CF74C82493167C00F2B5F0 /* AddChirldContrller */,
+				A6433369248F602F00D8C919 /* ModalPresent */,
 				A6A234FC248E0D6800CB81AD /* Appearance */,
 				A61B9C2E24872D6A00289351 /* HitTestAndPointInsid */,
 				A6C6D5E823B4A13E000370C4 /* Range */,
@@ -544,11 +549,12 @@
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
-		A6433369248F602F00D8C919 /* New Group */ = {
+		A6433369248F602F00D8C919 /* ModalPresent */ = {
 			isa = PBXGroup;
 			children = (
+				A6EABB2424920240006B7EB1 /* SSModalPresentVC.swift */,
 			);
-			path = "New Group";
+			path = ModalPresent;
 			sourceTree = "<group>";
 		};
 		A643336A248F604500D8C919 /* Animation */ = {
@@ -854,6 +860,14 @@
 			path = Range;
 			sourceTree = "<group>";
 		};
+		A6CF74C82493167C00F2B5F0 /* AddChirldContrller */ = {
+			isa = PBXGroup;
+			children = (
+				A6CF74C9249317E300F2B5F0 /* SSAddChirldControllerVC.swift */,
+			);
+			path = AddChirldContrller;
+			sourceTree = "<group>";
+		};
 		A6D5850223BD790400F11F14 /* Genericity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1060,6 +1074,7 @@
 				A69FDA7523D1ABAA000F3568 /* SSVMModel.swift in Sources */,
 				A618A1CF23B2F94700C97FD9 /* SSAlamofireVC.swift in Sources */,
 				A6983D4123CD996B006F720F /* SSUserAPI.swift in Sources */,
+				A6EABB2524920240006B7EB1 /* SSModalPresentVC.swift in Sources */,
 				A62C405A23BB23C4001584CF /* SSHandyJsonVC.swift in Sources */,
 				A643336C248F605900D8C919 /* SSAnimationVC.swift in Sources */,
 				A6106261245074CA004B9A9A /* SSMultithreadingVC.swift in Sources */,
@@ -1076,6 +1091,7 @@
 				A62C405623BADF5A001584CF /* SSJsonModelVC.swift in Sources */,
 				A697A25923AB927800B16AEA /* CJShareInstant.swift in Sources */,
 				A668036124570F8000A0D335 /* SwiftUIView.swift in Sources */,
+				A6CF74CA249317E300F2B5F0 /* SSAddChirldControllerVC.swift in Sources */,
 				A6A234FE248E0DA800CB81AD /* SSAppearanceVC.swift in Sources */,
 				A64333C6248F699300D8C919 /* UIImageEffects.m in Sources */,
 				A6ACD5FE23B1E09D009533DC /* SSArraryVC.swift in Sources */,
