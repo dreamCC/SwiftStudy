@@ -19,53 +19,80 @@ import UIKit
  QMUI是实现的逻辑，1、当QMUITheme.shareInstance.setThemeIdentify的时候，会调用notificyName方法，然后会调用UIview层的quuiThemeDidChangexxxx方法。
  然后在UIView的分类中，会重写获取view的一些属性进行赋值。
  
- 
- 
- */
-class SSQMUIViewController: QMUICommonViewController {
 
-   
+ */
+
+
+
+class SSQMUIViewController: QMUICommonViewController {
     
-    var btn: SSButton!
+  
+    
+    lazy var datas = ["QMUIDispalyLinkAnimation","QMUIAsset",  ""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-       
-      
-        
-    }
-    
-
-    override func initSubviews() {
         view.backgroundColor = UIColor.white
+        navigationItem.title = "ThirdFramework"
         
-        btn = SSButton(type: .custom)
-        btn.frame = CGRect(x: 10, y: 100, width: 0, height: 0)
-        btn.backgroundColor = UIColor.qmui_random()
-        btn.setTitle("button", for: .normal)
-        view.addSubview(btn)
-        btn.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.size.equalTo(CGSize(width: 100, height: 40))
-        }
-        
-        let toolBar = UIToolbar()
-        
-        view.addSubview(toolBar)
-        toolBar.snp.makeConstraints { (make) in
-            make.centerX.equalTo(btn)
-            make.top.equalTo(btn.snp.bottom).offset(20)
-            make.size.equalTo(CGSize(width: 200, height: 40))
+        let tabV = UITableView()
+        tabV.delegate = self
+        tabV.dataSource = self
+        tabV.tableFooterView = UIView()
+        view.addSubview(tabV)
+        tabV.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
         }
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        btn.sizeToFit()
-    }
-    
-
     
 }
 
+extension SSQMUIViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return datas.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellId = "cellID"
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
+        }
+        cell?.textLabel?.text = datas[indexPath.row]
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            navigationController?.pushViewController(SSDisplayLinkAnimationVC(), animated: true)
+        }else if indexPath.row == 1 {
+            navigationController?.pushViewController(SSAssetLibVC(), animated: true)
+        }else {
+            
+        }
+    }
+}
+
+
+
+// runtime 增加属性。
+extension SSQMUIViewController {
+    
+    private struct AssociatedKey {
+        static var nameKey: String = ""
+    }
+    
+    var name: String {
+        set {
+            objc_setAssociatedObject(self, &AssociatedKey.nameKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKey.nameKey) as! String
+        }
+    }
+    
+}

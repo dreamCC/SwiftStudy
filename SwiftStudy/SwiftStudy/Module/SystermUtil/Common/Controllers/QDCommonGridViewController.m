@@ -79,8 +79,8 @@
 - (QDCommonGridButton *)generateButtonAtIndex:(NSInteger)index {
     NSString *keyName = self.dataSource.allKeys[index];
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:keyName attributes:@{NSForegroundColorAttributeName: UIColor.qd_descriptionTextColor, NSFontAttributeName: UIFontMake(11), NSParagraphStyleAttributeName: [NSMutableParagraphStyle qmui_paragraphStyleWithLineHeight:12 lineBreakMode:NSLineBreakByTruncatingTail textAlignment:NSTextAlignmentCenter]}];
-    
-    UIImage *image = [UIImage imageNamed:@""];
+    //UIImage *image = (UIImage *)self.dataSource[keyName];
+    UIImage *image = [UIImage new];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     QDCommonGridButton *button = [[QDCommonGridButton alloc] init];

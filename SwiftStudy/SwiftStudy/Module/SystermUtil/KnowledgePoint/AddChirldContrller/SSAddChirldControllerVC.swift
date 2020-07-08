@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import WebKit
 
 
 /*
@@ -39,8 +40,8 @@ import SnapKit
  viwWillAppear:
  viewDidAppear:
  didMoveToParent:
- 
- 
+
+ 想要做一个容器类控制器，需要的步骤。
  
  */
 class SSAddChirldControllerVC: QMUICommonViewController {
@@ -91,6 +92,7 @@ class SSAddChirldControllerVC: QMUICommonViewController {
         // view.addSubview(addVc.view)
         //        addVc.endAppearanceTransition()
         self.present(addVc, animated: true, completion: nil)
+        
     }
            
     
@@ -131,6 +133,7 @@ class SSAddChirldControllerVC: QMUICommonViewController {
         print(self.presentedViewController)
         print(self.presentationController, separator: "*", terminator: "--")
     }
+    
 }
 
 class SSChirldForAddVC: UIViewController {

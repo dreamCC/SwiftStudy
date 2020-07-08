@@ -7,3 +7,10 @@
 #import "OCClass+Category.h"
 
 #import "QMUIKit.h"
+
+#import "QDThemeManager.h"
+#import "QMUIConfigurationTemplate.h"
+#import "QMUIConfigurationTemplateDark.h"
+#import "QMUIConfigurationTemplateGrass.h"
+#import "QMUIConfigurationTemplatePinkRose.h"
+#import "QMUIConfigurationTemplateGrapefruit.h"

@@ -36,32 +36,15 @@ class SSModalPresentVC: QMUICommonViewController, UIViewControllerTransitioningD
 
     @objc func modalBtnClick() {
         let modaledVc = ModaledViewController()
-        modaledVc.modalPresentationStyle = .formSheet
-        modaledVc.modalTransitionStyle   = .crossDissolve
+        modaledVc.modalPresentationStyle = .currentContext
+        modaledVc.modalTransitionStyle   = .flipHorizontal
         //modaledVc.transitioningDelegate = self
-        //modaledVc.definesPresentationContext = true
+        self.definesPresentationContext = true
         modaledVc.preferredContentSize = CGSize(width: 200, height: 50)
         
-
-        let modalV = QMUIModalPresentationViewController()
-        modalV.contentViewController = modaledVc
-        modalV.animationStyle = .slide
-        //modalV.showWith(animated: true, completion: nil)
         self.present(modaledVc, animated: true, completion: nil)
 
-//        modaledVc.previousWindow = UIApplication.shared.keyWindow
-//        modaledVc.window = UIWindow(frame: UIScreen.main.bounds)
-//        modaledVc.window.rootViewController = modaledVc
-//        modaledVc.window.windowLevel = .alert
-//        modaledVc.window.backgroundColor = UIColor.purple
-//        modaledVc.window.makeKeyAndVisible()
-        
-//        self.addChild(modaledVc)
-//        modaledVc.didMove(toParent: self)
-//        modaledVc.beginAppearanceTransition(true, animated: true)
-//        self.view.addSubview(modaledVc.view)
      
-    
 
     }
     
@@ -80,35 +63,16 @@ class SSModalPresentVC: QMUICommonViewController, UIViewControllerTransitioningD
 }
 
 
-class ModaledViewController: UIViewController, QMUIModalPresentationContentViewControllerProtocol {
+class ModaledViewController: UIViewController {
     
-    var window: UIWindow!
-    var previousWindow: UIWindow!
 
-    func preferredContentSize(in controller: QMUIModalPresentationViewController, keyboardHeight: CGFloat, limitSize: CGSize) -> CGSize {
-        return CGSize(width: 200, height: 200)
-    }
-    
-   
-    
-    override func willMove(toParent parent: UIViewController?) {
-        super.willMove(toParent: parent)
-        print("willMove--", view.frame, parent)
-
-    }
-    
-    
-    override func didMove(toParent parent: UIViewController?) {
-        super.didMove(toParent: parent)
-        print("didMove--", view.frame, parent)
-
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initSubviews()
     }
+    
      func initSubviews() {
         
         view.backgroundColor = UIColor.qmui_random()
@@ -124,11 +88,7 @@ class ModaledViewController: UIViewController, QMUIModalPresentationContentViewC
     
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("viewWillAppear--", view.frame)
-        
-    }
+   
     
     @objc func modalBtnClick() {
         

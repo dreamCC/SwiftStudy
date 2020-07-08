@@ -11,8 +11,10 @@ import UIKit
 /*
  暗黑模式，是ios 13推出的一种现实模式。而所谓的暗黑模式，其实就是我们可以改变系统的分格为dark。
  
- 默认控件是不支持暗黑样式的，比如UILable，如果我们不设置颜色，那么dark样式下字体是白色，在light样式
+ 默认控件是支持暗黑样式的，比如UILable，如果我们不设置颜色，那么dark样式下字体是白色，在light样式
  下字体是黑色。如果我们使用自定义颜色，则颜色不会随着设置的改变而改变。
+ 
+对于UIView，的系统颜色属性，比如backgroudColor、tintColor，这些会随着动态颜色值的变化改变，不需要重写赋值UIView会自动刷新。
  
  当暗黑模式切换的时候，ViewWillAppear并不会改变，如果颜色设置成动态颜色，那么会走回到方法，但是并不会重新加载，目测其渲染过程是有
  苹果自己的一套规则。
@@ -39,26 +41,84 @@ import UIKit
  
  */
 
-class SSUserInterfaceStyleVC: SSBaseViewController {
+class SSUserInterfaceStyleVC: QMUICommonViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        titleName   = "暗黑模式"
-        desLab.text = "这是暗黑模式的测试代码"
-        view.backgroundColor = UIColor.purple
-        //openOrCloseUserInterface()
-        adaptUserInterfaceStyle()
-        
-     
-    }
    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    override func initSubviews() {
         
-        print("viewWillAppear")
+        
+        
+        let redView = UIView()
+        redView.backgroundColor = UIColor.red
+        redView.layer.allowsGroupOpacity = false
+        view.addSubview(redView)
+        
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 5) {
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 1.0) {
+                    redView.alpha = 0.5
+                }
+            }
+        }
+        
+        let blueView = UIView()
+        blueView.backgroundColor = UIColor.blue
+
+        redView.addSubview(blueView)
+        redView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(100)
+            make.width.equalTo(200)
+            make.height.equalTo(100)
+        }
+        
+        blueView.snp.makeConstraints { (make) in
+             make.centerX.equalToSuperview()
+             make.top.equalToSuperview().offset(100)
+            make.width.equalTo(100)
+            make.height.equalTo(50)
+        }
+        
+        
+        let gridView = QMUIFloatLayoutView()
+        gridView.layer.borderWidth = 1
+        gridView.layer.borderColor = UIColor.qmui_color(themeProvider: { (manager, identify, theme) -> UIColor in
+            guard let theme = theme as? QDThemeProtocol else {
+                return UIColor.red
+            }
+            return theme.themeBackgroundColor()
+            }).cgColor
+        gridView.padding = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        gridView.itemMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        view.addSubview(gridView)
+        gridView.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.left.equalTo(20)
+            make.right.equalTo(-20)
+            make.height.equalTo(300)
+        }
+        
+        self.view.qmui_themeDidChangeBlock = {
+            gridView.layer.borderColor = QDThemeManager.currentTheme?.themeTintColor()?.cgColor
+        }
+        
+        let btnTitles = ["Default", "Grapefruit", "Grass", "Pink Rose", "Dark"]
+        btnTitles.forEach { (value) in
+            let btn = QMUIButton()
+            btn.backgroundColor = UIColor.gray
+            btn.setTitle(value, for: .normal)
+            btn.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+            btn.addTarget(self, action: #selector(themeBtnClick(btn:)), for: .touchUpInside)
+            gridView.addSubview(btn)
+        }
     }
 
+    
+    @objc func themeBtnClick(btn: QMUIButton) {
+        QMUIThemeManagerCenter.defaultThemeManager.currentThemeIdentifier = btn.currentTitle as (NSCopying & NSObjectProtocol)?
+        _ = QDThemeManager.self.currentTheme?.applyConfigurationTemplate()
+    }
 }
 
 extension SSUserInterfaceStyleVC {
@@ -78,7 +138,6 @@ extension SSUserInterfaceStyleVC {
     // 适配暗黑模式
     private func adaptUserInterfaceStyle() {
         // 1、苹果提供了一套动态颜色。如UIColor.systermxxx获取的颜色。
-        desLab.textColor = UIColor.systemBlue
         
         // 2、通过判断当前的样式来进行切换。
         print("当前的样式-",traitCollection.userInterfaceStyle.rawValue)
@@ -97,7 +156,6 @@ extension SSUserInterfaceStyleVC {
             }
             
             print(dyColor)
-            self.desLab.textColor = dyColor
         } else {
             
         }

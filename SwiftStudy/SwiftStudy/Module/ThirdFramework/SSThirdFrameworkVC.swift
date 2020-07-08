@@ -28,6 +28,8 @@ class SSThirdFrameworkVC: UIViewController {
         tabV.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        
     }
     
 

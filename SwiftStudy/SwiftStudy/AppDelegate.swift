@@ -8,7 +8,9 @@
 
 import UIKit
 
+// 相当于oc中，main函数里面调用的UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -17,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         initAppUI()
+        
+        initTheme()
         return true
     }
 

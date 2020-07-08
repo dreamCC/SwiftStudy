@@ -31,24 +31,34 @@ import QMUIKit
  */
 class SSHitTestAndPointInsideVC: QMUICommonViewController {
 
+    
+    weak var v3: SSQMUI3View!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
 
+        
     }
     
     override func initSubviews() {
         
         let v3 = SSQMUI3View()
         v3.backgroundColor = UIColor.blue
-        
+        v3.frame = CGRect(x: 20, y: 120, width: 100, height: 100)
         view.addSubview(v3)
+        self.v3 = v3
         v3.snp.makeConstraints { (make) in
             make.left.equalTo(20)
             make.top.equalToSuperview().offset(120)
-            make.size.equalTo(CGSize(width: 200, height: 200))
+            make.size.equalTo(CGSize(width: 150, height: 150))
         }
+        
+    
+       
+        
+        let gestureV3 = UITapGestureRecognizer(target: self, action: #selector(tapV3))
+        v3.addGestureRecognizer(gestureV3)
         
         let v1 = SSQMUIView()
         v1.backgroundColor = UIColor.red
@@ -70,5 +80,23 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
         }
     }
     
+    
+    @objc func tapV3() {
+        print("tapV3")
+        print(self.v3.sizeToFit())
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.v3.sizeToFit()
+    }
 
 }
+
+
+class FatherClass: NSObject {
+    
+    func test() {
+        print("----father class test-------")
+    }
+}
+

@@ -82,7 +82,6 @@
             
         case QMUIPieProgressViewShapeRing: {
             // 绘制环形进度区域
-            
             radius -= self.lineWidth;
             CGContextSetLineWidth(context, self.lineWidth);
             CGContextSetStrokeColorWithColor(context, self.strokeColor.CGColor);
@@ -141,6 +140,7 @@
 - (void)setProgress:(float)progress {
     [self setProgress:progress animated:NO];
 }
+
 
 - (void)setProgress:(float)progress animated:(BOOL)animated {
     _progress = fmax(0.0, fmin(1.0, progress));

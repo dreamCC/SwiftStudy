@@ -20,4 +20,8 @@ target 'SwiftStudy' do
   
   # facebook动画
   pod 'pop'
+  
+  # RXSwift
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

@@ -8,6 +8,7 @@
 
 #import "SSSingleton.h"
 #import "SSXiuShiFu.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @implementation SSSingleton
 
@@ -24,6 +25,7 @@
 // 防止alloc、new创建造成新对象。
 +(instancetype)allocWithZone:(struct _NSZone *)zone {
     
+    UIView *v = [UIView new];
     return [self shareInstance];
 }
 

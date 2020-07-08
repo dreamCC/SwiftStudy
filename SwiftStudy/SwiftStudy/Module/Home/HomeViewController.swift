@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
 
         navigationItem.title = "宝藏"
         
-        datas = ["SystermUtil","UIKit","ThirdFramwrok","MVVM",""]
+        datas = ["SystermUtil","UIKit","ThirdFramwrok","MVVM","UI",""]
         
         let tab = UITableView(frame: .zero, style: .plain)
         tab.delegate = self
@@ -61,9 +61,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(SSThirdFrameworkVC(), animated: true)
         }else if indexPath.row == 3 {
             navigationController?.pushViewController(SSMvvmVC(), animated: true)
+        }else if indexPath.row == 4 {
+            navigationController?.pushViewController(SSSystermUIVC(), animated: true)
         }else {
-            
-            runtimeUserSwift()
+        
+            //runtimeUserSwift()
        
         }
     }
@@ -92,7 +94,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         for index in 0..<methodCount {
             print("方法列表\(index)：", method_getName(methods![Int(index)]))
         }
-        free(propertys)
+        free(methods)
  
     }
 

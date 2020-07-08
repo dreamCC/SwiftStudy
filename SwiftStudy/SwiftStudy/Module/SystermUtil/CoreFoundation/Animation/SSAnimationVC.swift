@@ -103,6 +103,14 @@ class SSAnimationVC: QMUICommonViewController {
         basicAnimation.fromValue = CATransform3DMakeTranslation(200, 50, 0)
         animationView.layer.add(basicAnimation, forKey: nil)
      
+        
+        // 默认layer的改变会进行隐士动画
+        // 来显示管理动画
+        CATransaction.begin()
+        // 关闭动画
+        CATransaction.setDisableActions(true)
+        
+        CATransaction.commit()
     }
 
 }
@@ -270,7 +278,6 @@ extension SSAnimationVC {
         
         animationLayer.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
         self.animationView.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
-
 
     }
 }

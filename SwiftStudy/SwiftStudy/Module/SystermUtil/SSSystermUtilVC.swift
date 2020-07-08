@@ -13,30 +13,43 @@ import Alamofire
 class SSSystermUtilVC: UIViewController {
     
 
-    let datas = ["Multithreading","CoreFoundation","KnowledgePoint","UserInterfaceStyle",""]
+    let datas = ["Multithreading","CoreFoundation","KnowledgePoint","UserInterfaceStyle","QuartzAndCoreGraphics",""]
     
    
 
+    let handleDataSouces = SSHandelDataSouces()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         navigationItem.title = "系统知识"
         
         let tabV = UITableView()
+        
+        tabV.qmui_multipleDelegatesEnabled = true
+        tabV.dataSource = handleDataSouces
         tabV.dataSource = self
         tabV.delegate = self
+        
         tabV.tableFooterView = UIView()
+        
         view.addSubview(tabV)
         tabV.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        
         
        
         
     }
     
 
+    
 
 
 }
@@ -66,9 +79,12 @@ extension SSSystermUtilVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSKnowledgePointVC(), animated: true)
         }else if indexPath.row == 3 {
             navigationController?.pushViewController(SSUserInterfaceStyleVC(), animated: true)
+        }else if indexPath.row == 4 {
+            navigationController?.pushViewController(SSQuartzAndCoreGraphicsVC(), animated: true)
             
         }else {
-            print(SSSystermUtilVC.self, type(of: self))
+          
+        
         }
     }
     
@@ -91,5 +107,17 @@ extension SSSystermUtilVC: UIViewControllerTransitioningDelegate {
         
         return nil
     }
+    
+}
+
+class SSHandelDataSouces: NSObject, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
     
 }

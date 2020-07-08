@@ -12,7 +12,7 @@ class SSKnowledgePointVC: UIViewController {
     
     let datas = ["KeyWords","Function","Range","Runtime","JsonModel","Progress",
     "UniversalLinks","UnsafePoint","KVcKvo","HitTestAndPointInside","Appearance",
-    "ModalPresentVc","AddChirldController"]
+    "ModalPresentVc","AddChirldController", "Runloop","SizeThatFits","Countainer"]
     
 
     
@@ -79,6 +79,12 @@ extension SSKnowledgePointVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSModalPresentVC(), animated: true)
         }else if indexPath.row == 12 {
             navigationController?.pushViewController(SSAddChirldControllerVC(), animated: true)
+        }else if indexPath.row == 13 {
+            navigationController?.pushViewController(SSRunloopVC(), animated: true)
+        }else if indexPath.row == 14 {
+            navigationController?.pushViewController(SSSizeThatFitsVC(), animated: true)
+        }else if indexPath.row == 15 {
+            navigationController?.pushViewController(SSCountainerVC(), animated: true)
         }
     }
     

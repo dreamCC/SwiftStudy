@@ -29,13 +29,19 @@ class SSTabBarController: UITabBarController {
         viewControllers = [homeNavi, secondNavi, thirdNavi, forthNavi]
         homeNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
         secondNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
-        thirdNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
-        forthNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 1)
+        thirdNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+        forthNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 3)
 
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return .lightContent
+        }
     }
     
 }
