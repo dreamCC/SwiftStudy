@@ -9,6 +9,7 @@
 import UIKit
 import Moya
 
+
 /*
  关于Moya使用细节：
  首选有两个协议TargetType、MoyaProviderType两个协议方法。 遵循两个协议方法，才能进行网络请求。
@@ -50,6 +51,7 @@ class SSMoyaVC: SSBaseViewController {
             }
         }
         
+        
         SSNetworkManager.request(login, success: { (response) in
             print(response)
         }) { (error) in
@@ -84,6 +86,8 @@ class SSMoyaVC: SSBaseViewController {
             }
             
         })
+        
+    
         
         moyaProvider2.request(login) { (result) in
             

@@ -71,8 +71,8 @@ class SSAddChirldControllerVC: QMUICommonViewController {
     @objc func addBtnClick() {
        
         //showUseWindow()
-        showUseAddSubView()
-        //showUserAddVC()
+        //showUseAddSubView()
+        showUserAddVC()
     }
     
     @objc func tranAnimationClick() {
@@ -108,7 +108,7 @@ class SSAddChirldControllerVC: QMUICommonViewController {
     
     func showUserAddVC() {
         var first: SSChirldForAddVC!
-        for index in 0..<1 {
+        for index in 0..<3 {
         
             let addVc = SSChirldForAddVC(index: index)
             addVc.view.frame = CGRect(x: 10, y: 100, width: 200, height: 200)
@@ -116,9 +116,10 @@ class SSAddChirldControllerVC: QMUICommonViewController {
             if index == 0 {
                 first = addVc
             }
+
         }
-        
         self.view.addSubview(first.view)
+
         //first.didMove(toParent: self)
     }
     
