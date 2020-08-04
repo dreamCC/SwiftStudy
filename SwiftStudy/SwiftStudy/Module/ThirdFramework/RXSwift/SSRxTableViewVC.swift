@@ -33,12 +33,17 @@ class SSRxTableViewVC: QMUICommonViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCellId)
         
+        //normalFunc()
+        rxDataSources()
         
     }
  
     
     @objc func rightBarButtonItemClick() {
-        tableView.setEditing(!tableView.isEditing, animated: true)
+
+    
+        print(UIDevice.current.identifierForVendor)
+        //tableView.setEditing(!tableView.isEditing, animated: true)
     }
 
     deinit {
@@ -50,6 +55,9 @@ class SSRxTableViewVC: QMUICommonViewController {
 extension SSRxTableViewVC {
     
     func normalFunc() {
+        
+        
+        
         dataSources
             .bind(to: tableView.rx.items) {[weak self] (tableView, row, element) in
                 guard let `self` = self else {
@@ -89,5 +97,31 @@ extension SSRxTableViewVC {
     
     func rxDataSources() {
         
+        //初始化数据
+        let items = Observable.just([
+            SectionModel(model: "", items: [
+                "UILable的用法",
+                "UIText的用法",
+                "UIButton的用法"
+                ])
+            ])
+        
+        let dataSources = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>.init(configureCell: { (datas, tablv, indexPath, item) -> UITableViewCell in
+            
+            let cell = tablv.dequeueReusableCell(withIdentifier: self.kCellId)!
+            cell.textLabel?.text = "\(indexPath.row)：\(item)"
+            return cell
+        })
+        
+        
+        //绑定单元格数据
+        items
+            .bind(to: tableView.rx.items(dataSource: dataSources))
+            .disposed(by: disposeBag)
+        
+        
     }
 }
+
+
+

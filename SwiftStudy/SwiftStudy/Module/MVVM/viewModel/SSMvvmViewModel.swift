@@ -22,6 +22,7 @@ class SSMvvmViewModel: NSObject {
                 self.datas.append(model)
             }
             sucess()
+            
         }
     }
     
@@ -40,6 +41,7 @@ extension SSMvvmViewModel: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: "cellId",
             for: indexPath) as! SSMvvmTableCell
         return cell
+        
     }
     
 }

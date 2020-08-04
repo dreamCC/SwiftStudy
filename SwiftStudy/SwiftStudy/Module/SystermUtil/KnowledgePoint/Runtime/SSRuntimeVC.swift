@@ -151,7 +151,7 @@ import UIKit
     struct objc_protocol_list * _Nullable protocols;
  }
  
- 从上面定义可以看出，Category可以添加对象方法、类方法和协议，但是不能添加属性。
+ 从上面定义可以看出，Category可以添加对象方法、类方法和协议，但是不能添加属性（没有属性列表）。
  
  Category加载过程。我们知道Category是在运行时动态加载的。而Runtime（运行时）加载过程，离不开dylb的动态链接器。其中工作原理非常复杂，但是我们需要知道的是dylb在执行动态链接后，会执行_objc_init这也是runtime初始化的过程，该过程中，有一个重要的步骤就是attachCategories(cls, cats, true);，该方法就是用
      来存储分类方法、协议而的。

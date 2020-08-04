@@ -261,9 +261,9 @@ extension SSRxSwiftViewController {
 //            .disposed(by: disposeBag)
         
         
-//        let binder = Binder<String>.init(timeLab) { (lab, value) in
-//            lab.text = value
-//        }
+        let binder = Binder<String>.init(timeLab) { (lab, value) in
+            lab.text = value
+        }
 //
 //
 //        internalO
