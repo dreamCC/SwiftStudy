@@ -10,6 +10,7 @@ import UIKit
 
 
 /*
+ 
  我们可以使用pushViewController进行控制器间的切换。
  modal时候有两个重要属性来控制控制器间的转场：
  modalPresentStyle和modalTranstionStyle两个控制着转场的各种系统样式。

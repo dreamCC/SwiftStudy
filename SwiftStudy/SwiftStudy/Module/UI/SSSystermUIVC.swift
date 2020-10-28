@@ -19,6 +19,8 @@ class SSSystermUIVC: QMUICommonTableViewController {
     override func initSubviews() {
         super.initSubviews()
         
+        let pageV = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options:nil)
+        
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCellId)
     }

@@ -28,4 +28,7 @@ target 'SwiftStudy' do
   # RXSwift Community
   pod 'RxDataSources'
   
+  # 图片加载
+  pod 'Kingfisher'
+  
 end

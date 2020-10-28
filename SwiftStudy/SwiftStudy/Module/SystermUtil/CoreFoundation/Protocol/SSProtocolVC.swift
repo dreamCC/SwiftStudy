@@ -15,7 +15,7 @@ import UIKit
  
  协议如果声明了init构造方法，那么遵循这个协议的类或者结构体就必须实现init构造方法，并且使用require关键字。
  
- 协议中的方法没有可选类型了关键字了，不想oc中有@optional关键字。 但是我们可以通过协议扩展优雅的实现可选方法。
+ 协议中的方法没有可选类型了关键字了，不像oc中有@optional关键字。 但是我们可以通过协议扩展优雅的实现可选方法。
  当然如果我们非要使用optional和required这些oc关键字，那么就必须增加@objc关键字。
  
  
@@ -114,6 +114,8 @@ extension UIButton: ShakeAble {
 protocol SSProtocol: class {
     var name: String { get }
     func protocolFunc1()
+    
+    
     func protocolFunc2()
     
 }
@@ -125,11 +127,12 @@ extension SSProtocol {
     }
     func protocolFunc1() {
         print("extension protocolFunc1")
-        
-
+    
     }
-
 }
+
+
+
 
 /*
   swift中常见的协议。

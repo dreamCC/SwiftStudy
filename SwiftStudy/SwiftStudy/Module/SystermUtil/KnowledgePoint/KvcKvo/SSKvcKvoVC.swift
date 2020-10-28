@@ -87,7 +87,9 @@ class KvcClass: NSObject {
     }
 }
 
-/* kvo监听
+/*
+   
+   kvo监听
    kvo-key value observing。 和NotifacationCenter一样，属于苹果的观察者模式。
    不同点是，kvo是一对一，通知是一对多。
  

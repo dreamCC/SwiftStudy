@@ -278,6 +278,6 @@ extension SSAnimationVC {
         
         animationLayer.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
         self.animationView.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
-
+        
     }
 }

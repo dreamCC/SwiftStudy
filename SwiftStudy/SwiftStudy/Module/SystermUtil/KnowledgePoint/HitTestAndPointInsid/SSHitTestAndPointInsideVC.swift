@@ -16,7 +16,7 @@ import QMUIKit
  1、当点击屏幕会出现一个事件，这个时间会有UIApplication保存在事件队列（注意队列和栈的区别）中。
  2、UIApplication会启动runloop同时，将事件传递给keyWindow。
  3、keyWindow如果能响应事件（userInterfactationEnable = true、hidden = false、 alpha > 0.01）那么keyWindow会找到rootViewContorller以及相应的subViews依次类推直到找到合适view。
-那么如果找到合适的view。会牵扯到两个重要方法。
+那么如何找到合适的view。会牵扯到两个重要方法。
  -hitTest 和 pointInside。 这两个方法为了寻找最佳的响应view，开发者可以重写。调用顺序父类、super.subviews.last、super.subviews.xx依次类推，如果找到合适响应的view，那么其他的就不会调用（比如我们重写父类的该方法，返回指定view那么子类就会不调用）。
  
  

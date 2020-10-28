@@ -88,10 +88,10 @@ extension SSRxSwiftViewController {
         
         print("internal---------------------------------")
         // 没一秒发送一次。相当于定时器
-//        let internalO = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
-//        internalO.subscribe{ (value) in
-//            print(value)
-//        }.disposed(by: disposeBag)
+        //        let internalO = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+        //        internalO.subscribe{ (value) in
+        //            print(value)
+        //        }.disposed(by: disposeBag)
        
         print("from---------------------------------")
         let fromO = Observable<String>.from(["a", "b", "c"])
@@ -182,6 +182,8 @@ extension SSRxSwiftViewController {
          Optional("e")
          Optional("f")
          */
+        
+     
 
         print("BehaviorRelay-----------------------------------------------")
         let behaviorReplay = BehaviorRelay<String>.init(value: "初始化")
@@ -204,6 +206,7 @@ extension SSRxSwiftViewController {
         asyncSubject.onNext("第3次")
         // 不发送complement，则不会接受订阅
         asyncSubject.onCompleted()
+        
 
         
         

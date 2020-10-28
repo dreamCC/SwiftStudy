@@ -12,6 +12,7 @@ import WebKit
 
 
 /*
+ 
  当我们不使用navigationController.pushxxx 或者 self.presentViewControlelrxxxx的时候，我们想要显示一个控制器管理的view，那么
  会面临几个问题。
  1、如果我们通过self.view.add(vc.view)那么view将不会响应事件。
@@ -210,6 +211,7 @@ class SSChirldForAddVC: UIViewController {
 
 
 extension SSChirldForAddVC: UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning{
+    
     // 转场动画的时间
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 1.0

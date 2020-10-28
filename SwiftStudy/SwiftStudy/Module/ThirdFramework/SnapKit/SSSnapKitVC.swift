@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SSSnapKitVC: QMUICommonViewController {
 
@@ -14,6 +15,7 @@ class SSSnapKitVC: QMUICommonViewController {
         view.backgroundColor = UIColor.white
         
         
+    
     }
 
 }

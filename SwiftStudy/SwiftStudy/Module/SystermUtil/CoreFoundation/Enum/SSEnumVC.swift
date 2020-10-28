@@ -21,13 +21,18 @@ class SSEnumVC: UIViewController {
     let y = Year.month("month")
     let y2 = Year.secnod(12, "second")
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         view.backgroundColor = UIColor.white
         navigationItem.title = "枚举"
         
-     
+
+    
+        
+        
         let desLab = UILabel()
         desLab.numberOfLines = Int.max
         desLab.text = "enum枚举。相对于其他语言的特点：\n1、默认是没有原始值的。一般语言枚举默认是Int类型的，但是swift中，如果你不指定原始值类型，那么默认是没有类型的，即不能通过enum.rawvalue来获取值。\n2、原始值可以是Int、Double、Float、String、Bool类型，当然我们也可以自定类型。\n3、我们可以有绑定值。如case a(String)等。注意绑定值的解析方法，参考下面Demo。\n3、枚举中的函数。如下Level，其重要特点是通过swift self 来进行不同case的处理。\n4、枚举中的属性。和函数是一样的。"

@@ -130,6 +130,7 @@ protocol Container {
     subscript(index: Int) -> ItemType { get }
 }
 
+
 // 普通类型遵循协议。需要 typealias ItemType = Int
 struct IntStack: Container {
   
