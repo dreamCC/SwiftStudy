@@ -81,6 +81,7 @@
 		A6494CEF24BFF2F2004C065D /* SSTraitsObservableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6494CEE24BFF2F2004C065D /* SSTraitsObservableVC.swift */; };
 		A6494CF124C036FD004C065D /* SSTraitsObservableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6494CF024C036FC004C065D /* SSTraitsObservableVC.xib */; };
 		A6494CF324C04915004C065D /* SSSchedulersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6494CF224C04915004C065D /* SSSchedulersVC.swift */; };
+		A6499774254BBBE200998C53 /* SSNSCacheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6499773254BBBE200998C53 /* SSNSCacheViewController.swift */; };
 		A64D28C124A82D94005DF222 /* SSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64D28C024A82D94005DF222 /* SSTableViewCell.swift */; };
 		A64D28C424A881FF005DF222 /* SSFloatLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64D28C324A881FF005DF222 /* SSFloatLayoutViewController.swift */; };
 		A64D28C724A8959A005DF222 /* SSSizeThatFitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64D28C624A8959A005DF222 /* SSSizeThatFitsVC.swift */; };
@@ -245,6 +246,7 @@
 		A6494CEE24BFF2F2004C065D /* SSTraitsObservableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTraitsObservableVC.swift; sourceTree = "<group>"; };
 		A6494CF024C036FC004C065D /* SSTraitsObservableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSTraitsObservableVC.xib; sourceTree = "<group>"; };
 		A6494CF224C04915004C065D /* SSSchedulersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSchedulersVC.swift; sourceTree = "<group>"; };
+		A6499773254BBBE200998C53 /* SSNSCacheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNSCacheViewController.swift; sourceTree = "<group>"; };
 		A64D28C024A82D94005DF222 /* SSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTableViewCell.swift; sourceTree = "<group>"; };
 		A64D28C324A881FF005DF222 /* SSFloatLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFloatLayoutViewController.swift; sourceTree = "<group>"; };
 		A64D28C624A8959A005DF222 /* SSSizeThatFitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSizeThatFitsVC.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 		A610625F24507394004B9A9A /* CoreFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				A6499772254BBBCC00998C53 /* NSCache */,
 				A62739F924A32C4D00AB20E6 /* UIPropertyAnimatior */,
 				A643336A248F604500D8C919 /* Animation */,
 				A67DCD8F246BA3840079C5FA /* Tuples */,
@@ -797,6 +800,14 @@
 				A643339E248F699200D8C919 /* QMUIConfigurationTemplateGrapefruit.h */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A6499772254BBBCC00998C53 /* NSCache */ = {
+			isa = PBXGroup;
+			children = (
+				A6499773254BBBE200998C53 /* SSNSCacheViewController.swift */,
+			);
+			path = NSCache;
 			sourceTree = "<group>";
 		};
 		A64C2D5024789F0F00C07A5D /* Qmui */ = {
@@ -1275,6 +1286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6499774254BBBE200998C53 /* SSNSCacheViewController.swift in Sources */,
 				A6042AA924A0A98D00147D62 /* SSHeaderV.swift in Sources */,
 				A6E8598024AF07B000AA31C1 /* SSSearchResultVC.swift in Sources */,
 				A64D28C424A881FF005DF222 /* SSFloatLayoutViewController.swift in Sources */,

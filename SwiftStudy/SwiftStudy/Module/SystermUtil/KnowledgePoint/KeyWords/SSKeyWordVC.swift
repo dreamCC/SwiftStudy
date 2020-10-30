@@ -29,6 +29,7 @@ import Alamofire
         成UITableViewCell的子类Cell。 不同点：是否生成可选类型。
  
  Any和oc中id的区别。Any表示任意一指定类型，所以Option类型和nil并不属于Any。 但是oc中，id可以修饰任意值。
+ Any和AnyObject都是协议。任意类型都遵循了Any协议。任意对象都遵循了AnyObject协议。
  
  private、filePrivate、internal、public、open。 三个权限依次增加。  private私有权限，只有当前文件才能访问。
      internal默认的访问权限。internal修饰的属性和方法，整个命名空间内都可以访问。
@@ -54,10 +55,16 @@ import Alamofire
     表示类本身）。还有一种就是.self(如果用在类型后面表示类型本身，用在实例后面表示实例本身。)，
     比如SSKeyWordVC.self表示类型本身，即SSKeyWordVC.Type其实就是class，因为swift中
     public typealise AnyClass = AnyObject.Type。
-    Self一般用在协议中。表示遵循该协议的类型。
+    Self：使用场景。
+    1、一般用在协议中。表示遵循该协议的类型。注意Kingfisher.swfit对其设计。
+    2、在普通类中，Self表示类型。即class。
+ 
+ == 是属于Equalable协议里面的方法，也就是说，如果想要进行比较，就必须遵循Equalable协议。NSObject、String等都是遵循该协议的，所以一般我们可以直接使用 ==。
+ === 表示类型的比较。 我们通过操作符可以看到，=== 传入的参数是 AnyObject类型。
  
  where用来进行条件限定的，使用场景如下。
     1、协议，protocol ShakeAble where Self: UIView {} 。对协议进行限定。
+    5、泛型类型中。extension，加上泛型限定。
     2、for item in arys where item > xx 遍历时候限定。
     3、switch中的case语句。 比如，swift xx { case let a where a.count == 3 }
     4、if 或者 guard中，但是swift 4.0之后就使用, 来代替
@@ -78,19 +85,69 @@ import Alamofire
  typedefine将一种类型转换成另一种类型。
  typeof(xxx)获取xxx类型。比如__weak typeof(self)weakSelf = self; 等价于 __weak UIViewController *weakSelf = self;
  define定义宏。
+ 
+ 获取动态类型，即运行时的实施类型。
+ #column： 列号
+ #line:    行号     类似。__LINE__
+ #file:    路径
+ #function: 方法名   类似。__func__
+ 
+ 
+ operator: 操作符。在swift中，我们可以自定操作符。需要配合以下关键字使用：
+ infix：表示要定义的是一个中位操作符，即前后都是输入
+ 例如：
+ infix operator ++
+ func ++(a: Int, b: Int) ->Int {
+     return a+b+b
+ }
+ print(1++2) 结果：5
+ 
+ prefix：前置。也就是操作符在前面
+ 例如：
+ prefix operator ^
+ prefix func ^(a: Int) -> Int {
+     return Int(pow(a, 2))
+ }
+ print(^8) 结果：64
+ 
+ postfix： 后置。也就是操作符在后面
+ 例如：
+ postfix operator ^
+ postfix func ^(a: Double) -> Double {
+     return pow(a, 2.0)
+ }
+ print(6^) 结果： 36
+ 
+ 
+ willSet 、didSet可以任意时候进行属性监听。
+ var name:String? {
+        willSet{}
+ }
+ var name:String? = "age" {
+        willSet{}
+ }
+
+
  */
+  
+
 
 class SSKeyWordVC: UIViewController {
 
     private var name: String = ""
     
+   
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
+    
+        
         view.backgroundColor = UIColor.white
         navigationItem.title = "关键字"
         
+        print(#column, #line, #file, #function)
     
     }
     

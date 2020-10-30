@@ -36,6 +36,8 @@ class SSCharacterSetVC: SSBaseViewController {
         self.desLab.text = "CharacterSet，在swift中是结构体，在oc中，是对象。其实就是用来表示一组Unicode字符。经常配合String来进行一些查找或者删除的功能。"
         
         characterSetFunc()
+        
+    
     }
     
     func characterSetFunc() {

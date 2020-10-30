@@ -12,7 +12,7 @@ import Kingfisher
 class SSKingfisherViewController: QMUICommonViewController {
 
     @IBOutlet weak var imageV: UIImageView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +24,10 @@ class SSKingfisherViewController: QMUICommonViewController {
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? "为空-", NSHomeDirectory())
 
     
+    
     }
+    
+    
 
     private func kingfisherUrl() {
         

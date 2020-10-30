@@ -12,7 +12,7 @@ class SSCoreFoundationVC: UIViewController {
     
 
     let datas = ["Enum","String","Array","OptionSet","AnyAnyObject","Notifycation",
-    "CharacterSet","Protocol","Genericity","Error","URLComponents","Tuples","Animation","UIPropertyAnimator"]
+    "CharacterSet","Protocol","Genericity","Error","URLComponents","Tuples","Animation","UIPropertyAnimator", "NSCache"]
  
 
     
@@ -85,7 +85,10 @@ extension SSCoreFoundationVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSAnimationVC(), animated: true)
         }else if indexPath.row == 13 {
             navigationController?.pushViewController(SSUIViewPropertyAnimatorVC(), animated: true)
+        }else if indexPath.row == 14 {
+            navigationController?.pushViewController(SSNSCacheViewController(), animated: true)
         }
+
 
 
     }
