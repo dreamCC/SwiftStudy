@@ -61,17 +61,18 @@ extension SSRunloopVC {
     // 开启的线程
     @objc func openThread() {
         autoreleasepool {
-            print("start open thread")
-            let runloop = RunLoop.current
-            runloop.add(NSMachPort(), forMode: .common)
-            runloop.run()
-            print("end open thread")
+            print("start open thread", Thread.current)
+//            let runloop = RunLoop.current
+//            runloop.add(NSMachPort(), forMode: .common)
+//            runloop.run()
+            print("end open thread", Thread.current)
         }
     }
     
     // 线程开启，同时内部开启一个runloop，使thread不立即销毁。
     @objc func startRunloopBtnClick() {
         tTread.start()
+        
     }
     
     @objc func closeRunloopBtnClick() {
@@ -92,7 +93,7 @@ extension SSRunloopVC {
          tThread只是全局引用，但是没有runloop支持thread不finished。
          */
         
-         //perform(#selector(printThreadMsg), on: tTread, with: nil, waitUntilDone: false)
+         perform(#selector(printThreadMsg), on: tTread, with: nil, waitUntilDone: false)
         
         // 下面方法能执行,是因为thread默认是当前线程。
         // perform的好处是可以指定方法在哪个线程中执行。
@@ -104,6 +105,10 @@ extension SSRunloopVC {
     // 打印信息
     @objc func printThreadMsg() {
         print(Thread.current)
-        print(tTread.isFinished)
+        print("tTread.isFinished:",tTread.isFinished)
+        print("tTread.isExecuting:",tTread.isExecuting)
+        print("tTread.isCancelled:",tTread.isCancelled)
+
     }
+    
 }

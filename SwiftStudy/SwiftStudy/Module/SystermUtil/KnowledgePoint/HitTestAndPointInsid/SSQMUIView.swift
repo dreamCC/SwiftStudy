@@ -15,9 +15,10 @@ import UIKit
 class SSQMUIView: UIView {
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        print("SSQMUIView--hitTest")
+        let view = super.hitTest(point, with: event)
+        print("SSQMUIView--hitTest", view)
 
-        return super.hitTest(point, with: event)
+        return view
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -33,9 +34,10 @@ class SSQMUIView: UIView {
 class SSQMUI2View: UIView {
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        print("SSQMUI2View--hitTest")
+        let view = super.hitTest(point, with: event)
+        print("SSQMUI2View--hitTest", view)
 
-        return super.hitTest(point, with: event)
+        return view
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -55,10 +57,13 @@ class SSQMUI2View: UIView {
 class SSQMUI3View: UIView {
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        print("SSQMUI3View--hitTest")
+        
+        let view = super.hitTest(point, with: event)
+        print("SSQMUI3View--hitTest", view)
 //        return self
 //        return self.subviews.first
-        return super.hitTest(point, with: event)
+        
+        return view
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -68,15 +73,12 @@ class SSQMUI3View: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("SSQMUI3View--touchBegin")
     }
-    
+
+    //------------------------------------------------------------------
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         return CGSize(width: 200, height: 200)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-
     override var intrinsicContentSize: CGSize {
         get {
             return CGSize(width: 200, height: 200)

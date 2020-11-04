@@ -46,6 +46,7 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
         let v3 = SSQMUI3View()
         v3.backgroundColor = UIColor.blue
         v3.frame = CGRect(x: 20, y: 120, width: 100, height: 100)
+        v3.isUserInteractionEnabled = false
         view.addSubview(v3)
         self.v3 = v3
         v3.snp.makeConstraints { (make) in
@@ -78,6 +79,7 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
             make.top.equalTo(v1.snp.bottom).offset(20)
             make.size.equalTo(CGSize(width: 50, height: 50))
         }
+        
     }
     
     

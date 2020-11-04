@@ -344,7 +344,7 @@ import UIKit
  swift类的extention定义的方法，是以硬编码的形式存在的。这也是swift中extention无法进行runtime的method swizzling的原因，我们想要使用runtime就必须借助@objc关键字修饰。
 
 */
-class SSRuntimeVC: SSBaseViewController {
+class SSRuntimeVC: UIViewController {
 
     let swiftClass = SwiftClass()
     
@@ -353,8 +353,7 @@ class SSRuntimeVC: SSBaseViewController {
         super.viewDidLoad()
 
 
-        titleName = "SSRuntimeVC"
-        
+            
     }
     
     @IBAction func ivarBtnClick(_ sender: UIButton) {
@@ -430,12 +429,14 @@ class SSRuntimeVC: SSBaseViewController {
             let proName = protocol_getName(pro)
             print(proName)
         }
+        
     }
     
     
 }
 
 class SwiftClass {
+    var height: Double = 177.5
     @objc var name: String = "swift"
     @objc dynamic var age: Int = 12
 
@@ -455,7 +456,6 @@ extension SwiftClass {
     }
     
     var runtimeProperty: String? {
-        
         
         set {
             objc_setAssociatedObject(self, &AssociatedKey.propertyName, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
