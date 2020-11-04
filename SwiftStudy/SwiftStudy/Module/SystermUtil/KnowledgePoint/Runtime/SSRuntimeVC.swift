@@ -22,7 +22,6 @@ import UIKit
     f、如果都没有找到，那么就会报unselector错误。
  
  ---------------------------------------------------------------
-
  runtime中重要知识点：
  stuct objc_object{
     Class _Nonnull isa;
@@ -95,6 +94,134 @@ import UIKit
  
  
  从上面可以看出，oc中任意对象的本质其实是结构体指针，指向objc_objcet结构体。而该结构体有Class类型的isa指针。也就是说，一个Object对象，唯一保存的就是其所属的Class的地址。当我们对一个对象进行方法调用的时候，比如[obj selector];，它会通过其isa指针，找到其objc_class,并在cache或者methodList中寻找其实现。
+ 
+ 然而遗憾的是，上面知识点是Object 2.0之前的。
+ oc 2.0以后对objc_object和objc_class有了重写的定义。
+ struct objc_object {
+ private:
+     isa_t isa; // unit联合，可以表示Class类型，表明Object所属的类
+     。。。
+ }
+ 
+ // 精简过的isa_t共用体
+ union isa_t
+ {
+     isa_t() { }
+     isa_t(uintptr_t value) : bits(value) { }
+
+     Class cls;
+     uintptr_t bits;
+
+ #if SUPPORT_PACKED_ISA
+ # if __arm64__
+ #   define ISA_MASK        0x0000000ffffffff8ULL
+ #   define ISA_MAGIC_MASK  0x000003f000000001ULL
+ #   define ISA_MAGIC_VALUE 0x000001a000000001ULL
+     struct {
+         uintptr_t nonpointer        : 1;
+         uintptr_t has_assoc         : 1;
+         uintptr_t has_cxx_dtor      : 1;
+         uintptr_t shiftcls          : 33; // MACH_VM_MAX_ADDRESS 0x1000000000
+         uintptr_t magic             : 6;
+         uintptr_t weakly_referenced : 1;
+         uintptr_t deallocating      : 1;
+         uintptr_t has_sidetable_rc  : 1;
+         uintptr_t extra_rc          : 19;
+     #       define RC_ONE   (1ULL<<45)
+     #       define RC_HALF  (1ULL<<18)
+     };
+
+ # elif __x86_64__
+ #   define ISA_MASK        0x00007ffffffffff8ULL
+ #   define ISA_MAGIC_MASK  0x001f800000000001ULL
+ #   define ISA_MAGIC_VALUE 0x001d800000000001ULL
+     struct {
+         uintptr_t nonpointer        : 1;
+         uintptr_t has_assoc         : 1;
+         uintptr_t has_cxx_dtor      : 1;
+         uintptr_t shiftcls          : 44; // MACH_VM_MAX_ADDRESS 0x7fffffe00000
+         uintptr_t magic             : 6;
+         uintptr_t weakly_referenced : 1;
+         uintptr_t deallocating      : 1;
+         uintptr_t has_sidetable_rc  : 1;
+         uintptr_t extra_rc          : 8;
+ #       define RC_ONE   (1ULL<<56)
+ #       define RC_HALF  (1ULL<<7)
+     };
+
+ # else
+ #   error unknown architecture for packed isa
+ # endif
+ #endif
+ }
+ 
+ struct objc_class : objc_object {
+     // Class ISA;
+     Class superclass;
+     cache_t cache;             // formerly cache pointer and vtable
+     class_data_bits_t bits;    // class_rw_t * plus custom rr/alloc flags
+
+     class_rw_t *data() {
+         return bits.data();
+     }
+     void setData(class_rw_t *newData) {
+         bits.setData(newData);
+     }
+     // 省略其他方法
+     。。。
+ }
+ 我们发现objc_class实际objc_object，而且里面会有一些方法，所以这是c++结构体。 而且class也是一种结构体。同时拥有isa指针。
+ 
+ 其中。
+ superclass 指向父类。
+ cache_t 保存调用方法缓存。
+ class_data_bits 保存着类的一些信息。
+ class_rw_t 是通过bits获取。保存着类方法列表、属性列表及协议列表。
+ 
+ struct class_rw_t {
+     // Be warned that Symbolication knows the layout of this structure.
+     uint32_t flags;
+     uint32_t version;
+
+     const class_ro_t *ro;
+
+     method_array_t methods; // 方法列表
+     property_array_t properties; // 属性列表
+     protocol_array_t protocols; // 协议列表
+
+     Class firstSubclass;
+     Class nextSiblingClass;
+
+     char *demangledName;
+ };
+ 
+ 
+ class_ro_t 是只读的，保存的是类的原始方法、属性和协议。
+ struct class_ro_t {
+     uint32_t flags;
+     uint32_t instanceStart;
+     uint32_t instanceSize;
+ #ifdef __LP64__
+     uint32_t reserved;
+ #endif
+
+     const uint8_t * ivarLayout;
+     
+     const char * name;
+     method_list_t * baseMethodList;
+     protocol_list_t * baseProtocols;
+     const ivar_list_t * ivars;
+
+     const uint8_t * weakIvarLayout;
+     property_list_t *baseProperties;
+
+     method_list_t *baseMethods() const {
+         return baseMethodList;
+     }
+ };
+ 
+ 总结：
+ 程序一开始类的属性、方法、协议是存放在class_ro_t中，但当程序运行的时候，会将分类和clas_ro_t合并存放在class_rw_t。
  
  上面是对象方法调用过程，其实类方法的调用就需要objc_class的isa指针。比如[NSString stringWithFormatxx
     方法，那么就会通过NSString类的isa指针，找到NSString类的元类，并且在其methodList方法中找stringWithFormate方法，如果只选该方法的实现。
@@ -225,6 +352,7 @@ class SSRuntimeVC: SSBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         titleName = "SSRuntimeVC"
         
     }
@@ -278,6 +406,8 @@ class SSRuntimeVC: SSBaseViewController {
             print(String(utf8String: propertyName)!)
         }
         free(propertys)
+        
+    
     }
     
     private func methodList() {
@@ -325,6 +455,7 @@ extension SwiftClass {
     }
     
     var runtimeProperty: String? {
+        
         
         set {
             objc_setAssociatedObject(self, &AssociatedKey.propertyName, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -376,5 +507,6 @@ extension SwiftClass {
         print("swizzingFunc")
     }
 }
+
 
 

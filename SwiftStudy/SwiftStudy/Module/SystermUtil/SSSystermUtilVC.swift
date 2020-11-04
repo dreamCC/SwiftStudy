@@ -13,7 +13,7 @@ import Alamofire
 class SSSystermUtilVC: UIViewController {
     
 
-    let datas = ["Multithreading","CoreFoundation","KnowledgePoint","UserInterfaceStyle","QuartzAndCoreGraphics",""]
+    var datas = ["Multithreading","CoreFoundation","KnowledgePoint","UserInterfaceStyle","QuartzAndCoreGraphics","UIWindowScene"]
     
    
 
@@ -27,6 +27,8 @@ class SSSystermUtilVC: UIViewController {
         
 
         navigationItem.title = "系统知识"
+        
+        datas.reverse()
         
         let tabV = UITableView()
         
@@ -71,21 +73,24 @@ extension SSSystermUtilVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        let dataValue = datas[indexPath.row]
+        switch dataValue {
+        case "Multithreading":
             navigationController?.pushViewController(SSMultithreadingVC(), animated: true)
-        }else if indexPath.row == 1 {
+        case "CoreFoundation":
             navigationController?.pushViewController(SSCoreFoundationVC(), animated: true)
-        }else if indexPath.row == 2 {
+        case "KnowledgePoint":
             navigationController?.pushViewController(SSKnowledgePointVC(), animated: true)
-        }else if indexPath.row == 3 {
+        case "UserInterfaceStyle":
             navigationController?.pushViewController(SSUserInterfaceStyleVC(), animated: true)
-        }else if indexPath.row == 4 {
+        case "QuartzAndCoreGraphics":
             navigationController?.pushViewController(SSQuartzAndCoreGraphicsVC(), animated: true)
-            
-        }else {
-          
-        
+        case "UIWindowScene":
+            navigationController?.pushViewController(SSUIWindowSceneViewController(), animated: true)
+        default:
+            return
         }
+        
     }
     
     

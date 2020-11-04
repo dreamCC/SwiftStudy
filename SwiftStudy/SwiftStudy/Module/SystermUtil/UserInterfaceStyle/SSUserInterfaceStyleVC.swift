@@ -112,6 +112,20 @@ class SSUserInterfaceStyleVC: QMUICommonViewController {
             btn.addTarget(self, action: #selector(themeBtnClick(btn:)), for: .touchUpInside)
             gridView.addSubview(btn)
         }
+        
+        
+        let newTrait = UITraitCollection()
+        print(self.traitCollection.userInterfaceIdiom.rawValue, traitCollection.displayScale, traitCollection.displayGamut, traitCollection.forceTouchCapability.rawValue)
+        print(newTrait.userInterfaceIdiom.rawValue, newTrait.displayScale, newTrait.displayGamut, newTrait.forceTouchCapability)
+        
+        let device = UIDevice.current
+        print(device.name, device.systemName, device.systemVersion, device.identifierForVendor)
+        
+
+        print(UIApplication.shared.statusBarOrientation.rawValue, UIDevice.current.orientation.rawValue)
+        
+        
+
     }
 
     
@@ -119,6 +133,9 @@ class SSUserInterfaceStyleVC: QMUICommonViewController {
         QMUIThemeManagerCenter.defaultThemeManager.currentThemeIdentifier = btn.currentTitle as (NSCopying & NSObjectProtocol)?
         _ = QDThemeManager.self.currentTheme?.applyConfigurationTemplate()
     }
+    
+
+
 }
 
 extension SSUserInterfaceStyleVC {
@@ -166,8 +183,12 @@ extension SSUserInterfaceStyleVC {
     
     // 通过方法监听
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        print("traitCollectionDidChange", previousTraitCollection?.userInterfaceStyle.rawValue ?? "null")
+        print("traitCollectionDidChange", traitCollection.userInterfaceStyle.rawValue )
+        print("traitCollectionDidChange", traitCollection.preferredContentSizeCategory.rawValue)
+
     }
+    
+    
 }
 
 extension SSUserInterfaceStyleVC {

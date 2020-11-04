@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
 
         navigationItem.title = "宝藏"
         
-        datas = ["SystermUtil","UIKit","ThirdFramwrok","MVVM","UI",""]
+        datas = ["SystermUtil","UIKit","ThirdFramwrok","MVVM",""]
         
         let tab = UITableView(frame: .zero, style: .plain)
         tab.delegate = self
@@ -56,13 +56,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 {
             navigationController?.pushViewController(SSSystermUtilVC(), animated: true)
         }else if indexPath.row == 1 {
-            
+            navigationController?.pushViewController(SSSystermUIVC(), animated: true)
         }else if indexPath.row == 2 {
             navigationController?.pushViewController(SSThirdFrameworkVC(), animated: true)
         }else if indexPath.row == 3 {
             navigationController?.pushViewController(SSMvvmVC(), animated: true)
-        }else if indexPath.row == 4 {
-            navigationController?.pushViewController(SSSystermUIVC(), animated: true)
         }else {
         
             //runtimeUserSwift()

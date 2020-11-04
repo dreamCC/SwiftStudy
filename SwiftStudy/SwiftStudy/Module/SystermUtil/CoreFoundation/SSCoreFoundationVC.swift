@@ -11,8 +11,9 @@ import UIKit
 class SSCoreFoundationVC: UIViewController {
     
 
-    let datas = ["Enum","String","Array","OptionSet","AnyAnyObject","Notifycation",
-    "CharacterSet","Protocol","Genericity","Error","URLComponents","Tuples","Animation","UIPropertyAnimator", "NSCache"]
+    var datas = ["Enum","String","Array","OptionSet","AnyAnyObject","Notifycation",
+    "CharacterSet","Protocol","Genericity","Error","URLComponents","Tuples","Animation","UIPropertyAnimator",
+    "NSCache", "NSBundle", "Character", "Int"]
  
 
     
@@ -20,6 +21,9 @@ class SSCoreFoundationVC: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = "常见类型"
+        
+        // 排序
+        datas.reverse()
         
         let tabV = UITableView()
         tabV.dataSource = self
@@ -30,12 +34,11 @@ class SSCoreFoundationVC: UIViewController {
             make.edges.equalToSuperview()
         }
         
+        
+        
     }
 
     
-       @objc func ttest() {
-           print("-------ttest")
-       }
        
 
 }
@@ -57,39 +60,48 @@ extension SSCoreFoundationVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        let dataValue = datas[indexPath.row]
+        switch dataValue {
+        case "Enum":
             navigationController?.pushViewController(SSEnumVC(), animated: true)
-        }else if indexPath.row == 1 {
+        case "String":
             navigationController?.pushViewController(SSStringVC(), animated: true)
-        }else if indexPath.row == 2 {
+        case "Array":
             navigationController?.pushViewController(SSArraryVC(), animated: true)
-        }else if indexPath.row == 3 {
+        case "OptionSet":
             navigationController?.pushViewController(SSOptionSetVC(), animated: true)
-        }else if indexPath.row == 4 {
+        case "AnyAnyObject":
             navigationController?.pushViewController(SSAnyAnyObjectVC(), animated: true)
-        }else if indexPath.row == 5 {
+        case "Notifycation":
             navigationController?.pushViewController(SSNotifycationVC(), animated: true)
-        }else if indexPath.row == 6 {
+        case "CharacterSet":
             navigationController?.pushViewController(SSCharacterSetVC(), animated: true)
-        }else if indexPath.row == 7 {
+        case "Protocol":
             navigationController?.pushViewController(SSProtocolVC(), animated: true)
-        }else if indexPath.row == 8 {
+        case "Genericity":
             navigationController?.pushViewController(SSGenericityVC(), animated: true)
-        }else if indexPath.row == 9 {
+        case "Error":
             navigationController?.pushViewController(SSErrorVC(), animated: true)
-        }else if indexPath.row == 10 {
+        case "URLComponents":
             navigationController?.pushViewController(SSURLComponentsVC(), animated: true)
-        }else if indexPath.row == 11 {
+        case "Tuples":
             navigationController?.pushViewController(SSTuplesVC(), animated: true)
-        }else if indexPath.row == 12 {
+        case "Animation":
             navigationController?.pushViewController(SSAnimationVC(), animated: true)
-        }else if indexPath.row == 13 {
+        case "UIPropertyAnimator":
             navigationController?.pushViewController(SSUIViewPropertyAnimatorVC(), animated: true)
-        }else if indexPath.row == 14 {
+        case "NSCache":
             navigationController?.pushViewController(SSNSCacheViewController(), animated: true)
+        case "NSBundle":
+            navigationController?.pushViewController(SSBundleViewController(), animated: true)
+        case "Character":
+            navigationController?.pushViewController(SSCharacterViewController(), animated: true)
+        case "Int":
+            navigationController?.pushViewController(SSIntViewController(), animated: true)
+        default:
+            return
         }
-
-
+        
 
     }
     

@@ -12,7 +12,7 @@ import SnapKit
 
 class SSThirdFrameworkVC: UIViewController {
 
-    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI", "RxSwift", "Kingfisher", ""]
+    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI", "RxSwift", "Kingfisher", "MJRefresh"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,8 @@ class SSThirdFrameworkVC: UIViewController {
         view.backgroundColor = UIColor.white
         navigationItem.title = "ThirdFramework"
 
+        datas.reverse()
+        
         let tabV = UITableView()
         tabV.delegate = self
         tabV.dataSource = self
@@ -51,23 +53,30 @@ extension SSThirdFrameworkVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            
+        
+        let dataValue = datas[indexPath.row]
+        switch dataValue {
+        case "Alamofire":
             navigationController?.pushViewController(SSAlamofireVC(), animated: true)
-        }else if indexPath.row == 1{
+        case "HandyJson":
             navigationController?.pushViewController(SSHandyJsonVC(), animated: true)
-        }else if indexPath.row == 2{
+        case "SwiftJson":
             navigationController?.pushViewController(SSSwiftJsonVC(), animated: true)
-        }else if indexPath.row == 3{
+        case "ObjectMapper":
             navigationController?.pushViewController(SSObjectMapperVC(), animated: true)
-        }else if indexPath.row == 4{
+        case "Moya":
             navigationController?.pushViewController(SSMoyaVC(), animated: true)
-        }else if indexPath.row == 5{
+        case "QMUI":
             navigationController?.pushViewController(SSQMUIViewController(), animated: true)
-        }else if indexPath.row == 6{
+        case "RxSwift":
             navigationController?.pushViewController(SSRxViewController(), animated: true)
-        }else if indexPath.row == 7{
+        case "Kingfisher":
             navigationController?.pushViewController(SSKingfisherViewController(), animated: true)
+        case "MJRefresh":
+            navigationController?.pushViewController(SSMJRefreshViewController(), animated: true)
+        default:
+            return
         }
+    
     }
 }

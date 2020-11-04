@@ -31,4 +31,7 @@ target 'SwiftStudy' do
   # 图片加载
   pod 'Kingfisher'
   
+  # 刷新
+  pod 'MJRefresh'
+  
 end

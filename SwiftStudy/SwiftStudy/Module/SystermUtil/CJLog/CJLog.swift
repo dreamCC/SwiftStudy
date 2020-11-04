@@ -22,6 +22,8 @@ func dPrint(msg: String, file: String = #file, line: Int = #line, funcs: String 
         func: funcs,
         logItem: logItem)
     
+
+    
 }
 
 func iPrint(msg: String)  {

@@ -10,18 +10,22 @@ import UIKit
 
 class SSSystermUIVC: QMUICommonTableViewController {
 
-    let dataSources: [String]  = {
+    var dataSources: [String]  = {
         return ["UITableView", "FloatLayoutView","PieProgressView","ViewShowWay","Layer", "SSSearchController",
-        "QMUITextField", "QMUITips"]
+        "QMUITextField", "QMUITips", "UIPageViewController", "UICollectionViewController", "UIFont"]
     }()
     
     private let kCellId = "kCellId"
     override func initSubviews() {
         super.initSubviews()
         
+        // 排序
+        dataSources.reverse()
         
-        
+        view.backgroundColor = UIColor.white
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCellId)
+
+    
     }
     
     
@@ -36,23 +40,37 @@ class SSSystermUIVC: QMUICommonTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        
+        let dataValue = dataSources[indexPath.row]
+        switch dataValue {
+        case "UITableView":
             navigationController?.pushViewController(SSTableViewController(), animated: true)
-        }else if indexPath.row == 1 {
+        case "FloatLayoutView":
             navigationController?.pushViewController(SSFloatLayoutViewController(), animated: true)
-        }else if indexPath.row == 2 {
+        case "PieProgressView":
             navigationController?.pushViewController(SSProgressViewVC(), animated: true)
-        }else if indexPath.row == 3 {
+        case "ViewShowWay":
             navigationController?.pushViewController(SSViewShowWayController(), animated: true)
-        }else if indexPath.row == 4 {
+        case "Layer":
             navigationController?.pushViewController(SSLayerViewController(), animated: true)
-        }else if indexPath.row == 5 {
+        case "SSSearchController":
             navigationController?.pushViewController(SSSearchControllerVC(), animated: true)
-        }else if indexPath.row == 6 {
+        case "QMUITextField":
             navigationController?.pushViewController(SSTextFieldViewController(), animated: true)
-        }else if indexPath.row == 7 {
+        case "QMUITips":
             navigationController?.pushViewController(SSTipsViewController(), animated: true)
+        case "UIPageViewController":
+            navigationController?.pushViewController(SSPageViewController(), animated: true)
+        case "UICollectionViewController":
+            navigationController?.pushViewController(SSCollectionViewController(), animated: true)
+        case "UIFont":
+            navigationController?.pushViewController(SSUIFontViewController(), animated: true)
+        default:
+            return
         }
+       
     }
+    
+
 
 }

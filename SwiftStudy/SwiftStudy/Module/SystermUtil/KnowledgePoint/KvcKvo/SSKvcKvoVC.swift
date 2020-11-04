@@ -56,14 +56,14 @@ class SSKvcKvoVC: SSBaseViewController {
  这里牵扯到kvc的原理问题：
  1、查找模型中有没有setName:方法，如果有就直接赋值。
  2、如果没有，就会继续查找模型中有没有_name成员变量，有就_name = value赋值。
- 3、如果没有，就会查找模型中有没有name属性，有就直接赋值。
+ 3、如果没有，就会查找模型中有没有isName属性，有就直接赋值。
  4、如果都没有，就会直接报错。 setValue： forUndefineKey:
  
  kvc中几个重要方法的重写
  */
 class KvcClass: NSObject {
     
-    @objc var name: String = ""
+    @objc var name: String  = ""
     
     /* 属性重写，当没有该属性的时候，会调用该方法 */
     override class var accessInstanceVariablesDirectly: Bool {
