@@ -18,23 +18,20 @@ import WebKit
  1、如果我们通过self.view.add(vc.view)那么view将不会响应事件。
  2、shouldAutomaticallyForwardAppearanceMethods控制着是否调用viewWillAppeara等系列方法。当通过present或者pushxx的时候，该属性不起作用。
  
- navigationController.pushxxxx。会将controller添加到naviagation.chirldControllers里面。
-    被push的控制器会调用willMoveTo和didMoveToParent方法。
- present。并不会调用addChirld方法，所以willMoveTo和didMoveToParent方法不会调用。
- 
- 
+
  当我们使用addView来添加带控制器的view的时候，我们最好的办法是调用通过: （其实就是容器vc）
  self.addChirld(modalVc)
  self.viwe.add(modalVc.view)来进行显示，不然没法相应事件。
- modalV.didMoveToparent()
+ modalV.didMoveToparent() // 因为只通过上面两步添加，是不会调用modalV的didMoveToParent方法。
 
- vc.willMoveToparaent:nil
+ vc.willMoveToparaent:nil // 因为只通过下面两个方法，是不会调用vc的willMoveToparent方法。
  vc.view.remoeFromSuperView
  vc.remoeFromparent
  
- 
- 
- 
+ navigationController.pushxxxx。会将controller添加到naviagation.chirldControllers里面。
+    被push的控制器会调用willMoveTo和didMoveToParent方法。
+ present。并不会调用addChirld方法，所以willMoveTo和didMoveToParent方法不会调用。
+
  当我们调用navigationController.pushxxxx的时候会有完整过程：
  具体调用顺序:
  willMoveToParent:
@@ -72,7 +69,7 @@ class SSAddChirldControllerVC: QMUICommonViewController {
     @objc func addBtnClick() {
        
         //showUseWindow()
-        //showUseAddSubView()
+//        showUseAddSubView()
         showUserAddVC()
     }
     
@@ -80,22 +77,11 @@ class SSAddChirldControllerVC: QMUICommonViewController {
         
         let first = self.children.first
         let last  = self.children.last
-        self.transition(from: first!, to: last!, duration: 1.0, options: .transitionFlipFromRight, animations: {
+        self.transition(from: first!, to: last!, duration: 1.0, options: .repeat, animations: {
             
         }, completion: nil)
-    }
-    
-    func showUseAddSubView() {
-        let addVc = SSChirldForAddVC()
-        //        self.addChild(addVc)
-        addVc.view.frame = CGRect(x: 10, y: 100, width: 200, height: 200)
-        //        addVc.beginAppearanceTransition(true, animated: true)
-        // view.addSubview(addVc.view)
-        //        addVc.endAppearanceTransition()
-        self.present(addVc, animated: true, completion: nil)
         
     }
-           
     
     func showUseWindow() {
         let addVc = SSChirldForAddVC()
@@ -107,7 +93,25 @@ class SSAddChirldControllerVC: QMUICommonViewController {
         addWindow.makeKeyAndVisible()
     }
     
+    func showUseAddSubView() {
+        let addVc = SSChirldForAddVC()
+        //        self.addChild(addVc)
+        addVc.view.frame = CGRect(x: 10, y: 100, width: 200, height: 200)
+        //        addVc.beginAppearanceTransition(true, animated: true)
+        // view.addSubview(addVc.view)
+        //        addVc.endAppearanceTransition()
+        self.present(addVc, animated: true, completion: {
+            print(self.children)
+        })
+//        self.navigationController?.pushViewController(addVc, animated: true)
+    }
+           
+    
+
     func showUserAddVC() {
+        
+
+
         var first: SSChirldForAddVC!
         for index in 0..<3 {
         
@@ -121,20 +125,25 @@ class SSAddChirldControllerVC: QMUICommonViewController {
         }
         self.view.addSubview(first.view)
 
-        //first.didMove(toParent: self)
+        // 只调用上面两个方法，下面的这个方法是不会调用的
+        first.didMove(toParent: self)
     }
     
-    override var shouldAutomaticallyForwardAppearanceMethods: Bool {
-        get {
-            return true
-        }
-    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         print(self.presentedViewController)
         print(self.presentationController, separator: "*", terminator: "--")
+        
+        let first = self.children.first
+        let last  = self.children.last
+        self.transition(from: last!, to: first!, duration: 1.0, options: .repeat, animations: {
+            
+        }, completion: nil)
+        
     }
+    
     
 }
 
@@ -146,9 +155,17 @@ class SSChirldForAddVC: UIViewController {
         self.index = index
     }
     
+    override var shouldAutomaticallyForwardAppearanceMethods: Bool {
+        get {
+            return false
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        print("\(index):viewDidLoad")
+        
         view.backgroundColor = UIColor.qmui_random()
         
         let centerBtn = UIButton(type: .system)
@@ -181,11 +198,18 @@ class SSChirldForAddVC: UIViewController {
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("\(index):touchesBegan-Click")
+
+    }
+    
+    
     func removUserAddVc() {
-        //self.willMove(toParent: nil)
-        //self.view.removeFromSuperview()
-        //self.removeFromParent()  // 从父parent.chirldren中移除，这一步是很重要的。
-        self.dismiss(animated: true, completion: nil)
+        self.willMove(toParent: nil) // 只调用下面两个方法，该方法是不会调用的。
+        self.view.removeFromSuperview()
+        self.removeFromParent()  // 从父parent.chirldren中移除，这一步是很重要的。
+        //self.dismiss(animated: true, completion: nil)
+        //self.navigationController?.popViewController(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -205,7 +229,7 @@ class SSChirldForAddVC: UIViewController {
     }
     
     deinit {
-        print("对象销毁--------")
+        print("\(index):对象销毁--------")
     }
 }
 

@@ -70,6 +70,7 @@ class SSPageViewController: UIViewController {
             make.top.equalTo(collectionVc.snp.bottom)
         }
         
+        
     }
 
 }
@@ -109,6 +110,7 @@ extension SSPageViewController: UIPageViewControllerDelegate , UIPageViewControl
     // 上一个。如果是第一个，返回nil
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
+    
     
         print("上一个")
         var currentIndex = pageChildVcs.firstIndex(of: viewController as! PageChildVC)!

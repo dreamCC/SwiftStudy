@@ -55,6 +55,11 @@ class SSQMUI2View: UIView {
 }
 
 class SSQMUI3View: UIView {
+    
+    
+    override func willMove(toSuperview newSuperview: UIView?) {
+        print("willMove toSuperview", newSuperview)
+    }
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         

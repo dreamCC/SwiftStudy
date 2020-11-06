@@ -24,8 +24,8 @@ class SSView: UIView {
         print(event, action)
         if(event == "bounds"){
             let animation = CABasicAnimation()
-            animation.duration = 1.0
-            return nil
+            animation.duration = 2.0
+            return animation
         }
         return action
     }

@@ -20,8 +20,8 @@ class SSAnimationVC: QMUICommonViewController {
         return v
     }()
     
-    private var animationLayer: CALayer = {
-        let v = CALayer()
+    private var animationLayer: SSLayer = {
+        let v = SSLayer()
         v.frame = CGRect(x: 100, y: 300, width: 50, height: 50)
         v.backgroundColor = UIColor.qmui_random().cgColor
         return v
@@ -40,7 +40,6 @@ class SSAnimationVC: QMUICommonViewController {
         
         view.layer.addSublayer(animationLayer)
     
-        
         let functionBtn = QMUIButton(type: .custom)
         functionBtn.setTitle("函数动画", for: .normal)
         functionBtn.addTarget(self, action: #selector(functionAnimationClick), for: .touchUpInside)
@@ -86,6 +85,18 @@ class SSAnimationVC: QMUICommonViewController {
             make.top.equalTo(dynamicAnimation.snp.bottom).offset(10)
         }
         
+       
+     
+        
+        
+    }
+
+}
+
+extension SSAnimationVC {
+    
+    @objc func tapGestureStart() {
+        
         let basicAnimation = CABasicAnimation(keyPath: "transform")
         // CAAnimation的属性
         //basicAnimation.beginTime = CACurrentMediaTime()
@@ -102,22 +113,6 @@ class SSAnimationVC: QMUICommonViewController {
         // basicAnimation.fromValue = CATransform3DMakeTranslation(100, 100, 0)
         basicAnimation.fromValue = CATransform3DMakeTranslation(200, 50, 0)
         animationView.layer.add(basicAnimation, forKey: nil)
-     
-        
-        // 默认layer的改变会进行隐士动画
-        // 来显示管理动画
-        CATransaction.begin()
-        // 关闭动画
-        CATransaction.setDisableActions(true)
-        
-        CATransaction.commit()
-    }
-
-}
-
-extension SSAnimationVC {
-    
-    @objc func tapGestureStart() {
         
     }
     
@@ -148,9 +143,9 @@ extension SSAnimationVC {
          */
    
         
-//        UIView.animate(withDuration: 1.0) {
-//            self.animationView.qmui_left = 200
-//        }
+        UIView.animate(withDuration: 1.0) {
+            self.animationView.qmui_left = 200
+        }
         
         /*
         UIView.animate(withDuration: TimeInterval,
@@ -179,7 +174,7 @@ extension SSAnimationVC {
         */
         
         // 帧动画。
-//        UIView.animateKeyframes(withDuration: 1.0, delay: 0.0, options: .calculationModeLinear, animations: {
+//        UIView.animateKeyframes(withDuration: 3.0, delay: 0.0, options: .calculationModeLinear, animations: {
 //            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1/3) {
 //                self.animationView.qmui_left = 200
 //            }
@@ -276,8 +271,20 @@ extension SSAnimationVC {
     
     @objc func layerClick() {
         
-        animationLayer.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
-        self.animationView.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
+
+        // 默认layer的改变会进行隐士动画
+        // 来显示管理动画
+        CATransaction.begin()
+        // 关闭动画
+        //CATransaction.setDisableActions(true)
+        CATransaction.setAnimationDuration(3)
+        
+        //animationLayer.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
+        self.animationView.layer.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
+        
+        CATransaction.commit()
+        
+        //self.animationView.bounds = CGRectMakeWithSize(CGSize(width: 200, height: 200))
         
     }
 }

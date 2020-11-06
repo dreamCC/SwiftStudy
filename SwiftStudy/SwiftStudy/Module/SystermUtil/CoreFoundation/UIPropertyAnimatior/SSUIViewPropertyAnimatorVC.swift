@@ -76,7 +76,7 @@ class SSUIViewPropertyAnimatorVC: QMUICommonViewController {
             self.animationV.alpha = 0.1
         }
 
-        
+    
     }
 
     
@@ -99,3 +99,6 @@ extension SSUIViewPropertyAnimatorVC {
     }
     
 }
+
+
+

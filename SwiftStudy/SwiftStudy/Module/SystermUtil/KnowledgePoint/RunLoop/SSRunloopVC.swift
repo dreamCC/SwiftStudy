@@ -11,13 +11,12 @@ import UIKit
 class SSRunloopVC: QMUICommonViewController {
 
     var tTread: Thread!
+    var tRunloop: RunLoop!
+    var timer: Timer!
     
     override func didInitialize() {
         super.didInitialize()
         
-        
-        tTread = Thread(target: self, selector: #selector(openThread), object: nil)
-        tTread.name = "current-"
     }
     
     override func initSubviews() {
@@ -34,7 +33,7 @@ class SSRunloopVC: QMUICommonViewController {
         runloopBtn.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
         }
-        
+
         let closeRunloop = QMUIButton()
         closeRunloop.setTitle("closeRunloop", for: .normal)
         closeRunloop.addTarget(self, action: #selector(closeRunloopBtnClick), for: .touchUpInside)
@@ -43,7 +42,7 @@ class SSRunloopVC: QMUICommonViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(runloopBtn.snp.bottom).offset(20)
         }
-        
+
         let testRunloop = QMUIButton()
         testRunloop.setTitle("testRunloop", for: .normal)
         testRunloop.addTarget(self, action: #selector(testRunloopBtnClick), for: .touchUpInside)
@@ -52,6 +51,20 @@ class SSRunloopVC: QMUICommonViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(closeRunloop.snp.bottom).offset(20)
         }
+
+        let testTimer = QMUIButton()
+        testTimer.setTitle("testTimer", for: .normal)
+        testTimer.addTarget(self, action: #selector(testTimerBtnClick), for: .touchUpInside)
+        view.addSubview(testTimer)
+        testTimer.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(testRunloop.snp.bottom).offset(20)
+        }
+    }
+    
+
+    deinit {
+        timer?.invalidate()
     }
 
 }
@@ -60,24 +73,31 @@ extension SSRunloopVC {
     
     // 开启的线程
     @objc func openThread() {
+
+        
         autoreleasepool {
             print("start open thread", Thread.current)
-//            let runloop = RunLoop.current
-//            runloop.add(NSMachPort(), forMode: .common)
-//            runloop.run()
+            let runloop = RunLoop.current
+            tRunloop = runloop
+            runloop.add(NSMachPort(), forMode: .common)
+            runloop.run()
             print("end open thread", Thread.current)
         }
     }
     
     // 线程开启，同时内部开启一个runloop，使thread不立即销毁。
     @objc func startRunloopBtnClick() {
+        tTread = Thread(target: self, selector: #selector(openThread), object: nil)
+        tTread.name = "current-"
         tTread.start()
-        
     }
     
     @objc func closeRunloopBtnClick() {
+
     
+        
         tTread.cancel()
+    
     }
     
     
@@ -100,6 +120,20 @@ extension SSRunloopVC {
         // perform(#selector(printThreadMsg))
         // perform(#selector(printThreadMsg), on: Thread.main, with: nil, waitUntilDone: false)
         // Thread.detachNewThreadSelector(#selector(printThreadMsg), toTarget: self, with: nil)
+        
+    }
+    
+    @objc func testTimerBtnClick() {
+        
+        timer = Timer(timeInterval: 1, repeats: true, block: { (timer) in
+            print("计时器开始", Thread.current)
+            if self.tTread.isCancelled {
+                Thread.exit()
+            }
+                
+        })
+        tRunloop.add(timer, forMode: .default)
+        timer.fire()
     }
     
     // 打印信息

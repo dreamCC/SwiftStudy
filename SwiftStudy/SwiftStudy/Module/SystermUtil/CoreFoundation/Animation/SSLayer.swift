@@ -54,23 +54,42 @@ import UIKit
 class SSLayer: CALayer {
 
     
-    override func display() {
-        super.display()
-        print("layer:display---")
-    }
+    override func action(forKey event: String) -> CAAction? {
     
-    override func draw(in ctx: CGContext) {
-        super.draw(in: ctx)
-        print("layer:draw in context---")
-        
-       
+        let action = super.action(forKey: event)
+        print("action forKey",event, action)
+        //return nil
+        return action
     }
     
     
-    override func add(_ anim: CAAnimation, forKey key: String?) {
-        print(anim)
-        super.add(anim, forKey: key)
+    override class func defaultAction(forKey event: String) -> CAAction? {
+    
+        let action = super.defaultAction(forKey: event)
+        print("defaultAction",event, action)
+
+        return action
     }
+    
+
+    
+//    override func display() {
+//        super.display()
+//        print("layer:display---")
+//    }
+//
+//    override func draw(in ctx: CGContext) {
+//        super.draw(in: ctx)
+//        print("layer:draw in context---")
+//
+//
+//    }
+//
+//
+//    override func add(_ anim: CAAnimation, forKey key: String?) {
+//        // print(anim)
+//        super.add(anim, forKey: key)
+//    }
     
     
     

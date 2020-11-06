@@ -56,8 +56,6 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
         }
         
     
-       
-        
         let gestureV3 = UITapGestureRecognizer(target: self, action: #selector(tapV3))
         v3.addGestureRecognizer(gestureV3)
         
@@ -89,7 +87,9 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.v3.sizeToFit()
+       // self.v3.sizeToFit()
+        
+       view.addSubview(self.v3)
     }
 
 }
