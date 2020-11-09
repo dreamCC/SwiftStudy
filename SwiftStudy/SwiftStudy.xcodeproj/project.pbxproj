@@ -103,6 +103,7 @@
 		A668036124570F8000A0D335 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A668036024570F8000A0D335 /* SwiftUIView.swift */; };
 		A66D060425591901005C44AC /* SS1107-1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D060325591901005C44AC /* SS1107-1ViewController.swift */; };
 		A66D06072559192E005C44AC /* SS1107-2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D06062559192E005C44AC /* SS1107-2ViewController.swift */; };
+		A66D060A25591961005C44AC /* SS1107-3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D060925591961005C44AC /* SS1107-3ViewController.swift */; };
 		A672A796247F445E005AC5F5 /* SSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A672A795247F445E005AC5F5 /* SSSingleton.m */; };
 		A672A799247F46C6005AC5F5 /* SSXiuShiFu.m in Sources */ = {isa = PBXBuildFile; fileRef = A672A798247F46C6005AC5F5 /* SSXiuShiFu.m */; };
 		A673F29824868A1D00CC35FA /* SSQMUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673F29724868A1D00CC35FA /* SSQMUIViewController.swift */; };
@@ -288,6 +289,7 @@
 		A668036024570F8000A0D335 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		A66D060325591901005C44AC /* SS1107-1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SS1107-1ViewController.swift"; sourceTree = "<group>"; };
 		A66D06062559192E005C44AC /* SS1107-2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SS1107-2ViewController.swift"; sourceTree = "<group>"; };
+		A66D060925591961005C44AC /* SS1107-3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SS1107-3ViewController.swift"; sourceTree = "<group>"; };
 		A672A794247F445E005AC5F5 /* SSSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSingleton.h; sourceTree = "<group>"; };
 		A672A795247F445E005AC5F5 /* SSSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSSingleton.m; sourceTree = "<group>"; };
 		A672A797247F46C6005AC5F5 /* SSXiuShiFu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSXiuShiFu.h; sourceTree = "<group>"; };
@@ -628,6 +630,7 @@
 				A618A1CB23B2F8D300C97FD9 /* SSThirdFrameworkVC.swift */,
 				A66D060325591901005C44AC /* SS1107-1ViewController.swift */,
 				A66D06062559192E005C44AC /* SS1107-2ViewController.swift */,
+				A66D060925591961005C44AC /* SS1107-3ViewController.swift */,
 			);
 			path = ThirdFramework;
 			sourceTree = "<group>";
@@ -1426,6 +1429,7 @@
 				A6E8598024AF07B000AA31C1 /* SSSearchResultVC.swift in Sources */,
 				A64D28C424A881FF005DF222 /* SSFloatLayoutViewController.swift in Sources */,
 				A60564EE23C6B7C500720AC3 /* SSUniversalLinksVC.swift in Sources */,
+				A66D060A25591961005C44AC /* SS1107-3ViewController.swift in Sources */,
 				A618A1D223B306E300C97FD9 /* SSKeyWordVC.swift in Sources */,
 				A610625A244FF4A9004B9A9A /* SSThreadVC.swift in Sources */,
 				A67DCD91246BA3A20079C5FA /* SSTuplesVC.swift in Sources */,
