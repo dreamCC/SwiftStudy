@@ -101,7 +101,6 @@
 		A65B7D0C23C492C8002312EA /* SSProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B7D0A23C492C8002312EA /* SSProgressVC.swift */; };
 		A65B7D0D23C492C8002312EA /* SSProgressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65B7D0B23C492C8002312EA /* SSProgressVC.xib */; };
 		A668036124570F8000A0D335 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A668036024570F8000A0D335 /* SwiftUIView.swift */; };
-		A66D060425591901005C44AC /* SS1107-1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D060325591901005C44AC /* SS1107-1ViewController.swift */; };
 		A66D06072559192E005C44AC /* SS1107-2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D06062559192E005C44AC /* SS1107-2ViewController.swift */; };
 		A66D060A25591961005C44AC /* SS1107-3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D060925591961005C44AC /* SS1107-3ViewController.swift */; };
 		A672A796247F445E005AC5F5 /* SSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A672A795247F445E005AC5F5 /* SSSingleton.m */; };
@@ -287,7 +286,6 @@
 		A65B7D0A23C492C8002312EA /* SSProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProgressVC.swift; sourceTree = "<group>"; };
 		A65B7D0B23C492C8002312EA /* SSProgressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSProgressVC.xib; sourceTree = "<group>"; };
 		A668036024570F8000A0D335 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		A66D060325591901005C44AC /* SS1107-1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SS1107-1ViewController.swift"; sourceTree = "<group>"; };
 		A66D06062559192E005C44AC /* SS1107-2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SS1107-2ViewController.swift"; sourceTree = "<group>"; };
 		A66D060925591961005C44AC /* SS1107-3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SS1107-3ViewController.swift"; sourceTree = "<group>"; };
 		A672A794247F445E005AC5F5 /* SSSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSingleton.h; sourceTree = "<group>"; };
@@ -628,7 +626,6 @@
 				A62C405723BB2366001584CF /* HandyJson */,
 				A618A1CD23B2F92F00C97FD9 /* Alamofire */,
 				A618A1CB23B2F8D300C97FD9 /* SSThirdFrameworkVC.swift */,
-				A66D060325591901005C44AC /* SS1107-1ViewController.swift */,
 				A66D06062559192E005C44AC /* SS1107-2ViewController.swift */,
 				A66D060925591961005C44AC /* SS1107-3ViewController.swift */,
 			);
@@ -1513,7 +1510,6 @@
 				A600C4A024B41A500083FC02 /* QDCommonListViewController.m in Sources */,
 				A6110A3E24BEE95A00999C8A /* SSRxSwiftComBingVC.swift in Sources */,
 				A6983D4123CD996B006F720F /* SSUserAPI.swift in Sources */,
-				A66D060425591901005C44AC /* SS1107-1ViewController.swift in Sources */,
 				A6EABB2524920240006B7EB1 /* SSModalPresentVC.swift in Sources */,
 				A62739F324A2E98100AB20E6 /* SSQuartzAndCoreGraphicsVC.swift in Sources */,
 				A62C405A23BB23C4001584CF /* SSHandyJsonVC.swift in Sources */,
