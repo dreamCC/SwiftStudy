@@ -10,6 +10,7 @@ import UIKit
 
 /*
  关于sizeToFit和sizeThatSize的关系。
+
  
  */
 class SSQMUIView: UIView {
@@ -17,6 +18,7 @@ class SSQMUIView: UIView {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
         print("SSQMUIView--hitTest", view)
+        
 
         return view
     }
@@ -62,12 +64,12 @@ class SSQMUI3View: UIView {
     }
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        
+
         let view = super.hitTest(point, with: event)
-        print("SSQMUI3View--hitTest", view)
+//        print("SSQMUI3View--hitTest", view)
 //        return self
 //        return self.subviews.first
-        
+
         return view
     }
     
@@ -77,7 +79,11 @@ class SSQMUI3View: UIView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("SSQMUI3View--touchBegin")
+        //super.touchesBegan(touches, with: event)
+        next?.touchesBegan(touches, with: event)
     }
+    
+
 
     //------------------------------------------------------------------
     override func sizeThatFits(_ size: CGSize) -> CGSize {

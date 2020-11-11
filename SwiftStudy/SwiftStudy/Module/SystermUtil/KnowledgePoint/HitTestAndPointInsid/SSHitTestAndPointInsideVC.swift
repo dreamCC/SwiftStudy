@@ -21,7 +21,9 @@ import QMUIKit
  
  
  事件响应。
- 1、找到最合适的view，会响应响应的点击事件，比如touchBegan方法，如果最合适的view没有重写touchBegan方法，那么事件会向上传递。如果重写则不会传递（因为默认touchBegan方法内部会调用super.touchesBegan(touches, with: event)方法，当然也已可以通过nextResponder.touchBegans）。如果都会不会处理，那么会传递到UIApplication如果不处理，那么就是丢弃。
+ 事件响应，有first responser 想下传递。如果整个过程都没有响应这个事件，该事件就被丢弃。一般情况下，在响应者链中只要由对象处理事件，事件就停止传递。
+ 1、找到最合适的view，会响应响应的点击事件，比如touchBegan方法，如果最合适的view没有重写touchBegan方法，那么事件会向上传递。如果重写则不会传递
+ （因为默认touchBegan方法内部会调用super.touchesBegan(touches,with:event)方法，当然也已可以通过nextResponder.touchBegans）。以此类推，如果都不处理，那么会传递到UIApplication如果不处理，那么就是丢弃。
  
 在事件的响应中，如果某个控件实现了touches...方法，则这个事件将由该控件来接受，如果调用了[supertouches….];就会将事件顺着响应者链条往上传递，传递给上一个响应者；接着就会调用上一个响应者的touches….方法
 
@@ -46,7 +48,7 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
         let v3 = SSQMUI3View()
         v3.backgroundColor = UIColor.blue
         v3.frame = CGRect(x: 20, y: 120, width: 100, height: 100)
-        v3.isUserInteractionEnabled = false
+        v3.isUserInteractionEnabled = true
         view.addSubview(v3)
         self.v3 = v3
         v3.snp.makeConstraints { (make) in
@@ -87,9 +89,8 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       // self.v3.sizeToFit()
-        
-       view.addSubview(self.v3)
+
+        print("vc-touchesBegan")
     }
 
 }

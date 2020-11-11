@@ -20,7 +20,14 @@
 
 @end
 
+
+@interface OCClass ()
+
+@end
+
 @implementation OCClass
+
+
 
 
 -(instancetype)init {
@@ -45,6 +52,7 @@
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key {
     NSLog(@"--------%@", key);
 }
+
 
 
 @end
