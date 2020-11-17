@@ -34,9 +34,10 @@
     self = [super init];
     if (self) {
        
-    
-
-      
+       
+        @synchronized (self) {
+            
+        }
     }
     return self;
 }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SSThreadLockViewController" customModule="SwiftStudy" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="G9N-YT-Hvd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tN-t5-0ub">
+                    <rect key="frame" x="161" y="181" width="92" height="30"/>
+                    <state key="normal" title="synchronized"/>
+                    <connections>
+                        <action selector="synchronized:" destination="-1" eventType="touchUpInside" id="V3M-1w-JQj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKa-Jh-Qlo">
+                    <rect key="frame" x="180.5" y="240" width="53" height="30"/>
+                    <state key="normal" title="NSLock"/>
+                    <connections>
+                        <action selector="nslock:" destination="-1" eventType="touchUpInside" id="l2K-jd-XQi"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDI-fs-KH4">
+                    <rect key="frame" x="135" y="289" width="144" height="30"/>
+                    <state key="normal" title="dispatch_semaphore"/>
+                    <connections>
+                        <action selector="semaphore:" destination="-1" eventType="touchUpInside" id="mjI-qs-hi4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPX-sn-HSf">
+                    <rect key="frame" x="163.5" y="345" width="87" height="30"/>
+                    <state key="normal" title="NSCondition"/>
+                    <connections>
+                        <action selector="nscondition:" destination="-1" eventType="touchUpInside" id="i3P-CB-4MP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJS-9F-s6Y">
+                    <rect key="frame" x="147.5" y="399" width="119" height="30"/>
+                    <state key="normal" title="NSConditionLock"/>
+                    <connections>
+                        <action selector="nsconditionlock:" destination="-1" eventType="touchUpInside" id="EmS-vS-VBG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEv-2m-Cti">
+                    <rect key="frame" x="147" y="450" width="120" height="30"/>
+                    <state key="normal" title="NSRecursiveLock"/>
+                    <connections>
+                        <action selector="nsrecursivelock:" destination="-1" eventType="touchUpInside" id="rhB-41-bTh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0i-cU-z83">
+                    <rect key="frame" x="155" y="510" width="104" height="30"/>
+                    <state key="normal" title="pthread_mutex"/>
+                    <connections>
+                        <action selector="pthread:" destination="-1" eventType="touchUpInside" id="SlT-d6-Lb6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oPX-sn-HSf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="09a-2a-lxm"/>
+                <constraint firstItem="xKa-Jh-Qlo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0EA-IV-avH"/>
+                <constraint firstItem="lEv-2m-Cti" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Wc-B0-vQ8"/>
+                <constraint firstItem="g0i-cU-z83" firstAttribute="top" secondItem="lEv-2m-Cti" secondAttribute="bottom" constant="30" id="4sg-06-cjB"/>
+                <constraint firstItem="oPX-sn-HSf" firstAttribute="top" secondItem="PDI-fs-KH4" secondAttribute="bottom" constant="26" id="BjT-z2-gTp"/>
+                <constraint firstItem="vJS-9F-s6Y" firstAttribute="top" secondItem="oPX-sn-HSf" secondAttribute="bottom" constant="24" id="Bol-mp-k3T"/>
+                <constraint firstItem="xKa-Jh-Qlo" firstAttribute="top" secondItem="7tN-t5-0ub" secondAttribute="bottom" constant="29" id="FRg-fo-2a6"/>
+                <constraint firstItem="7tN-t5-0ub" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MEd-7f-ypJ"/>
+                <constraint firstItem="PDI-fs-KH4" firstAttribute="centerX" secondItem="7tN-t5-0ub" secondAttribute="centerX" id="NhE-jh-Vtq"/>
+                <constraint firstItem="oPX-sn-HSf" firstAttribute="centerX" secondItem="7tN-t5-0ub" secondAttribute="centerX" id="NmJ-8d-d6h"/>
+                <constraint firstItem="xKa-Jh-Qlo" firstAttribute="centerX" secondItem="7tN-t5-0ub" secondAttribute="centerX" id="VCL-zR-OoP"/>
+                <constraint firstItem="vJS-9F-s6Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="X4A-I1-AzA"/>
+                <constraint firstItem="PDI-fs-KH4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xen-mS-R03"/>
+                <constraint firstItem="g0i-cU-z83" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZIt-ys-BSG"/>
+                <constraint firstItem="g0i-cU-z83" firstAttribute="centerX" secondItem="7tN-t5-0ub" secondAttribute="centerX" id="b3h-BH-G9V"/>
+                <constraint firstItem="vJS-9F-s6Y" firstAttribute="centerX" secondItem="7tN-t5-0ub" secondAttribute="centerX" id="csd-ZB-zP4"/>
+                <constraint firstItem="lEv-2m-Cti" firstAttribute="centerX" secondItem="7tN-t5-0ub" secondAttribute="centerX" id="eDx-Th-zSu"/>
+                <constraint firstItem="lEv-2m-Cti" firstAttribute="top" secondItem="vJS-9F-s6Y" secondAttribute="bottom" constant="21" id="kdJ-6a-vYj"/>
+                <constraint firstItem="xKa-Jh-Qlo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="240" id="nsj-4P-hy5"/>
+                <constraint firstItem="PDI-fs-KH4" firstAttribute="top" secondItem="xKa-Jh-Qlo" secondAttribute="bottom" constant="19" id="sMr-oj-w5v"/>
+            </constraints>
+            <point key="canvasLocation" x="71" y="26"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

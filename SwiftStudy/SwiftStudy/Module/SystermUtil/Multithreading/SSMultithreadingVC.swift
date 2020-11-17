@@ -11,7 +11,7 @@ import UIKit
 class SSMultithreadingVC: UIViewController {
     
 
-    let datas = ["Thread","GCD","OperationQueue"]
+    let datas = ["Thread","GCD","OperationQueue","ThreadLock"]
     
    
 
@@ -62,7 +62,10 @@ extension SSMultithreadingVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSGCDVC(), animated: true)
         }else if indexPath.row == 2 {
             navigationController?.pushViewController(SSOperationVC(), animated: true)
+        }else if indexPath.row == 3 {
+            navigationController?.pushViewController(SSThreadLockViewController(), animated: true)
         }
+
 
     }
 }

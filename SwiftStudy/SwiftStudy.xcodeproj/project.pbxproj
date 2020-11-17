@@ -159,6 +159,8 @@
 		A6E9F6212499C0E800718F5D /* SSRunloopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9F6202499C0E800718F5D /* SSRunloopVC.swift */; };
 		A6EABB2524920240006B7EB1 /* SSModalPresentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EABB2424920240006B7EB1 /* SSModalPresentVC.swift */; };
 		A6EFA9D024AD7A1A00D609B5 /* SSCountainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFA9CF24AD7A1A00D609B5 /* SSCountainerVC.swift */; };
+		A6F5EFD425622A07000CF134 /* SSThreadLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5EFD325622A07000CF134 /* SSThreadLockViewController.swift */; };
+		A6F5EFD725622A7D000CF134 /* SSThreadLockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F5EFD625622A7D000CF134 /* SSThreadLockViewController.xib */; };
 		A6F7D40F25490F4C0061EF67 /* SSKingfisherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7D40D25490F4C0061EF67 /* SSKingfisherViewController.swift */; };
 		A6F7D41025490F4C0061EF67 /* SSKingfisherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6F7D40E25490F4C0061EF67 /* SSKingfisherViewController.xib */; };
 		A6F7EBA8254EF011002557C9 /* SSBundleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7EBA7254EF011002557C9 /* SSBundleViewController.swift */; };
@@ -348,6 +350,8 @@
 		A6E9F6202499C0E800718F5D /* SSRunloopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRunloopVC.swift; sourceTree = "<group>"; };
 		A6EABB2424920240006B7EB1 /* SSModalPresentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSModalPresentVC.swift; sourceTree = "<group>"; };
 		A6EFA9CF24AD7A1A00D609B5 /* SSCountainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCountainerVC.swift; sourceTree = "<group>"; };
+		A6F5EFD325622A07000CF134 /* SSThreadLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSThreadLockViewController.swift; sourceTree = "<group>"; };
+		A6F5EFD625622A7D000CF134 /* SSThreadLockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSThreadLockViewController.xib; sourceTree = "<group>"; };
 		A6F7D40D25490F4C0061EF67 /* SSKingfisherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSKingfisherViewController.swift; sourceTree = "<group>"; };
 		A6F7D40E25490F4C0061EF67 /* SSKingfisherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSKingfisherViewController.xib; sourceTree = "<group>"; };
 		A6F7EBA7254EF011002557C9 /* SSBundleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSBundleViewController.swift; sourceTree = "<group>"; };
@@ -529,6 +533,7 @@
 		A610625E245072B3004B9A9A /* Multithreading */ = {
 			isa = PBXGroup;
 			children = (
+				A6F5EFD2256229EF000CF134 /* ThreadLock */,
 				A610625B24507294004B9A9A /* Operation */,
 				A6106258244FF137004B9A9A /* Thread */,
 				A6ACD5FF23B2000E009533DC /* GCD */,
@@ -1238,6 +1243,15 @@
 			path = Countainer;
 			sourceTree = "<group>";
 		};
+		A6F5EFD2256229EF000CF134 /* ThreadLock */ = {
+			isa = PBXGroup;
+			children = (
+				A6F5EFD325622A07000CF134 /* SSThreadLockViewController.swift */,
+				A6F5EFD625622A7D000CF134 /* SSThreadLockViewController.xib */,
+			);
+			path = ThreadLock;
+			sourceTree = "<group>";
+		};
 		A6F7D40C25490F080061EF67 /* Kingfisher */ = {
 			isa = PBXGroup;
 			children = (
@@ -1345,6 +1359,7 @@
 				A697A25123AB8F3B00B16AEA /* LaunchScreen.storyboard in Resources */,
 				A6F7D41025490F4C0061EF67 /* SSKingfisherViewController.xib in Resources */,
 				A6DAFE3523AC71AA007E02EA /* summary in Resources */,
+				A6F5EFD725622A7D000CF134 /* SSThreadLockViewController.xib in Resources */,
 				A6D5850823BD9A7600F11F14 /* SSProtocolVC.xib in Resources */,
 				A656F86524653D8500B7A8B5 /* SSRuntimeVC.xib in Resources */,
 				A6494CF124C036FD004C065D /* SSTraitsObservableVC.xib in Resources */,
@@ -1453,6 +1468,7 @@
 				A6DC03FD2490CFB8002E72E4 /* SSView.swift in Sources */,
 				A6DC03FB24907E40002E72E4 /* SSLayer.swift in Sources */,
 				A6110A3A24BE9EDD00999C8A /* SSRxSwiftTransformOperatorVC.swift in Sources */,
+				A6F5EFD425622A07000CF134 /* SSThreadLockViewController.swift in Sources */,
 				A6F7EBA8254EF011002557C9 /* SSBundleViewController.swift in Sources */,
 				A6A1C68623CE071D00167BE2 /* SSErrorVC.swift in Sources */,
 				A60598E7245875B2007B71CB /* SSKvcKvoVC.swift in Sources */,

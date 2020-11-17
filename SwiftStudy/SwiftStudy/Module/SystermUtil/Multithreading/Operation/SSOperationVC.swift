@@ -19,6 +19,11 @@ import UIKit
  还是需要通过opration.isCancled 或者 workItem.isCancled来进行判断，进而进行一些特殊操作。
  只有OprationQueue才能进行线程的取消。
  
+ 线程锁。类似oc中@synchorized(self) {}
+ objc_sync_enter(self)
+ 
+ objc_sync_exit(self)
+ 
  */
 class SSOperationVC: SSBaseViewController {
 
