@@ -25,20 +25,7 @@ import UIKit
  2、userInterfaceStyle其实是通过UITraitCollection获取的。
  3、UITraitCollection其实有很多和特性有关的东西，比如字体、亮度等一些特性。
  
- 
- 需要理解ios 13，xcode 11引入的SceneDelegate。
- ios 13之前，AppDelegate控制着app的生命周期、以及app页面的生命周期。
- ios 13之后，AppDelegate只控制app的生命周期，UI的生命周期交给Scene session来控制。
- xcode 11之后，创建项目，AppDelegate里面会有两个和Scene Session有关的两个方法
- configurationForConnectingSceneSession： 生成一个UISceneConfig，其内部会生成一个UISceneSession。 并且每个
- window.windowScene必须不能为空。不然window会显示不出来。  这些配置在info.plist上体现Application Scene manifest字段。
- 
- 具体加载过程：
- 1、app启动调用Appdelegate中，appDidFinishLaunch方法表示app加载完成。
- 2、查看info.plist中是否有Application Scene manifest以及是否Scene Config及配置是否正确，如果正确就按plist上面加载，如果不正确会
-    调用AppDelegate中生成UISceneConfig的代理。
- 3、通过UISceneConfig来生成UISceneSession，同时同构UISceneConfig来获取UIWindowSceneDelegate，通过在代理方法中设置window.windoScene。
- 
+
  */
 
 class SSUserInterfaceStyleVC: QMUICommonViewController {

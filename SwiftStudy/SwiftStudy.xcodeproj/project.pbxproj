@@ -73,7 +73,6 @@
 		A6333E2C23AF137700774E5A /* AppDelegate+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333E2B23AF137700774E5A /* AppDelegate+extension.swift */; };
 		A6333E3123AF14D300774E5A /* SSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333E3023AF14D300774E5A /* SSTabBarController.swift */; };
 		A6333E3323AF16A500774E5A /* SSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333E3223AF16A500774E5A /* SSNavigationController.swift */; };
-		A63CE77A2489D1EB00041D22 /* summary-one-build in Resources */ = {isa = PBXBuildFile; fileRef = A63CE7792489D1EB00041D22 /* summary-one-build */; };
 		A63CE77C248A2DF400041D22 /* SSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63CE77B248A2DF400041D22 /* SSButton.swift */; };
 		A64184972470ACDC007C4434 /* SSAppInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64184962470ACDC007C4434 /* SSAppInit.swift */; };
 		A6433368248F317500D8C919 /* SSSnapKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6433367248F317500D8C919 /* SSSnapKitVC.swift */; };
@@ -250,7 +249,6 @@
 		A6333E2B23AF137700774E5A /* AppDelegate+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+extension.swift"; sourceTree = "<group>"; };
 		A6333E3023AF14D300774E5A /* SSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTabBarController.swift; sourceTree = "<group>"; };
 		A6333E3223AF16A500774E5A /* SSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNavigationController.swift; sourceTree = "<group>"; };
-		A63CE7792489D1EB00041D22 /* summary-one-build */ = {isa = PBXFileReference; lastKnownFileType = text; path = "summary-one-build"; sourceTree = "<group>"; };
 		A63CE77B248A2DF400041D22 /* SSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSButton.swift; sourceTree = "<group>"; };
 		A64184962470ACDC007C4434 /* SSAppInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppInit.swift; sourceTree = "<group>"; };
 		A6433367248F317500D8C919 /* SSSnapKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSnapKitVC.swift; sourceTree = "<group>"; };
@@ -1032,7 +1030,6 @@
 				A697A25223AB8F3B00B16AEA /* Info.plist */,
 				A64333CF248F69FF00D8C919 /* PrefixHeader.pch */,
 				A6DAFE3423AC71AA007E02EA /* summary */,
-				A63CE7792489D1EB00041D22 /* summary-one-build */,
 				A6DAFE3623ACB397007E02EA /* SwiftStudy-Bridging-Header.h */,
 			);
 			path = SwiftStudy;
@@ -1371,7 +1368,6 @@
 				A697A24E23AB8F3B00B16AEA /* Assets.xcassets in Resources */,
 				A623276724BD445E00A62EE4 /* SSRxSwiftViewController.xib in Resources */,
 				A6755CC123CEF6540041C753 /* manifest.plist in Resources */,
-				A63CE77A2489D1EB00041D22 /* summary-one-build in Resources */,
 				A6F7EBB6254EF583002557C9 /* mine.bundle in Resources */,
 				A6F7EBB0254EF470002557C9 /* 考试结果 - 产品组测试平台.webarchive in Resources */,
 				A6F7EBB9254EF6B2002557C9 /* timg-2.jpeg in Resources */,
