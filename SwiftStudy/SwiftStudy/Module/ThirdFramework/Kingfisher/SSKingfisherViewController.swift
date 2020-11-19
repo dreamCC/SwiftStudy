@@ -9,25 +9,90 @@
 import UIKit
 import Kingfisher
 
+/*
+ Kingfisher对于kf的设计，简直完美。 相对于SnapKit（SnapKit中对于view.snp其实snp是extentsion UIView的属性），
+ 而Kingfisher则完美的使用泛型、泛型协议和协议扩展以及泛型类型和泛型类型约束来实现。我们通常也可以借助该写法：
+ 其实我们理解其写法就发现：其内部就是SnapKit实现的一种变异。
+ 其实SnapKit通过extentsion实现的好处是所有的UIview都有snp属性，而Kingfisher之所以这样设计并不是所有的UIView都能通过
+ kf进行设置。
+ 
+ 其实这种设计可以运用在项目中，比如为了防止分类中方法重叠，我们可以通过该方法进行赋值。
+ 其实React也是这样实现的。
+ */
+
+class Zfisher<Base> {
+    let base: Base
+    init(_ base: Base) {
+        self.base = base
+    }
+}
+
+// Zfisher进行扩展
+extension Zfisher where Base: UIImage {
+    
+    var imageScal: CGFloat {
+        get {
+            return base.scale
+        }
+    }
+}
+
+
+extension Zfisher where Base: UIView {
+    
+    var bgColor: UIColor? {
+        get {
+            return base.backgroundColor
+        }
+    }
+}
+
+// 保证能够获取Zfisher。
+protocol ZfisherCompatible {
+   
+    associatedtype CompatibleType
+    var zf: Zfisher<CompatibleType> {get}
+}
+
+extension ZfisherCompatible {
+    
+    var zf: Zfisher<Self> {
+        return Zfisher(self)
+    }
+}
+extension UIView: ZfisherCompatible {}
+
+
+
 class SSKingfisherViewController: QMUICommonViewController {
 
-    @IBOutlet weak var imageV: UIImageView!
+    @IBOutlet weak var imageV: AnimatedImageView!
+    
+     private(set) var name: String = "helo"
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    
       
         //kingfisherImageSources()
         //kingfisherPlaceHolder()
-        kingfisherAllParameters()
+        //kingfisherAllParameters()
         
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? "为空-", NSHomeDirectory())
 
-    
-    
+        
+       
+        let catPath = Bundle.main.path(forResource: "cat.gif", ofType: nil)
+        imageV.image = UIImage(contentsOfFile: catPath!)
+        
+        
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        imageV.startAnimating()
+    }
 
     private func kingfisherUrl() {
         
@@ -106,21 +171,4 @@ extension Kingfisher where Base : UIImageView {
         setImage(with: url)
     }
     
-}
-
-
-protocol S {
-    
-    var name: String { get }
-    
-}
-
-class A: S {
-    
-    var name: String {
-        return ""
-    }
-    
-    
-    lazy var age: String = "age"
 }

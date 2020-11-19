@@ -127,6 +127,7 @@ import Alamofire
         willSet{}
  }
 
+ private(set) var name: String // 起作用是标记为只读属性。只有类的内部能修改。
 
  */
   

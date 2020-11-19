@@ -274,4 +274,23 @@ query               query=value
 fragment            ref
 
 URLComponts可以很好的拆解url。其中，提供了获取url各个部分的参数。需要注意的是，URLComponts是可以初始化失败的，主要和url的格式和是否携带中文有关系。
+
+11.18
+1、ios中程序是不能再后天执行的，哪怕是开启了子线程。
+
+11.19
+1、关于protocol通过where进行类型限定。
+2、oc中分类不要重写父类方法。首先分类中调用super xxxx会报错，其次如果项目中有多个分类，那么分类中重写方法怎么执行都是问题。
+    swift中分类和oc中分类有了很大的改变。oc中的分类在动态链接的时候，会将其方法insert到class中的property_array_t中。而swift中runtimer。所以其方法
+    直接就是放在虚拟函数表中。所以swift中extention直接可以作为类的一部分，如果原类和分类只能重写一次，编译器做了优化。
+    
+3、Swift中区分存储属性和计算属性。
+
+4、Kingfisher中，AnimatedImageView，中对于TargeProxy的设计（防止循环引用）。
+
+5、协议与协议扩展主要是解决继承问题，而不是分类问题。
+
+6、where关键字对泛型的类型的约束。
+
+7、Swift中的命名空间。
     

@@ -11,7 +11,7 @@ import Alamofire
 import SnapKit
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, EmptyViewAble {
     
 
     
@@ -65,6 +65,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
             //runtimeUserSwift()
        
+            showEmptyView()
         }
     }
     

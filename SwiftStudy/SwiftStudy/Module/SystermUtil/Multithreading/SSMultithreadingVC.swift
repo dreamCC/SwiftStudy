@@ -64,8 +64,10 @@ extension SSMultithreadingVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSOperationVC(), animated: true)
         }else if indexPath.row == 3 {
             navigationController?.pushViewController(SSThreadLockViewController(), animated: true)
+        
         }
 
+       
 
     }
 }

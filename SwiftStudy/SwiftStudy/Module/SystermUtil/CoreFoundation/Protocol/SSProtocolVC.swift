@@ -67,9 +67,14 @@ class SSProtocolVC: SSBaseViewController {
     }
 }
 
+
+
 /*
  
  这种写法是标准的面向协议编程。 好好体会这种写法，到底怎么优于OOP的。
+ 
+ protocol进行类型限定。有点类似dart中，mixin XXX<T extents StatefullWidget> on State<T> {}
+ 对于一些多个类都具有的特性明显采用协议的方式比继承更加优秀，而且可以避免采用继承的代码耦合性。
  
  比如要实现抖动效果，传统OOP的思路，可能是设置一个ShakeAbleClass作为基类，那么如果想要实现抖动效果，只需要类继承
  ShakeAbleClass就可以。这样咋一看没什么问题，但是，类之间的耦合性明显变强，使继承关系变得很复杂，比如我现在想要增加一个
@@ -90,7 +95,9 @@ class SSProtocolVC: SSBaseViewController {
 当extension和 遵循的类都实现协议的话，那么会先调类里面的方法。
  
  */
-protocol ShakeAble where Self: UIView { }
+protocol ShakeAble where Self: UIView {
+    func shake()
+}
 extension ShakeAble {
     func shake() {
         let animation = CABasicAnimation(keyPath: "position")
@@ -106,6 +113,7 @@ extension ShakeAble {
 
 extension UIButton: ShakeAble {
     
+
 }
 
 

@@ -239,6 +239,7 @@ open class AnimatedImageView: UIImageView {
     /// Reset the animator.
     private func reset() {
         animator = nil
+        
         if let imageSource = image?.kf.imageSource?.imageRef {
             animator = Animator(imageSource: imageSource,
                                 contentMode: contentMode,

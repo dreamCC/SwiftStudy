@@ -12,8 +12,8 @@ import SnapKit
 
 class SSThirdFrameworkVC: UIViewController {
 
-    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI", "RxSwift", "Kingfisher", "MJRefresh"]
-    
+    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI", "RxSwift", "Kingfisher", "MJRefresh", "---"]
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,9 +31,13 @@ class SSThirdFrameworkVC: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        
     }
+   
     
+    deinit {
+        print("deinit=========")
+
+    }
 
 }
 
@@ -75,6 +79,10 @@ extension SSThirdFrameworkVC : UITableViewDelegate, UITableViewDataSource {
         case "MJRefresh":
             navigationController?.pushViewController(SSMJRefreshViewController(), animated: true)
         default:
+           
+            let fisher = SSKingfisherViewController()
+            print(fisher.name)
+
             return
         }
     

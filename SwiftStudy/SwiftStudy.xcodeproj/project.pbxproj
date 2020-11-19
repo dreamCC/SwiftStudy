@@ -107,6 +107,10 @@
 		A6755CC123CEF6540041C753 /* manifest.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6755CC023CEF6540041C753 /* manifest.plist */; };
 		A67C0C4D247610320009531A /* SSNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C0C4C247610320009531A /* SSNetworkManager.swift */; };
 		A67DCD91246BA3A20079C5FA /* SSTuplesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67DCD90246BA3A20079C5FA /* SSTuplesVC.swift */; };
+		A6809DC92566014800EFC7C6 /* SSExtentsionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6809DC82566014800EFC7C6 /* SSExtentsionViewController.swift */; };
+		A6809DD32566025E00EFC7C6 /* UIView+category.m in Sources */ = {isa = PBXBuildFile; fileRef = A6809DD22566025E00EFC7C6 /* UIView+category.m */; };
+		A6809DD72566061F00EFC7C6 /* UIView+EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6809DD62566061F00EFC7C6 /* UIView+EmptyView.swift */; };
+		A6809DDC25665B4100EFC7C6 /* cat.gif in Resources */ = {isa = PBXBuildFile; fileRef = A6809DDB25665B4100EFC7C6 /* cat.gif */; };
 		A681F00523C87909002574E2 /* SSNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681F00423C87909002574E2 /* SSNetwork.swift */; };
 		A6945CF5254FFC95007C673F /* SSCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945CF4254FFC95007C673F /* SSCollectionViewController.swift */; };
 		A6945CF9254FFE0D007C673F /* SSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945CF8254FFE0D007C673F /* SSCollectionViewCell.swift */; };
@@ -293,6 +297,11 @@
 		A6755CC023CEF6540041C753 /* manifest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = manifest.plist; sourceTree = "<group>"; };
 		A67C0C4C247610320009531A /* SSNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNetworkManager.swift; sourceTree = "<group>"; };
 		A67DCD90246BA3A20079C5FA /* SSTuplesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTuplesVC.swift; sourceTree = "<group>"; };
+		A6809DC82566014800EFC7C6 /* SSExtentsionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSExtentsionViewController.swift; sourceTree = "<group>"; };
+		A6809DD12566025E00EFC7C6 /* UIView+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+category.h"; sourceTree = "<group>"; };
+		A6809DD22566025E00EFC7C6 /* UIView+category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+category.m"; sourceTree = "<group>"; };
+		A6809DD62566061F00EFC7C6 /* UIView+EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+EmptyView.swift"; sourceTree = "<group>"; };
+		A6809DDB25665B4100EFC7C6 /* cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cat.gif; sourceTree = "<group>"; };
 		A681F00423C87909002574E2 /* SSNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNetwork.swift; sourceTree = "<group>"; };
 		A6945CF4254FFC95007C673F /* SSCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCollectionViewController.swift; sourceTree = "<group>"; };
 		A6945CF8254FFE0D007C673F /* SSCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -569,6 +578,7 @@
 		A610626424507708004B9A9A /* KnowledgePoint */ = {
 			isa = PBXGroup;
 			children = (
+				A6809DC72566012E00EFC7C6 /* Extention */,
 				A6EFA9CE24AD79FA00D609B5 /* Countainer */,
 				A64D28C524A89557005DF222 /* SizeThatFits */,
 				A6E9F61C2499C08900718F5D /* RunLoop */,
@@ -809,6 +819,8 @@
 				A6DAFE3823ACB397007E02EA /* OCClass.m */,
 				A60BD7B423CC7999007E753B /* OCClass+Category.h */,
 				A60BD7B523CC7999007E753B /* OCClass+Category.m */,
+				A6809DD12566025E00EFC7C6 /* UIView+category.h */,
+				A6809DD22566025E00EFC7C6 /* UIView+category.m */,
 				A672A794247F445E005AC5F5 /* SSSingleton.h */,
 				A672A795247F445E005AC5F5 /* SSSingleton.m */,
 				A672A797247F46C6005AC5F5 /* SSXiuShiFu.h */,
@@ -975,6 +987,22 @@
 			path = Tuples;
 			sourceTree = "<group>";
 		};
+		A6809DC72566012E00EFC7C6 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				A6809DC82566014800EFC7C6 /* SSExtentsionViewController.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		A6809DD5256605F600EFC7C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A6809DD62566061F00EFC7C6 /* UIView+EmptyView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		A6945CF3254FFC7F007C673F /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1017,6 +1045,7 @@
 			isa = PBXGroup;
 			children = (
 				A6245B60254FA958005D06D8 /* SwiftStudy.entitlements */,
+				A6809DD5256605F600EFC7C6 /* Common */,
 				A6F7EBB2254EF50D002557C9 /* Resources */,
 				A6333E2A23AF135400774E5A /* Extension */,
 				A6333E2D23AF13E000774E5A /* Main */,
@@ -1269,6 +1298,7 @@
 		A6F7EBB2254EF50D002557C9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A6809DDB25665B4100EFC7C6 /* cat.gif */,
 				A6F7EBB8254EF6B2002557C9 /* timg-2.jpeg */,
 				A6F7EBAF254EF470002557C9 /* 考试结果 - 产品组测试平台.webarchive */,
 				A6F7EBB5254EF583002557C9 /* mine.bundle */,
@@ -1360,6 +1390,7 @@
 				A6D5850823BD9A7600F11F14 /* SSProtocolVC.xib in Resources */,
 				A656F86524653D8500B7A8B5 /* SSRuntimeVC.xib in Resources */,
 				A6494CF124C036FD004C065D /* SSTraitsObservableVC.xib in Resources */,
+				A6809DDC25665B4100EFC7C6 /* cat.gif in Resources */,
 				A62C405B23BB23C4001584CF /* SSHandyJsonVC.xib in Resources */,
 				A6D5850623BD826F00F11F14 /* SSGenericityVC.xib in Resources */,
 				A60564F023C6B7F200720AC3 /* SSUniversalLinksVC.xib in Resources */,
@@ -1444,6 +1475,7 @@
 				A64333C4248F699300D8C919 /* QMUIConfigurationTemplate.m in Sources */,
 				A6D39F7A249B40A000B8930D /* SSAssetLibVC.swift in Sources */,
 				A6333E3323AF16A500774E5A /* SSNavigationController.swift in Sources */,
+				A6809DD32566025E00EFC7C6 /* UIView+category.m in Sources */,
 				A60113DE23B05BB300E6E5EF /* SSAnyAnyObjectVC.swift in Sources */,
 				A62739F624A2EA0B00AB20E6 /* SSCGContextVC.swift in Sources */,
 				A697A24923AB8F3A00B16AEA /* HomeViewController.swift in Sources */,
@@ -1522,6 +1554,7 @@
 				A64333C1248F699300D8C919 /* QMUIConfigurationTemplatePinkRose.m in Sources */,
 				A672A799247F46C6005AC5F5 /* SSXiuShiFu.m in Sources */,
 				A60BD7B623CC7999007E753B /* OCClass+Category.m in Sources */,
+				A6809DC92566014800EFC7C6 /* SSExtentsionViewController.swift in Sources */,
 				A6042AA724A0883200147D62 /* SSTableViewController.swift in Sources */,
 				A6C6D5EA23B4A14C000370C4 /* SSRangeVC.swift in Sources */,
 				A64333C0248F699300D8C919 /* QDThemeManager.m in Sources */,
@@ -1558,6 +1591,7 @@
 				A65008DA24B5735F000D6B6C /* CJLog.swift in Sources */,
 				A600C4A524B41A500083FC02 /* QDCommonUI.m in Sources */,
 				A6BA982823B6EC2500DDD06C /* SSRuntimeVC.swift in Sources */,
+				A6809DD72566061F00EFC7C6 /* UIView+EmptyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

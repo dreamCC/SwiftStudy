@@ -11,6 +11,8 @@ import SnapKit
 
 class SSGCDVC: UIViewController {
     
+  
+    
     var workItem: DispatchWorkItem!
     var semaphore: DispatchSemaphore = DispatchSemaphore(value: 3)
 
@@ -19,6 +21,7 @@ class SSGCDVC: UIViewController {
 
         view.backgroundColor = UIColor.white
         navigationItem.title = "GCD"
+        
         
         let desLab = UITextView()
         desLab.font = UIFont.systemFont(ofSize: 16)
@@ -34,12 +37,15 @@ class SSGCDVC: UIViewController {
         //gcdFunc()
         //gcdBarrierFunc()
         //gcdTargetFunc()
-        gcdWorkItemFunc()
+        //gcdWorkItemFunc()
         //gcdGroupFunc()
         //gcdTimeFunc()
+        
     }
     
     func gcdFunc() {
+        
+    
         // 系统提供了一个串行队列，一个并发队列。
         let main = DispatchQueue.main
         let globle = DispatchQueue.global()
