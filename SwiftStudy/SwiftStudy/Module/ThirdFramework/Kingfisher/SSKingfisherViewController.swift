@@ -63,35 +63,145 @@ extension ZfisherCompatible {
 extension UIView: ZfisherCompatible {}
 
 
+///-----------------------------------
+// 所以我们得出结论： 在protocol中尽量通过associatedtype替代Self。而在extension protocol中尽量使用Self。
+struct SwiftStudyDemo<Base> {
+    
+    var base: Base
+    init(_ base: Base) {
+        self.base = base
+    }
+}
+
+protocol SwiftStudyCompatible {
+    
+    associatedtype CompatibleType
+    var vet: SwiftStudyDemo<CompatibleType> {get}
+}
+
+extension SwiftStudyCompatible {
+    
+    var vet: SwiftStudyDemo<Self> {
+        return SwiftStudyDemo(self)
+    }
+}
+
+
+extension UIView: SwiftStudyCompatible {}
+extension SwiftStudyDemo where Base: UIView {
+   
+    
+}
+
+
+// 这种写法有一定好处，当然也有一定风险。
+protocol SSModify {
+    
+    var name: String {get}
+    var fullName: String {get}
+    
+    
+    func modify(_ name: String) -> String
+}
+
+extension SSModify {
+   
+    var fullName: String {
+        get {
+            return name + ":SSModify"
+        }
+    }
+    
+    func modify(_ name: String) -> String {
+        print("protocol call modify")
+        return modify(name)
+    }
+    
+    // 这种写法。
+    func goto() -> SSModify {
+        print(Self.self)
+        return TestSSModify(name: "TestSSModify")
+    }
+    
+   
+}
+
+class TestSSModify: SSModify {
+    var name: String
+    
+    
+    func modify(_ name: String) -> String {
+        print("protocol call modify")
+        return "hello"
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+}
+
+class TestSSModify1: SSModify {
+    var name: String {
+        return "TestSSModify1"
+    }
+    
+}
+
+
+
 
 class SSKingfisherViewController: QMUICommonViewController {
 
+    typealias SuccessCallBack = (String, String)->Void
+    var sucCallBack: SuccessCallBack?
+    
     @IBOutlet weak var imageV: AnimatedImageView!
     
-     private(set) var name: String = "helo"
+    private(set) var name: String = "helo" {
+        willSet {
+            print("name 开始设置", newValue)
+        }
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
+        
+        let dm = TestSSModify(name: "enha")
+        print( dm.goto())
+        print( TestSSModify1().goto())
+
       
         //kingfisherImageSources()
         //kingfisherPlaceHolder()
         //kingfisherAllParameters()
         
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? "为空-", NSHomeDirectory())
+        //print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? "为空-", NSHomeDirectory())
 
-        
+       
        
         let catPath = Bundle.main.path(forResource: "cat.gif", ofType: nil)
-        imageV.image = UIImage(contentsOfFile: catPath!)
-        
-        
+        let image: Image = UIImage(contentsOfFile: catPath!)!
+        imageV.image = image
+
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        imageV.startAnimating()
+        
+        // 两种方法，使代码整合。 方法内部多次调用的话，可以采用该方式。
+        let startAppend: (String)->(String) = {(name)-> String in
+           return self.name.appending(name)
+        }
+        
+        print(startAppend("age"))
+        
+        func append(name: String) -> String {
+            return self.name.appending(name)
+        }
+        
+        print(append(name: "appendMethod"))
     }
 
     private func kingfisherUrl() {
@@ -169,6 +279,9 @@ extension Kingfisher where Base : UIImageView {
         }
         
         setImage(with: url)
+        
     }
     
 }
+
+

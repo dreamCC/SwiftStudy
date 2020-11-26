@@ -56,7 +56,7 @@ class SSFunctionVC: UIViewController {
         self.hasPara = { (name, age) in
             
         }
-        // 有参数有返回值。
+        // 有参数有返回值。 有点类似闭包
         self.hasParaReture = { (name, age)->String in
             
             return "\(name) + \(age)"

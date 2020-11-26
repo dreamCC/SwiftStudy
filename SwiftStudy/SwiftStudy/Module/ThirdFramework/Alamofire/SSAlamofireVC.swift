@@ -66,7 +66,9 @@ enum SSError: LocalizedError {
  3、ParamesEncoding一个协议，暴露一个方法，encode方法，其功能就是讲参数编码到url中，返回URLRequest。
     Alamofire提供了已个URLEncoding结构体，遵循了该协议，来实现编码功能。可参看ParameterEncoding.swift查看源码。
     URLEncoding，是将参数编码到url中。
+        核心方法。queryComponents（将参数压扁，是一个递归函数处理了value为数组或者字典的时候）、query（将参数拼接成key=value的形式）、excape、
     JsonEncoding，是将参数编码成jsonData，放在httpBody中。
+        通过JSONSerialization类将参数转换成data，然后放在urlRequest.httpBody当中。
     PropertyListEncoding，是将参数编码成PropertyListSerialization，放在httpBody中。
  
  4、Result的封装。
@@ -141,17 +143,36 @@ UploadTaskDelegate： 继承TaskDelegate。
  10、TimeLine用来记录时间的。
  
  */
+
+
+
 class SSAlamofireVC: UITableViewController {
 
 
     
     lazy var datas = ["request","链式请求", "download","upload","SSNetwork","--"]
+    
+   
  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         tableView.tableFooterView = UIView()
+        
+        SessionManager.default.request("").responseString { (dataResponse: DataResponse<String>) in
+            let result = dataResponse.result
+
+            switch result {
+            case let .success(jsonString):
+                print(jsonString)
+            case let .failure(error):
+                print(error)
+            }
+        }
+        
+        
+       
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -187,6 +208,7 @@ class SSAlamofireVC: UITableViewController {
    
  
 }
+
 
 extension SSAlamofireVC {
     
@@ -256,6 +278,7 @@ extension SSAlamofireVC {
     
     
     func uploadFunc()  {
+        
         
         SessionManager.default.upload(multipartFormData: { (formData) in
             

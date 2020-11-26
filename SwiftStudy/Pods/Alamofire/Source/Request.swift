@@ -125,6 +125,7 @@ open class Request {
 
     // MARK: Lifecycle
 
+    
     init(session: URLSession, requestTask: RequestTask, error: Error? = nil) {
         self.session = session
 

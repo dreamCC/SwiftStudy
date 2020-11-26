@@ -90,7 +90,7 @@ open class TaskDelegate: NSObject {
 
     /*
      重定向方法。
-     当返回码以3xx的时候，会进行重定向，而且会返回重定向地址。服务器进行重定向的原因很过，比如资源撤离、服务器负载、URL增强等。
+     当返回码以3xx的时候，会进行重定向，而且会返回重定向地址。服务器进行重定向的原因很多，比如资源撤离、服务器负载、URL增强等。
      */
     @objc(URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:)
     func urlSession(
@@ -114,7 +114,7 @@ open class TaskDelegate: NSObject {
      1、HTTPS是不会触发这个方法的，因为NSURLSession内部有一个根证书，如果服务器证书是证书机构颁发的，那么就可以顺利通过验证。
      2、这个方法只有在服务器响应头中，www-Autenticate对于的是proxy authentication或者TLS trust validation时候才会触发。
      
-     因此客户端要和服务端简历SSL只需要两步：
+     因此客户端要和服务端建立SSL只需要两步：
      1、服务器响应头中有www-authenticate,同时返回自己信任的证书。
      2、客户端验证服务端返回的证书。然后用证书中的公钥把数据加密发送给服务端。
      */

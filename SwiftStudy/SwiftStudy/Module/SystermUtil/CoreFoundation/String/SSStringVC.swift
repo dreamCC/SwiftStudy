@@ -37,8 +37,8 @@ class SSStringVC: UIViewController {
         }
         
         
-        stringFunc()
-        
+        //stringFunc()
+     
     }
     
     func stringFunc() {
@@ -74,7 +74,6 @@ class SSStringVC: UIViewController {
         let indexS = c.startIndex
         let indexE = c.index(c.endIndex, offsetBy: -10)
         let f:Substring = c[indexS...indexE]
-        
         print(c.count)
         print(d)
         print(e)
@@ -89,6 +88,7 @@ class SSStringVC: UIViewController {
         // 字符串索引。
         let sIndex = c.startIndex
         print(c[sIndex])
+        
         
         
     

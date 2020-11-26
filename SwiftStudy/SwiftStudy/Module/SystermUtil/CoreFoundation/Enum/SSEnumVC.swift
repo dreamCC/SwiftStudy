@@ -15,6 +15,9 @@ import SnapKit
  枚举enum是不具有构造方法的。而且没有存储属性（也就是没有成员变量）。
  
  枚举的关联值是不能相等的。
+ 
+ 枚举里面添加方法的好处。可能增加枚举的功能性。
+ 
  */
 class SSEnumVC: UIViewController {
 
@@ -107,8 +110,6 @@ enum Level:Int {
         case .low:
             print("成绩很差")
         }
-        
-    
     }
 }
 

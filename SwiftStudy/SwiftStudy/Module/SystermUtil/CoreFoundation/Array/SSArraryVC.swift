@@ -56,6 +56,7 @@ class SSArraryVC: UIViewController {
         a.insert(contentsOf: [8, 9], at: 5)
         
         
+        
         // 删
         a.remove(at: 7)
         a.removeLast()

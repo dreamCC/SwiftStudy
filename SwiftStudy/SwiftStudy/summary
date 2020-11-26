@@ -293,4 +293,66 @@ URLComponts可以很好的拆解url。其中，提供了获取url各个部分的
 6、where关键字对泛型的类型的约束。
 
 7、Swift中的命名空间。
+
+11.20
+1、对于泛型类型的使用。可以参考Kingfisher。
+2、注意willSet 和 set的区别。我们一般属性set、get那么表示属性为计算属性。但是willSet只是用来进行属性监听的，并不会影响设置的值。
+3、Swift中方法可以添加方法和闭包。然后在方法内部使用。
+4、关于DispathQueque队列，一般我们一个工具使用一个队列就可以。
+5、Kingfisher中ImageCache内部源码发现，其核心方法，storexxxx、retrieveImage（有retrieveMemoryImage和retrieveDiskImage）其中内部逻辑就是，如果是从
+    内存中找到的话，直接完成，如果从disk中找到，会将找到的图片保存在内存中。
+6、typealise 是可以使用在内部的。
+7、kingfisher对ImageTransition的使用。
     
+11.23
+1、关于构造函数init。init我们是不需要返回值的，只要重写就一定能初始化，但是又前提，如果init内部有return nil。 那么就需要使用init？。
+2、关于枚举绑定值的巧妙用法。
+3、关于协议protocol和extension protocol等的使用。参考kingfisher Indicator协议。
+    我们一般可以使用protocol和extension protocol来实现继承的关系。
+    如果协议中有属性，那么遵循该协议的class、enum、struct一定要有该属性，而且这个时候，属性的set get就起到作用了。如果{get} 那么表示遵循该协议的对象或者类就必须
+    重写属性的get方法。如果是{set get}那么遵循该协议的类就必须要有set、get方法。
+    
+    注意protocol的构造方法。
+
+4、关于throws的使用。 throws用于函数外，throw用于函数内部。
+    如果有throw进行了错误的抛掷。那么我们就需要处理该错误。处理的方式有三种：
+    1、通过try将错误往下抛（也就是调用的函数也必须使用throws修饰）。
+    2、通过try？或者try!进行错误的处理。注意两种写法的优缺点。
+    3、通过do-catch配合try来进行错误的处理。
+    
+
+5、内部类。外部类可以直接使用内部类InnerClass而不需要通过OutClass进行初始化。
+    Alamofire对于内部类的使用。
+
+6、当遵循Equalable，可以在内部实现。static func == (lhs: Per, rhs: Per) -> Bool。或者是类外面实现func == (lhs: Per, rhs: Per) -> Bool。
+    参考NetworkReachabilityManager.NetworkReachabilityStatus
+    
+7、URL参数有两种方式。
+    1、通过urlRequest.httpBody的形式，出入的是Data，这个Data的值其实就是，通过参数
+     private func query(_ parameters: [String: Any]) -> String {
+        var components: [(String, String)] = []
+
+        for key in parameters.keys.sorted(by: <) {
+            let value = parameters[key]!
+            components += queryComponents(fromKey: key, value: value)
+        }
+        return components.map { "\($0)=\($1)" }.joined(separator: "&")
+    }。 然后string.dataxxx的形式转换的。
+    2、直接拼接到参数里面。表单的形式。比如get请求。
+        通过schemer://host?key1=value1&key2=value2&.......的形式拼接。
+        
+8、URL的百分比编码。CharacterSet.urlQueryAllowed还并不够，可以参考Alamofire中ParameterEncoding类中，escape方法。
+
+
+11.24
+1、json只是。首先全称：javaScript object notion，即javascript对象表示法，是一种轻量级的数据交换格式。
+    其实xml也是一种轻量级的数据交换格式，但是由于xml里面牵扯到标签多，处理复杂所以现在用的并不多。
+
+    JSON有两种表示结构，对象和数组。
+        其中key只能是字符串。
+        value可以试字符串、数值、bool、数组和对象。
+        
+    json字符串、json对象和普通字符串的区别。
+    json字符串就是json格式的字符串。比如"{StudentID:'100',Name:'tmac',Hometown:'usa'}"。
+    普通字符串只是用双引号包裹起来的，比如"hello"。
+    json对象就是指定具有json格式的对象。比如json字符串、数组、字典都是可以充当json对象的。

@@ -142,6 +142,7 @@
 		A6B8029E23CCB41D00DED3CB /* SSPointVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6B8029D23CCB41D00DED3CB /* SSPointVC.xib */; };
 		A6BA982523B6D99B00DDD06C /* SSProtocolVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA982423B6D99B00DDD06C /* SSProtocolVC.swift */; };
 		A6BA982823B6EC2500DDD06C /* SSRuntimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA982723B6EC2500DDD06C /* SSRuntimeVC.swift */; };
+		A6BB52C8256C9A4F00AF1EBF /* mine.json in Resources */ = {isa = PBXBuildFile; fileRef = A6BB52C7256C9A4F00AF1EBF /* mine.json */; };
 		A6BE7BA623B4458F00F82DC5 /* SSFunctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BE7BA523B4458F00F82DC5 /* SSFunctionVC.swift */; };
 		A6C6D5E223B49029000370C4 /* SSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C6D5E123B49029000370C4 /* SSBaseViewController.swift */; };
 		A6C6D5E423B49195000370C4 /* SSURLComponentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C6D5E323B49195000370C4 /* SSURLComponentsVC.swift */; };
@@ -335,6 +336,7 @@
 		A6B8029D23CCB41D00DED3CB /* SSPointVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSPointVC.xib; sourceTree = "<group>"; };
 		A6BA982423B6D99B00DDD06C /* SSProtocolVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProtocolVC.swift; sourceTree = "<group>"; };
 		A6BA982723B6EC2500DDD06C /* SSRuntimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRuntimeVC.swift; sourceTree = "<group>"; };
+		A6BB52C7256C9A4F00AF1EBF /* mine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mine.json; sourceTree = "<group>"; };
 		A6BE7BA523B4458F00F82DC5 /* SSFunctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFunctionVC.swift; sourceTree = "<group>"; };
 		A6C6D5E123B49029000370C4 /* SSBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSBaseViewController.swift; sourceTree = "<group>"; };
 		A6C6D5E323B49195000370C4 /* SSURLComponentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSURLComponentsVC.swift; sourceTree = "<group>"; };
@@ -1302,6 +1304,7 @@
 				A6F7EBB8254EF6B2002557C9 /* timg-2.jpeg */,
 				A6F7EBAF254EF470002557C9 /* 考试结果 - 产品组测试平台.webarchive */,
 				A6F7EBB5254EF583002557C9 /* mine.bundle */,
+				A6BB52C7256C9A4F00AF1EBF /* mine.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1396,6 +1399,7 @@
 				A60564F023C6B7F200720AC3 /* SSUniversalLinksVC.xib in Resources */,
 				A6983D3F23CD6EE6006F720F /* SSMoyaVC.xib in Resources */,
 				A6B8029E23CCB41D00DED3CB /* SSPointVC.xib in Resources */,
+				A6BB52C8256C9A4F00AF1EBF /* mine.json in Resources */,
 				A697A24E23AB8F3B00B16AEA /* Assets.xcassets in Resources */,
 				A623276724BD445E00A62EE4 /* SSRxSwiftViewController.xib in Resources */,
 				A6755CC123CEF6540041C753 /* manifest.plist in Resources */,
