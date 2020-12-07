@@ -129,6 +129,7 @@ import Alamofire
 
  private(set) var name: String // 起作用是标记为只读属性。只有类的内部能修改。
 
+ @autoclosure ： 自动闭包，顾名思义就是自动生成闭包的意思。
  */
   
 
@@ -141,15 +142,35 @@ class SSKeyWordVC: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-    
         
         view.backgroundColor = UIColor.white
         navigationItem.title = "关键字"
         
         print(#column, #line, #file, #function)
     
+        
+        let value = autoClosure { () -> Bool in
+            return false
+        }
+        
+        print(value)
+        
+        auto(condition: { () -> Bool in
+            
+            return true
+        }, name: "")
+        
+        auto(condition: { true }, name: "")
+        
+        auto(name: "") { () -> Bool in
+            return true
+        }
+        
+        auto(name: "") { return true }
+        
+        auto(name: "") {  true }
+        
+        autoclosure(name: "", condition: true)
     }
     
 
@@ -220,8 +241,29 @@ class SSKeyWordVC: UIViewController {
         
     }
     
+    // autoclosure
+    func autoClosure(condition: ()-> Bool) -> Bool{
+        if condition() {
+            return true
+        }
+        return false
+    }
+    
+    func autoclosure(name: String,  condition:@autoclosure ()->Bool) {
+        
+    }
+    
+    func auto(condition: ()->Bool, name: String) {
+        
+    }
+    
+    func auto(name: String,  condition: ()->Bool) {
+        
+    }
+    
     
 }
+
 
 
 

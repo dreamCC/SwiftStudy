@@ -17,7 +17,7 @@ class SSQMUIView: UIView {
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
-        print("SSQMUIView--hitTest", view)
+        //print("SSQMUIView--hitTest", view)
         
 
         return view
@@ -31,13 +31,22 @@ class SSQMUIView: UIView {
         print("SSQMUIView--touchBegin")
     }
 
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("SSQMUIView--touchesCancelled")
+
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("SSQMUIView--touchesEnded")
+
+    }
 }
 
 class SSQMUI2View: UIView {
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
-        print("SSQMUI2View--hitTest", view)
+        //print("SSQMUI2View--hitTest", view)
 
         return view
     }
@@ -52,7 +61,15 @@ class SSQMUI2View: UIView {
         //self.next?.touchesBegan(touches, with: event)
     }
     
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("SSQMUI2View--touchesCancelled")
+
+    }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("SSQMUI2View--touchesEnded")
+
+    }
 
 }
 
@@ -60,7 +77,7 @@ class SSQMUI3View: UIView {
     
     
     override func willMove(toSuperview newSuperview: UIView?) {
-        print("willMove toSuperview", newSuperview)
+        //print("willMove toSuperview", newSuperview)
     }
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
@@ -83,6 +100,15 @@ class SSQMUI3View: UIView {
         next?.touchesBegan(touches, with: event)
     }
     
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("SSQMUI3View--touchesCancelled")
+
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("SSQMUI3View--touchesEnded")
+
+    }
 
 
     //------------------------------------------------------------------

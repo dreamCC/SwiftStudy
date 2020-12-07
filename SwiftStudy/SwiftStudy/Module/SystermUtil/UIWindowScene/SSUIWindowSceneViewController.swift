@@ -29,6 +29,7 @@ import UIKit
 
 class SSUIWindowSceneViewController: SSBaseViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,5 +45,8 @@ class SSUIWindowSceneViewController: SSBaseViewController {
         } else {
 
         }
+        
+       
     }
+    
 }

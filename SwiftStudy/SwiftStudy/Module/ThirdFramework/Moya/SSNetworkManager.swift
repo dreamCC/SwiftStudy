@@ -8,7 +8,7 @@
 
 import UIKit
 import Moya
-
+import Alamofire
 
 class SSNetworkManager {
     
@@ -16,7 +16,7 @@ class SSNetworkManager {
     typealias FailCallBack    = (Error)->()
     
     static func request(_ target: TargetType, success:@escaping SuccessCallback,fail:@escaping  FailCallBack) {
-        networkProvider.request(target as! SSUserAPI) { (result) in
+        userProvider.request(target as! SSUserAPI) { (result) in
             
             switch result {
             case .success(let response):
@@ -30,3 +30,4 @@ class SSNetworkManager {
         
     }
 }
+

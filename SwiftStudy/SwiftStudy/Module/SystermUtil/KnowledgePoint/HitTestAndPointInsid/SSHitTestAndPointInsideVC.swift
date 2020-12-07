@@ -34,7 +34,7 @@ import QMUIKit
 class SSHitTestAndPointInsideVC: QMUICommonViewController {
 
     
-    weak var v3: SSQMUI3View!
+   fileprivate weak var v3: SSQMUI3View!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,9 +56,9 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
             make.top.equalToSuperview().offset(120)
             make.size.equalTo(CGSize(width: 150, height: 150))
         }
-        
-    
         let gestureV3 = UITapGestureRecognizer(target: self, action: #selector(tapV3))
+        gestureV3.cancelsTouchesInView = false
+        gestureV3.delegate = self
         v3.addGestureRecognizer(gestureV3)
         
         let v1 = SSQMUIView()
@@ -72,7 +72,6 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
         
         let v2 = SSQMUI2View()
         v2.backgroundColor = UIColor.purple
-        
         v3.addSubview(v2)
         v2.snp.makeConstraints { (make) in
             make.left.equalTo(20)
@@ -80,12 +79,28 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
             make.size.equalTo(CGSize(width: 50, height: 50))
         }
         
+        let gestureV2 = UITapGestureRecognizer(target: self, action: #selector(tapV2))
+//        gestureV2.cancelsTouchesInView = false
+//        gestureV2.numberOfTapsRequired = 2
+        gestureV2.delegate = self
+        v2.addGestureRecognizer(gestureV2)
+        
+//        let doubleGestureV3 = UITapGestureRecognizer(target: self, action: #selector(doubleTapV3))
+//        doubleGestureV3.numberOfTapsRequired = 1
+//        v3.addGestureRecognizer(doubleGestureV3)
     }
     
     
     @objc func tapV3() {
         print("tapV3")
-        print(self.v3.sizeToFit())
+    }
+    
+    @objc func tapV2() {
+        print("tapV2")
+    }
+    
+    @objc func doubleTapV3() {
+        print("doubleTapV3")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -93,7 +108,22 @@ class SSHitTestAndPointInsideVC: QMUICommonViewController {
         print("vc-touchesBegan")
         
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("vc-touchesEnded")
+
+    }
 
 }
 
+
+
+extension SSHitTestAndPointInsideVC: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        return true
+    }
+    
+}
 

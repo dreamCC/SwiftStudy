@@ -196,6 +196,7 @@ public extension MoyaProvider {
 /// A public function responsible for converting the result of a `URLRequest` to a Result<Moya.Response, MoyaError>.
 public func convertResponseToResult(_ response: HTTPURLResponse?, request: URLRequest?, data: Data?, error: Swift.Error?) ->
     Result<Moya.Response, MoyaError> {
+    
         switch (response, data, error) {
         case let (.some(response), data, .none):
             let response = Moya.Response(statusCode: response.statusCode, data: data ?? Data(), request: request, response: response)

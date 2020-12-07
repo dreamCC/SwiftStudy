@@ -28,14 +28,18 @@
 @implementation OCClass
 
 
-
-
+// TODO: 这是todo
+// FIXME: 这是fixme
+// MARK: 这是mark
+// !!!: 这是叹号
+// ???: 这是问号
 -(instancetype)init {
     self = [super init];
     if (self) {
        
        
         @synchronized (self) {
+        
             
         }
     }

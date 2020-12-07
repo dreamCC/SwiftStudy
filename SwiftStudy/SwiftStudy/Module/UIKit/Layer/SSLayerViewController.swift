@@ -10,16 +10,20 @@ import UIKit
 
 class SSLayerViewController: QMUICommonViewController {
 
+    
+    var v: SV!
+    var v1: SV!
+    var layer1: SVlayer!
     override func initSubviews() {
     
-        let v = UIView()
+        v = SV()
         v.frame = CGRect(x: 200, y: 200, width: 100, height: 100)
         v.backgroundColor = UIColor.black
         view.addSubview(v)
         
+     
         
-        let layer1 = CALayer()
-    
+        layer1 = SVlayer()
         layer1.frame = CGRect(x: 200, y: 200, width: 100, height: 100)
         //layer1.frame.origin = CGPoint(x: 10, y: 100)
         layer1.backgroundColor = UIColor.qmui_random().cgColor
@@ -47,14 +51,79 @@ class SSLayerViewController: QMUICommonViewController {
             make.height.equalTo(100)
         }
         
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+        self.v.layer.delegate = nil
+
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(3)
+       // self.layer1.backgroundColor = UIColor.qmui_random().cgColor
+        self.v.frame = CGRect(x: 200, y: 200, width: 200, height: 50)
+        CATransaction.commit()
+
+//        UIView.animate(withDuration: 5) {
+//
+//            self.v.layer.frame = CGRect(x: 200, y: 200, width: 200, height: 50)
+//        }
+    }
+}
+
+
+class SVlayer: CALayer {
+    
+    override func action(forKey event: String) -> CAAction? {
+        
+        let action = super.action(forKey: event)
+        print("layer action for key", action )
+//        if event == "backgroundColor" {
+//            let newA = CABasicAnimation(keyPath: event)
+//            newA.duration = 5
+//            return newA
+//        }
+        return action
+//        return NSNull()
+//        return nil
     }
 }
 
 
 class SV: UIView {
     
+    
+    override class var layerClass: AnyClass {
+        return  SVlayer.self
+    }
+    
+    
+    override func action(for layer: CALayer, forKey event: String) -> CAAction? {
+       let action = super.action(for: layer, forKey: event)
+        print("UIView action for key", action )
+        return action
+        //return NSNull()
+        //return nil
+    }
+    
+    override func willMove(toWindow newWindow: UIWindow?) {
+        super.willMove(toWindow: newWindow)
+        print("willMove to Window")
+    }
+    
+    override func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        print("willMove to superView")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        print("layoutSubviews")
+
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        print("draw rect")
+
+    }
 }

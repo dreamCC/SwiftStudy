@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SSTableViewCell: UITableViewCell {
+class SSAutoLayoutTableViewCell: UITableViewCell {
     
     
     private let nameL: UILabel = {
@@ -35,7 +35,6 @@ class SSTableViewCell: UITableViewCell {
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-    
         self.nameL.preferredMaxLayoutWidth = UIScreen.main.bounds.width - 20
         return self.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
     }
@@ -45,12 +44,11 @@ class SSTableViewCell: UITableViewCell {
     func setModel(model: SSTableViewModel)  {
         self.nameL.text = model.name
         
-        print("----- setModel")
-//        if model.isOpen {
-//            openH()
-//        }else {
-//            closeH()
-//        }
+        if model.isOpen {
+            openH()
+        }else {
+            closeH()
+        }
     }
     
     private func closeH() {

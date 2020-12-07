@@ -8,6 +8,17 @@
 
 import UIKit
 
+/*
+ UITablView动态高度的实现方式。
+ 1、通过系统提供的self-sizing实现。
+    a、需要设置tableview.estimatedRowHeight = 44 （tableV.rowHeight = UITableView.automaticDimension 当然默认就是这个属性）
+    b、UITableViewCell内部，控件是autoLayout布局的。
+ 
+ 
+ 2、通过优秀的框架，比如UITableview-FDTemplateLayoutCell，或者是通过 QMUI中动态计算高度的方式。
+    前提是需要重写sizeThatFits来返回想要计算的准确高度。
+ 
+ */
 struct  SSTableViewModel {
     var name: String
     var isOpen: Bool
@@ -27,6 +38,11 @@ class SSTableViewController: UIViewController {
     }
 
     func initSubviews() {
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapStart))
+        tapGesture.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tapGesture)
+        
         
         let  dataSourceAry = [ "张三 的想法", "全局 UI 配置：只需要修改一份配置表就可以调整 App 的全局样式，包括颜色、导航栏、输入框、列表等。一处修改，全局生效。",
                               "李四 的想法", "UIKit 拓展及版本兼容：拓展多个 UIKit 的组件，提供更加丰富的特性和功能，提高开发效率；解决不同 iOS 版本常见的兼容性问题。",
@@ -58,11 +74,12 @@ class SSTableViewController: UIViewController {
         tableV.dataSource = self
         tableV.contentInsetAdjustmentBehavior = .never
         // self-sizing的是实现方式。
-        //tableV.estimatedRowHeight = 44
-        //tableV.rowHeight = UITableView.automaticDimension
+//        tableV.estimatedRowHeight = 44
+//        tableV.rowHeight = UITableView.automaticDimension
         
         view.addSubview(tableV)
-        tableV.register(SSTableViewCell.self, forCellReuseIdentifier: kCellId)
+        tableV.register(SSAutoLayoutTableViewCell.self, forCellReuseIdentifier: kCellId)
+//        tableV.register(SSFrameTableViewCell.self, forCellReuseIdentifier: kCellId)
         tableV.register(SSHeaderV.self, forHeaderFooterViewReuseIdentifier: kHeaderId)
 
     
@@ -91,6 +108,12 @@ class SSTableViewController: UIViewController {
         }
     }
 
+    
+    @objc func tapStart() {
+        
+        print("tapStart -----------")
+    }
+    
 }
 
 extension SSTableViewController: UITableViewDelegate, UITableViewDataSource {
@@ -104,7 +127,7 @@ extension SSTableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kCellId, for: indexPath) as! SSTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kCellId, for: indexPath) as! SSAutoLayoutTableViewCell
         cell.setModel(model: dataSource[indexPath.row])
         print("---cellForRowAt")
         return cell
@@ -125,7 +148,7 @@ extension SSTableViewController: UITableViewDelegate, UITableViewDataSource {
         print("---heightForRowAt")
 
         return tableView.qmui_heightForCell(withIdentifier: kCellId, cacheBy: indexPath) { (cell) in
-            let convertCell = cell as! SSTableViewCell
+            let convertCell = cell as! SSAutoLayoutTableViewCell
             convertCell.setModel(model: self.dataSource[indexPath.row])
         }
     }

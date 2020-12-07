@@ -13,7 +13,7 @@ class SSCoreFoundationVC: UIViewController {
 
     var datas = ["Enum","String","Array","OptionSet","AnyAnyObject","Notifycation",
     "CharacterSet","Protocol","Genericity","Error","URLComponents","Tuples","Animation","UIPropertyAnimator",
-    "NSCache", "NSBundle", "Character", "Int"]
+    "NSCache", "NSBundle", "Character", "Int", "Sequence","classAndStruct"]
  
 
     
@@ -98,6 +98,10 @@ extension SSCoreFoundationVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSCharacterViewController(), animated: true)
         case "Int":
             navigationController?.pushViewController(SSIntViewController(), animated: true)
+        case "Sequence":
+            navigationController?.pushViewController(SSSequenceViewController(), animated: true)
+        case "classAndStruct":
+            navigationController?.pushViewController(SSClassAndStructVC(), animated: true)
         default:
             return
         }

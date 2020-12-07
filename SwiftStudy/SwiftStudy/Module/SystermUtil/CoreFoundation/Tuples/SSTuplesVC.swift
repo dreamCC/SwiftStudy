@@ -15,6 +15,9 @@ import UIKit
  2、通过拆解成单独的变量来获取值。let (value1, value2) = tuple， 也可以拆取单个值let (_, value2) = tuple
  
  我们也可以通过给元素命名来进行赋值。let tuple2 = (age: Int, name: String)
+ 
+ 常见元祖用法。switch中对于元祖进行解包。
+ 
  */
 class SSTuplesVC: SSBaseViewController {
 
@@ -42,6 +45,14 @@ class SSTuplesVC: SSBaseViewController {
         // 拆值
         let (a, n) = tuple2
         print(a, n)
+        
+        
+        switch tuple1 {
+        case let (a, b):
+            print(a, b)
+        default:
+            print("default")
+        }
         
       
     }

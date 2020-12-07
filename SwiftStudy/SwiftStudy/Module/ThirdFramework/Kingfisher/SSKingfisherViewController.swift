@@ -27,6 +27,8 @@ class Zfisher<Base> {
     }
 }
 
+
+
 // Zfisher进行扩展
 extension Zfisher where Base: UIImage {
     
@@ -55,7 +57,7 @@ protocol ZfisherCompatible {
 }
 
 extension ZfisherCompatible {
-    
+
     var zf: Zfisher<Self> {
         return Zfisher(self)
     }
@@ -64,89 +66,6 @@ extension UIView: ZfisherCompatible {}
 
 
 ///-----------------------------------
-// 所以我们得出结论： 在protocol中尽量通过associatedtype替代Self。而在extension protocol中尽量使用Self。
-struct SwiftStudyDemo<Base> {
-    
-    var base: Base
-    init(_ base: Base) {
-        self.base = base
-    }
-}
-
-protocol SwiftStudyCompatible {
-    
-    associatedtype CompatibleType
-    var vet: SwiftStudyDemo<CompatibleType> {get}
-}
-
-extension SwiftStudyCompatible {
-    
-    var vet: SwiftStudyDemo<Self> {
-        return SwiftStudyDemo(self)
-    }
-}
-
-
-extension UIView: SwiftStudyCompatible {}
-extension SwiftStudyDemo where Base: UIView {
-   
-    
-}
-
-
-// 这种写法有一定好处，当然也有一定风险。
-protocol SSModify {
-    
-    var name: String {get}
-    var fullName: String {get}
-    
-    
-    func modify(_ name: String) -> String
-}
-
-extension SSModify {
-   
-    var fullName: String {
-        get {
-            return name + ":SSModify"
-        }
-    }
-    
-    func modify(_ name: String) -> String {
-        print("protocol call modify")
-        return modify(name)
-    }
-    
-    // 这种写法。
-    func goto() -> SSModify {
-        print(Self.self)
-        return TestSSModify(name: "TestSSModify")
-    }
-    
-   
-}
-
-class TestSSModify: SSModify {
-    var name: String
-    
-    
-    func modify(_ name: String) -> String {
-        print("protocol call modify")
-        return "hello"
-    }
-    
-    init(name: String) {
-        self.name = name
-    }
-    
-}
-
-class TestSSModify1: SSModify {
-    var name: String {
-        return "TestSSModify1"
-    }
-    
-}
 
 
 
@@ -163,20 +82,40 @@ class SSKingfisherViewController: QMUICommonViewController {
             print("name 开始设置", newValue)
         }
     }
+    
+    lazy var displayLink: CADisplayLink = {
+        let displayLink = CADisplayLink(target: TargetProxy(self), selector: #selector(onScreenUpdate))
+        displayLink.isPaused = true
+        displayLink.add(to: RunLoop.current, forMode: .common)
+        return displayLink
+    }()
+    
+    // 代理
+    class TargetProxy {
         
+        private weak var target: SSKingfisherViewController!
+        init(_ target: SSKingfisherViewController) {
+            self.target = target
+        }
+        
+        // 方法。
+        @objc func onScreenUpdate() {
+            self.target.onScreenUpdate()
+        }
+    }
+     
+    
+    @objc func onScreenUpdate() {
+        
+        print("onScreenUpdate---")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        let dm = TestSSModify(name: "enha")
-        print( dm.goto())
-        print( TestSSModify1().goto())
-
-      
         //kingfisherImageSources()
         //kingfisherPlaceHolder()
         //kingfisherAllParameters()
-        
         //print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last ?? "为空-", NSHomeDirectory())
 
        
@@ -184,24 +123,15 @@ class SSKingfisherViewController: QMUICommonViewController {
         let catPath = Bundle.main.path(forResource: "cat.gif", ofType: nil)
         let image: Image = UIImage(contentsOfFile: catPath!)!
         imageV.image = image
-
+        
+        
+        
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        // 两种方法，使代码整合。 方法内部多次调用的话，可以采用该方式。
-        let startAppend: (String)->(String) = {(name)-> String in
-           return self.name.appending(name)
-        }
         
-        print(startAppend("age"))
-        
-        func append(name: String) -> String {
-            return self.name.appending(name)
-        }
-        
-        print(append(name: "appendMethod"))
     }
 
     private func kingfisherUrl() {
@@ -278,10 +208,9 @@ extension Kingfisher where Base : UIImageView {
             return
         }
         
+    
         setImage(with: url)
         
     }
     
 }
-
-

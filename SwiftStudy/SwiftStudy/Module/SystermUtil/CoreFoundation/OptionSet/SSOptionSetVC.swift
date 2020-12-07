@@ -32,11 +32,13 @@ class SSOptionSetVC: SSBaseViewController {
         
         
     
+    
     }
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let options = [SSOptions.OptionOne, SSOptions.OptionTwo]
+        
         
         if options.contains(.OptionTwo) {
             print("包含")
@@ -44,4 +46,8 @@ class SSOptionSetVC: SSBaseViewController {
             print("不包含")
         }
     }
+    
+
 }
+
+

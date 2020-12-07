@@ -73,7 +73,7 @@ enum SSError: LocalizedError {
  
  4、Result的封装。
  
- 5、TaskDelegate.swift。用来处理和请求相关的代理方法。
+ 5、TaskDelegate.swift。用来处理和请求相关的代理方法。也是核心类。
     URLSessionTaskDelegate、URLSessionDataDelegate、URLSessionDDownloadDelegate等，请求、下载、上传
     的一些代理方法。
  
@@ -142,6 +142,10 @@ UploadTaskDelegate： 继承TaskDelegate。
  
  10、TimeLine用来记录时间的。
  
+ alamofire。链式编程之所以能够实现，其核心原理是通过SessionManager创建URLSession，同时设置delegate为TaskDelegate。而taskDelegate用来处理回调，
+ 并且有OperationQueue队列，queue.isSuspend = true （很重要）。其后面DateRequest.response 会将其操作放在delegate.queue.addOperation中，当delegate
+ 的回调结束调用queue.isSuspend = false，调用response方法。从而实现整个下载过程。
+ 
  */
 
 
@@ -154,6 +158,7 @@ class SSAlamofireVC: UITableViewController {
     
    
  
+    // MARK:---- 注释标签
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -175,10 +180,12 @@ class SSAlamofireVC: UITableViewController {
        
     }
 
+    // TODO: 点半
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count
     }
     
+    // FIXME: 需要修改
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "cellId"
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
@@ -203,9 +210,28 @@ class SSAlamofireVC: UITableViewController {
         }else {
             
             
+            let dateRequest = request("https://httpbin.org/get").validate(statusCode: 200 ..< 300)
+            
+            print(dateRequest.delegate.data)
+
+            dateRequest.responseData { (response: DataResponse<Data>) in
+                print(dateRequest.delegate.data)
+
+                print(response.result)
+
+            }
+            
+           
+            mineValidate(accepte: 12 ..< 14)
+           
         }
     }
    
+    @discardableResult // 可以忽略结果。
+    func mineValidate<S: Sequence>(accepte: S) -> String where S.Iterator.Element == Int{
+        
+        return ""
+    }
  
 }
 
@@ -319,10 +345,12 @@ extension SSAlamofireVC: URLSessionDataDelegate{
         let route = RequstRoute.login(name: "zhangsan", pwd: "124567")
         request(route).responseJSON(queue: DispatchQueue.main, options: JSONSerialization.ReadingOptions.mutableLeaves) { (response) in
             
+            
+
         }
     }
     
     
-
-    
 }
+
+
