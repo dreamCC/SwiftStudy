@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)origiClassMethod;
 
+-(instancetype)initName:(NSString *)name;
+
 @end
 
 

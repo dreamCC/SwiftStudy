@@ -20,6 +20,7 @@ target 'SwiftStudy' do
   
   # facebook动画
   pod 'pop'
+  #pod 'Spring'
   
   # RXSwift
   pod 'RxSwift'
@@ -33,5 +34,9 @@ target 'SwiftStudy' do
   
   # 刷新
   pod 'MJRefresh'
+  #pod 'DGElasticPullToRefresh'
+  
+  # 新手指南
+  pod 'Instructions'
   
 end

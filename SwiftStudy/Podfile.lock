@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.9.1)
   - Differentiator (4.0.1)
   - HandyJSON (5.0.1)
+  - Instructions (2.0.0)
   - iVersion (1.11.5)
   - Kingfisher (4.10.1)
   - MJRefresh (3.4.3)
@@ -318,6 +319,7 @@ PODS:
 
 DEPENDENCIES:
   - HandyJSON
+  - Instructions
   - iVersion
   - Kingfisher
   - MJRefresh
@@ -336,6 +338,7 @@ SPEC REPOS:
     - Alamofire
     - Differentiator
     - HandyJSON
+    - Instructions
     - iVersion
     - Kingfisher
     - MJRefresh
@@ -355,6 +358,7 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
+  Instructions: debf9cedeaf8d095108fd35d2c54b97ccf769e65
   iVersion: 3a93a89259eb3b52b0a8ba52c46a0027fa6b4d30
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
@@ -370,6 +374,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 2a51bf90f505f393022d7ea708b6923e9d85be97
+PODFILE CHECKSUM: bcc9f59ff27d4b14c7b220212f75036db5a41a28
 
 COCOAPODS: 1.9.3

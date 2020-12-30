@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 /*
  
@@ -79,6 +80,7 @@ class SSViewShowWayController: QMUICommonViewController {
             make.top.equalTo(subVShow.snp.bottom).offset(20)
         }
         
+    
     }
 
 }

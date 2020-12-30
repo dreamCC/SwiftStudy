@@ -46,6 +46,13 @@
     return self;
 }
 
+-(instancetype)initName:(NSString *)name {
+    self = [super init];
+    if(!self) return nil;
+    self.name = name;
+    
+    return self;
+}
 
 
 -(void)origiClassMethod {

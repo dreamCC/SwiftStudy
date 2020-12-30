@@ -25,13 +25,11 @@
 // 防止alloc、new创建造成新对象。
 +(instancetype)allocWithZone:(struct _NSZone *)zone {
     
-    UIView *v = [UIView new];
     return [self shareInstance];
 }
 
 -(void)test {
 
-    SSXiuShiFu *xf = [[SSXiuShiFu alloc] initWithName:@""];
     
     
 }

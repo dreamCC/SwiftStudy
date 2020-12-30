@@ -37,6 +37,13 @@ class SSMJRefreshViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
              
+        if #available(iOS 14.0, *) {
+            let barButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(rightButtonItemClick))
+            navigationItem.rightBarButtonItem = barButtonItem
+        } else {
+            // Fallback on earlier versions
+        }
+        
         tableView.estimatedRowHeight = 10
         tableView.register(SSItemCell.self, forCellReuseIdentifier: "kCellId")
         tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
@@ -47,9 +54,13 @@ class SSMJRefreshViewController: UITableViewController {
                 }
             }
         })
+        tableView.mj_header?.backgroundColor = UIColor.red
         
-        print(tableView.estimatedRowHeight, tableView.rowHeight)
         
+    }
+    
+    @objc func rightButtonItemClick() {
+        print(tableView.contentInset, tableView.contentOffset);
     }
     
 }
@@ -57,6 +68,9 @@ class SSMJRefreshViewController: UITableViewController {
 extension SSMJRefreshViewController {
     
 
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(tableView.contentOffset, tableView.contentInset)
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSources.count
@@ -77,6 +91,13 @@ extension SSMJRefreshViewController {
         }
     }
    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        for item in tableView.subviews {
+            print(item)
+        }
+    }
 }
 
 
