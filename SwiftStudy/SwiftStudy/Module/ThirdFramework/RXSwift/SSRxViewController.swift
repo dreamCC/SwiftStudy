@@ -15,14 +15,17 @@ class SSRxViewController: QMUICommonTableViewController {
     private var dataSouces: [String]!
     private let kCellId = "kCellId"
 
+    // 释放池
+    private let disposeBag = DisposeBag()
+    
     override func initSubviews() {
         super.initSubviews()
-        dataSouces = ["RxCocoa", "RxSwift", "TransformOperator", "FilterOperator",
-                      "CombingOperator", "ConnectableObservable", "OtherOperator",
-                      "TraitsObservable", "Schedulers", "RxTableView"]
+        dataSouces = ["Observable", "Observer", "Subjects", "Operator", "Trail",
+        "Schedulers"]
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCellId)
     }
+    
 }
 
 
@@ -39,27 +42,25 @@ extension SSRxViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            navigationController?.pushViewController(SSRxCocoaViewController(), animated: true)
-        }else if indexPath.row == 1 {
-            navigationController?.pushViewController(SSRxSwiftViewController(), animated: true)
-        }else if indexPath.row == 2 {
-            navigationController?.pushViewController(SSRxSwiftTransformOperatorVC(), animated: true)
-        }else if indexPath.row == 3 {
-            navigationController?.pushViewController(SSRxSwiftFilterOperatorVC(), animated: true)
-        }else if indexPath.row == 4 {
-            navigationController?.pushViewController(SSRxSwiftComBingVC(), animated: true)
-        }else if indexPath.row == 5 {
-            navigationController?.pushViewController(SSConnectableOperatorsVC(), animated: true)
-        }else if indexPath.row == 6 {
-            navigationController?.pushViewController(SSOtherOperatorVC(), animated: true)
-        }else if indexPath.row == 7 {
-            navigationController?.pushViewController(SSTraitsObservableVC(), animated: true)
-        }else if indexPath.row == 8 {
-            navigationController?.pushViewController(SSSchedulersVC(), animated: true)
-        }else if indexPath.row == 9{
-            navigationController?.pushViewController(SSRxTableViewVC(), animated: true)
+        let selecteValue = dataSouces[indexPath.row]
+        switch selecteValue {
+        case "Observable":
+            navigationController?.pushViewController(ObservableViewController(), animated: true)
+        case "Observer":
+            navigationController?.pushViewController(ObserverViewController(), animated: true)
+        case "Subjects":
+            navigationController?.pushViewController(SubjectsViewController(), animated: true)
+        case "Operator":
+            navigationController?.pushViewController(OperatorViewController(), animated: true)
+        case "Trail":
+            navigationController?.pushViewController(TrailViewController(), animated: true)
+        case "Schedulers":
+            navigationController?.pushViewController(SchedulersViewController(), animated: true)
+        default:
+            print("--------")
         }
+        
+        
     }
 }
 

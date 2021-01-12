@@ -28,6 +28,8 @@ class SSBaseViewController: UIViewController {
     
     private func initSubViews() {
         
+        UITabBar.appearance().barStyle = .black
+        
         view.backgroundColor = UIColor.white
         
         let desLab = UILabel()

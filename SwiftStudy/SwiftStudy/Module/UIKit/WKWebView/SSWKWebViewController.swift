@@ -11,10 +11,11 @@ import WebKit
 
 class SSWKWebViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
+        
         let webConfig = WKWebViewConfiguration()
         let webV = WKWebView(frame: CGRect.zero, configuration: webConfig)
         webV.uiDelegate = self
@@ -27,6 +28,9 @@ class SSWKWebViewController: UIViewController {
         
         
     }
+    
+
+    
 
 }
 

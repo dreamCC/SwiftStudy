@@ -16,6 +16,8 @@ class SSGCDVC: UIViewController {
     var workItem: DispatchWorkItem!
     var semaphore: DispatchSemaphore = DispatchSemaphore(value: 3)
 
+    var timer: DispatchSourceTimer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +41,8 @@ class SSGCDVC: UIViewController {
         //gcdTargetFunc()
         //gcdWorkItemFunc()
         //gcdGroupFunc()
-        //gcdTimeFunc()
+        gcdTimeFunc()
+        //gcdSemaphoreFunc()
         
     }
     
@@ -198,20 +201,37 @@ class SSGCDVC: UIViewController {
     
     func gcdTimeFunc() {
         
-        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 3) {
-            print("asyncAfter",Thread.current)
+        timer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
+        timer!.schedule(deadline: .now(), repeating: 1)
+        timer!.setEventHandler {
+            print("定时器启动：\(Thread.current)")
         }
+        timer!.resume()
     }
     
+    
     func gcdSemaphoreFunc() {
+        print("start")
+        let semaphore = DispatchSemaphore(value: 0)
+        DispatchQueue.global().async {
+            Thread.sleep(forTimeInterval: 2)
+            semaphore.signal()
+            print("signal-start")
+        }
         
         
+        semaphore.wait()
+        print("end")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       
         workItem.cancel() // 是无法对运行的任务进行取消的。 但是可以标记为取消，我们需要通过isCanceled来获取是否取消
         
+    }
+    
+    deinit {
+
     }
     
     

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(instancetype)initName:(NSString *)name;
 
+
++(instancetype)shareInstance;
 @end
 
 

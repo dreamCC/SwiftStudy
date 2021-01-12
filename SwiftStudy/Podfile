@@ -27,6 +27,45 @@ target 'SwiftStudy' do
   pod 'RxCocoa'
   
   # RXSwift Community
+  #pod 'RxDataSources'
+  
+  # 图片加载
+  pod 'Kingfisher'
+  
+  # 刷新
+  pod 'MJRefresh'
+  #pod 'DGElasticPullToRefresh'
+  
+  # 新手指南
+  pod 'Instructions'
+  
+end
+
+# 用于UITest
+target 'SwiftStudyUITests' do
+
+  #pod 'Alamofire'
+  pod 'SnapKit'
+
+  pod 'Moya'
+
+  # model。
+  pod 'HandyJSON'
+  pod 'SwiftyJSON'
+  pod 'ObjectMapper'
+  
+  pod 'QMUIKit'
+  pod 'iVersion'
+  
+  # facebook动画
+  pod 'pop'
+  #pod 'Spring'
+  
+  # RXSwift
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  
+  # RXSwift Community
   pod 'RxDataSources'
   
   # 图片加载

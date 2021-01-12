@@ -11,14 +11,16 @@ import UIKit
 class SSMultithreadingVC: UIViewController {
     
 
+    
     let datas = ["Thread","GCD","OperationQueue","ThreadLock"]
     
-   
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    
+        
+    
         navigationItem.title = "多线程"
         
         let tabV = UITableView()
@@ -30,7 +32,7 @@ class SSMultithreadingVC: UIViewController {
             make.edges.equalToSuperview()
         }
         
-       
+    
         
     }
     

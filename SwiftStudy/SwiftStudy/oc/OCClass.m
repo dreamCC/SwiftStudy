@@ -27,6 +27,19 @@
 
 @implementation OCClass
 
++(instancetype)shareInstance {
+    static dispatch_once_t  onceToken;
+    static OCClass *instance = nil;
+    dispatch_once(&onceToken, ^{
+        instance = [[OCClass allocWithZone:NULL] init];
+    });
+    return instance;
+}
+
+
++(instancetype)allocWithZone:(struct _NSZone *)zone {
+    return [self shareInstance];
+}
 
 // TODO: 这是todo
 // FIXME: 这是fixme
@@ -46,6 +59,8 @@
     return self;
 }
 
+
+
 -(instancetype)initName:(NSString *)name {
     self = [super init];
     if(!self) return nil;
@@ -54,6 +69,14 @@
     return self;
 }
 
+
+
+
+-(BOOL)numberNoto:(NSString *)name age:(NSString *)age {
+    
+    
+    return YES;
+}
 
 -(void)origiClassMethod {
     

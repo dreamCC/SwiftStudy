@@ -36,7 +36,7 @@ class SSThreadLockViewController: SSBaseViewController {
         return ary
     }()
     
-    // ---- synchoronized。互斥锁
+    // ---- synchoronized。递归锁？
     private lazy var threadSynchronizedA: Thread = {
         let thread = Thread(target: self, selector: #selector(synchronizedRemove), object:nil)
         thread.name = "threadSynchronizedA"
@@ -205,6 +205,7 @@ class SSThreadLockViewController: SSBaseViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("当前数据：\(dataSources)")
+
     }
     
     deinit {

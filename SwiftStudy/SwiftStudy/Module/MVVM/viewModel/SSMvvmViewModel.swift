@@ -22,7 +22,6 @@ class SSMvvmViewModel: NSObject {
                 self.datas.append(model)
             }
             sucess()
-            
         }
     }
     

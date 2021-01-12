@@ -62,13 +62,10 @@ extension ZfisherCompatible {
         return Zfisher(self)
     }
 }
-extension UIView: ZfisherCompatible {}
+
 
 
 ///-----------------------------------
-
-
-
 
 class SSKingfisherViewController: QMUICommonViewController {
 
