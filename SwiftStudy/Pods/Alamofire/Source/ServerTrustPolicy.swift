@@ -22,41 +22,10 @@
 //  THE SOFTWARE.
 //
 
-/*
- 服务端和前端建立SSL认证的基础。
- HTTPS安全认证。
- 1、当我们以https：//进行网络请求的时候。前端和服务器都需要一个证书，因为URLSession自带一个根证书，所以我们进行https请求的时候感觉没做什么操作，其实
-    苹果内部已经加载了一个根证书。
- 2、服务器的证书可以从证书机构获取，也可以自己生成。如果从证书机构获取，那么是不需要做任何操作的，URLSeeion自带的根证书一定会验证通过同样代理方法也不会调用（didReciveChanllenge）。如果是自己创建的证书就需要客户端进行验证（证书里面有公钥和私钥），那么客户端需要一个证书用来对比服务端发送的证书来确保服务端可信：
-    a、公钥是公开的，任何人都可以通过公钥对数据进行加密。
-    b、私钥是保密的，只有拥有私钥的人才能对加密数据进行解密。其实这就是非对称加密。
-    
- 认证过程：
- 1、发送https请求。如果服务器证书是证书机构颁发的，那么直接就不会走URLSession的回调直接验证通过。如果是自己生成的证书那么会往下走。
- 2、服务器将公钥发给客户端。
- 3、客户端拿到公钥，这个时候并不会直接用公钥进行加密传送，因为服务端这个时候没法给客户端发送数据（因为客户端没有私钥，如果服务端用公钥对数据进行加密发送，客户端拿到数据也没用）。那么就需要客户端和服务端建立一个安全通道，客户端会生成一个随机密码，然后用公钥给随机密码加密，然后发给服务端，服务端用私钥进行解密拿到随机密码，然后用随机密码对传输数据进行对称加密，这样安全通过就建立了。
- 所以说认证过程其实是非对称加密和对称加密共同作用的结果。
-    
- */
 import Foundation
 
 /// Responsible for managing the mapping of `ServerTrustPolicy` objects to a given host.
 open class ServerTrustPolicyManager {
-    
-    /*
-     通过不同的host来绑定不同的安全策略。而URLSession会绑定一个ServerTrustPolicyManager。
-     let serverTrustPolicies: [String: ServerTrustPolicy] = [
-         "test.example.com": .pinCertificates(
-             certificates: ServerTrustPolicy.certificates(),
-             validateCertificateChain: true,
-             validateHost: true
-         ),
-         "insecure.expired-apis.com": .disableEvaluation
-     ]
-
-     let serverTrustManager = ServerTrustPolicyManager(policies: serverTrustPolicies)
-     
-     */
     /// The dictionary of policies mapped to a particular host.
     public let policies: [String: ServerTrustPolicy]
 
@@ -143,11 +112,6 @@ extension URLSession {
 /// - disableEvaluation:        Disables all evaluation which in turn will always consider any server trust as valid.
 ///
 /// - customEvaluation:         Uses the associated closure to evaluate the validity of the server trust.
-
-/*
- 核心代码。安全策略。
- 
- */
 public enum ServerTrustPolicy {
     case performDefaultEvaluation(validateHost: Bool)
     case performRevokedEvaluation(validateHost: Bool, revocationFlags: CFOptionFlags)
@@ -163,9 +127,6 @@ public enum ServerTrustPolicy {
     /// - parameter bundle: The bundle to search for all `.cer` files.
     ///
     /// - returns: All certificates within the given bundle.
-    /*
-     获取证书。
-     */
     public static func certificates(in bundle: Bundle = Bundle.main) -> [SecCertificate] {
         var certificates: [SecCertificate] = []
 
@@ -190,9 +151,6 @@ public enum ServerTrustPolicy {
     /// - parameter bundle: The bundle to search for all `*.cer` files.
     ///
     /// - returns: All public keys within the given bundle.
-    /*
-    获取公钥。
-     */
     public static func publicKeys(in bundle: Bundle = Bundle.main) -> [SecKey] {
         var publicKeys: [SecKey] = []
 

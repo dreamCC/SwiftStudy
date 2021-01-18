@@ -21,7 +21,7 @@ class SSRxViewController: QMUICommonTableViewController {
     override func initSubviews() {
         super.initSubviews()
         dataSouces = ["Observable", "Observer", "Subjects", "Operator", "Trail",
-        "Schedulers"]
+        "Schedulers","RxDataSources"]
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: kCellId)
     }
@@ -56,6 +56,8 @@ extension SSRxViewController {
             navigationController?.pushViewController(TrailViewController(), animated: true)
         case "Schedulers":
             navigationController?.pushViewController(SchedulersViewController(), animated: true)
+        case "RxDataSources":
+            navigationController?.pushViewController(RxDataSourcesViewController(), animated: true)
         default:
             print("--------")
         }

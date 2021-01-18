@@ -14,10 +14,12 @@ class TrailViewController: SSBaseViewController {
 
     @IBOutlet weak var controlBtn: UIButton!
     @IBOutlet weak var inputField: UITextField!
+
     private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
     
     }
 
@@ -40,11 +42,13 @@ class TrailViewController: SSBaseViewController {
             
             return Single<String>.create { (single) -> Disposable in
                 
-                if case Optional.none = value {
-                    single(.error(NSError(domain: "传入值为nil", code: 100, userInfo: nil)))
-                }else {
-                    single(.success(value!))
-                }
+                single(.error(NSError(domain: "传入值为nil", code: 100, userInfo: nil)))
+
+//                if case Optional.none = value {
+//                    single(.error(NSError(domain: "传入值为nil", code: 100, userInfo: nil)))
+//                }else {
+//                    single(.success(value!))
+//                }
                 return Disposables.create()
             }
         }
@@ -57,6 +61,7 @@ class TrailViewController: SSBaseViewController {
         } onError: { (error) in
             print("Single 收到：", error)
         }.disposed(by: disposeBag)
+        
         
         let single1 = creatSingle(value: nil)
         // 发送的SingleEvent，只有两种情况。
@@ -94,7 +99,8 @@ class TrailViewController: SSBaseViewController {
                 }else {
                     ct(.error(NSError(domain: "传入值为nil", code: 100, userInfo: nil)))
                 }
-                
+
+
                 return Disposables.create()
             }
         }
@@ -114,6 +120,8 @@ class TrailViewController: SSBaseViewController {
         }.disposed(by: disposeBag)
 
     
+        
+        
     }
     
     
@@ -138,10 +146,29 @@ class TrailViewController: SSBaseViewController {
             
             return Maybe<String>.create { (mb) -> Disposable in
                 
+                mb(.success("hello"))
+                mb(.success("world"))
+                mb(.completed)
+                mb(.completed)
+                mb(.error(NSError(domain: "错误-1", code: 100, userInfo: nil)))
+                mb(.error(NSError(domain: "错误-2", code: 100, userInfo: nil)))
                 return Disposables.create()
             }
         }
         
+        createMayBe("enha").subscribe { (value) in
+            print("value: \(value)")
+        } onError: { (error) in
+            print("error:", error)
+        } onCompleted: {
+            print("completable")
+        }.disposed(by: disposeBag)
+        
+        /*
+         输出日志：
+         value: hello
+         */
+
     }
     
     
@@ -151,12 +178,15 @@ class TrailViewController: SSBaseViewController {
 
         print("\ncreate-------------")
         let create = Observable<Int>.create { (observer) -> Disposable in
-            observer.onNext(1)
-            observer.onNext(12)
-            observer.onError(NSError(domain: "错误", code: 100, userInfo: nil))
-            observer.onNext(-1)
-            observer.onCompleted()
-            observer.onNext(-12)
+
+            DispatchQueue.global().async {
+                observer.onNext(1)
+                observer.onNext(12)
+                observer.onError(NSError(domain: "错误", code: 100, userInfo: nil))
+                observer.onNext(-1)
+                observer.onCompleted()
+                observer.onNext(-12)
+            }
 
             return Disposables.create()
         }
@@ -171,14 +201,14 @@ class TrailViewController: SSBaseViewController {
         
         // 这些代码和上面是一样的。driver可以直接对error进行处理。
         print("\ndriver-------------")
+        
         create.asDriver(onErrorJustReturn: -100).drive { (value) in
-            print("driver收到的值：\(value)")
+            print("driver收到的值：\(value)", Thread.current)
         } onCompleted: {
             print("driver---completed")
         }.disposed(by: disposeBag)
 
     
-        
     }
     
     
@@ -187,7 +217,6 @@ class TrailViewController: SSBaseViewController {
         
         // UITextField中的text就属于ControlProperty。
         inputField.rx.text.bind(to: desLab.rx.text).disposed(by: disposeBag)
-        
     }
     
     

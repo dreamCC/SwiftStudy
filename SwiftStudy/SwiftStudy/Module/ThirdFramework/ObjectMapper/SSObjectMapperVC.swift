@@ -30,6 +30,9 @@ class SSObjectMapperVC: SSBaseViewController {
     @IBAction func modelToJson(_ sender: UIButton) {
         let model = ObjectMapperModel(JSON: ["name":"David", "age":18])
         print(model!.toJSONString(prettyPrint: true) ?? "")
+
+        print(model?.name, model?.age)
+        
     }
 }
 
@@ -44,7 +47,6 @@ class ObjectMapperModel: Mappable {
     }
     
     func mapping(map: Map) {
-        name  <- map["name"]
-        age   <- map["age"]
+        
     }
 }

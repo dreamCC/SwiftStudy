@@ -42,46 +42,6 @@ import CoreServices
 /// - https://www.ietf.org/rfc/rfc2388.txt
 /// - https://www.ietf.org/rfc/rfc2045.txt
 /// - https://www.w3.org/TR/html401/interact/forms.html#h-17.13
-/*
- 表单格式如下：
- Content-Type: multipart/form-data; boundary=735323031399963166993862150
-         Content-Length: 834
-         
-         --735323031399963166993862150
-         Content-Disposition: form-data; name="text1"
-         
-         text default
-         735323031399963166993862150
-         Content-Disposition: form-data; name="text2"
-         
-         aωb
-         735323031399963166993862150
-         Content-Disposition: form-data; name="file1"; filename="a.txt"
-         Content-Type: text/plain
-         
-         Content of a.txt.
-         735323031399963166993862150
-         Content-Disposition: form-data; name="file2"; filename="a.html"
-         Content-Type: text/html
-         
-         <!DOCTYPE html><title>Content of a.html.</title>
-         735323031399963166993862150
-         Content-Disposition: form-data; name="file3"; filename="binary"
-         Content-Type: application/octet-stream
-         
-         aωb
-         735323031399963166993862150--
- 
- 从上面表单表单可以看出。
- Content-Type: multipart/form-data; boundary=735323031399963166993862150，content-type是multipart/form-data; boundary用来分开多媒体文件的。
- --735323031399963166993862150，其中735323031399963166993862150我们已经知道它表示的是边界。如果在前边添加了--就表示是多表单的开始边界，
-    与之对应的是735323031399963166993862150--表示表单结尾。
- Content-Disposition: form-data; name="file1"; filename="a.txt" 对内容的进一步说明。
- Content-Type: application/octet-stream表示表单内的数据类型。
- 
- 
-
- */
 open class MultipartFormData {
 
     // MARK: - Helper Types
@@ -115,9 +75,6 @@ open class MultipartFormData {
         }
     }
 
-    /*
-     多媒体表单。
-     */
     class BodyPart {
         let headers: HTTPHeaders
         let bodyStream: InputStream

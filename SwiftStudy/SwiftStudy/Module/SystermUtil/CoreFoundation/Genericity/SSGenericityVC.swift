@@ -31,15 +31,28 @@ extension NSObject: MyKfCompatible {}
 
 
 
+struct Sx<Base> {
+    private let base: Base
+    init(_ base: Base) {
+        self.base = base
+    }
+}
+
+protocol SxCompatible {
+    
+    var sx: Sx<Self> {get}
+}
+
+
 class SSGenericityVC: SSBaseViewController {
     
     static let staticValue = "staticValue"
     let objectValue = "objectValue"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
         self.titleName = "泛型"
         self.desLab.text = "泛型对于我们写Lib、Framework、SDK很有帮助。可以让我们写很多通用代码。现在很多好的语言都是支持泛型的。Swift中泛型主要有以下：\n\n1、泛型函数。func swapTwoItem<T>(item1:inout T, item2:inout T) {}。特别注意其写法。 而且在调用的时候不能指定类型，swapTwoItem<Int>(item1: &item1, item2: &item2)，这个时候会报错。只能swapTwoItem(item1: &item1, item2: &item2)调用。同时<T: Comparable>是可以对T进行约束的。func someFunction<T : SomeClass, U : SomeProtocol> (someT : T, someU : U)，两个类型也是可以的。\n\n2、泛型类型。struct Stack<T> {}。var stack = Stack<Int>()，注意和泛型函数的区别，泛型函数调用的时候不能指定类型。但是泛型类型，初始化的时候需要指定类型，不然那都会报错。同样我们可以约束其类型 struct Stack<T: StringProtocol> 。\n\n3、泛型协议。注意和泛型函数、泛型类型的区别。protocol Container<T>{} 这种写法会报错。Protocols do not allow generic parameters; use associated types instead。很明显泛型协议，需要借助associated来设置。 而且，普通类型遵循协议，就必须借助typealias ItemType = Int。泛型类型可以省略，注意泛型类型遵循泛型协议的写法，参考Demo"
         

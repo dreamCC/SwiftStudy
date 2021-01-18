@@ -88,10 +88,6 @@ open class TaskDelegate: NSObject {
     var taskNeedNewBodyStream: ((URLSession, URLSessionTask) -> InputStream?)?
     var taskDidCompleteWithError: ((URLSession, URLSessionTask, Error?) -> Void)?
 
-    /*
-     重定向方法。
-     当返回码以3xx的时候，会进行重定向，而且会返回重定向地址。服务器进行重定向的原因很多，比如资源撤离、服务器负载、URL增强等。
-     */
     @objc(URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:)
     func urlSession(
         _ session: URLSession,
@@ -109,15 +105,6 @@ open class TaskDelegate: NSObject {
         completionHandler(redirectRequest)
     }
 
-    /*
-     安全认证方法。
-     1、HTTPS是不会触发这个方法的，因为NSURLSession内部有一个根证书，如果服务器证书是证书机构颁发的，那么就可以顺利通过验证。
-     2、这个方法只有在服务器响应头中，www-Autenticate对于的是proxy authentication或者TLS trust validation时候才会触发。
-     
-     因此客户端要和服务端建立SSL只需要两步：
-     1、服务器响应头中有www-authenticate,同时返回自己信任的证书。
-     2、客户端验证服务端返回的证书。然后用证书中的公钥把数据加密发送给服务端。
-     */
     @objc(URLSession:task:didReceiveChallenge:completionHandler:)
     func urlSession(
         _ session: URLSession,
@@ -159,9 +146,6 @@ open class TaskDelegate: NSObject {
         completionHandler(disposition, credential)
     }
 
-    /*
-     当Request有bodystream的时候才会调用。
-     */
     @objc(URLSession:task:needNewBodyStream:)
     func urlSession(
         _ session: URLSession,
@@ -177,11 +161,6 @@ open class TaskDelegate: NSObject {
         completionHandler(bodyStream)
     }
 
-    
-    /*
-     请求结束。
-     当时下载任务的时候，还保存下载的resumeDate。
-     */
     @objc(URLSession:task:didCompleteWithError:)
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let taskDidCompleteWithError = taskDidCompleteWithError {
@@ -195,7 +174,6 @@ open class TaskDelegate: NSObject {
                     let resumeData = (error as NSError).userInfo[NSURLSessionDownloadTaskResumeData] as? Data
                 {
                     downloadDelegate.resumeData = resumeData
-                   
                 }
             }
 
@@ -255,11 +233,6 @@ class DataTaskDelegate: TaskDelegate, URLSessionDataDelegate {
     var dataTaskDidReceiveData: ((URLSession, URLSessionDataTask, Data) -> Void)?
     var dataTaskWillCacheResponse: ((URLSession, URLSessionDataTask, CachedURLResponse) -> CachedURLResponse?)?
 
-    /*
-     当收到服务器响应数据的时候会调用。我们可以通过dataTaskDidReceiveResponse属性来控制是否接受服务器数据。
-     
-     
-     */
     func urlSession(
         _ session: URLSession,
         dataTask: URLSessionDataTask,
@@ -277,22 +250,6 @@ class DataTaskDelegate: TaskDelegate, URLSessionDataDelegate {
         completionHandler(disposition)
     }
 
-    /*
-     public enum ResponseDisposition : Int {
-
-         
-         case cancel = 0 /* Cancel the load, this is the same as -[task cancel] */
-
-         case allow = 1 /* Allow the load to continue */
-
-         case becomeDownload = 2 /* Turn this request into a download */
-
-         @available(iOS 9.0, *)
-         case becomeStream = 3 /* Turn this task into a stream task */
-     }
-     URLSession.ResponseDisposition有四种情况。前两种很好理解。如果=.becomeDownload 就会调用该方法。
-     也就是使自己dataTask变成downloadTask。这样做的究竟有什么场景？
-     */
     func urlSession(
         _ session: URLSession,
         dataTask: URLSessionDataTask,
@@ -301,10 +258,6 @@ class DataTaskDelegate: TaskDelegate, URLSessionDataDelegate {
         dataTaskDidBecomeDownloadTask?(session, dataTask, downloadTask)
     }
 
-    
-    /*
-     这个方法算是核心方法。就是服务器返回数据的处理。
-     */
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         if initialResponseTime == nil { initialResponseTime = CFAbsoluteTimeGetCurrent() }
 
@@ -324,16 +277,12 @@ class DataTaskDelegate: TaskDelegate, URLSessionDataDelegate {
             progress.totalUnitCount = totalBytesExpected
             progress.completedUnitCount = totalBytesReceived
 
-            // 这个设计很巧妙。通过元祖的形式将回调的进度和回调所在的线程同时进行处理。
             if let progressHandler = progressHandler {
                 progressHandler.queue.async { progressHandler.closure(self.progress) }
             }
         }
     }
 
-    /*
-     处理缓存的。当设置URLSessionConfig.cacheProperty的时候会调用该方法。
-     */
     func urlSession(
         _ session: URLSession,
         dataTask: URLSessionDataTask,
@@ -341,7 +290,7 @@ class DataTaskDelegate: TaskDelegate, URLSessionDataDelegate {
         completionHandler: @escaping (CachedURLResponse?) -> Void)
     {
         var cachedResponse: CachedURLResponse? = proposedResponse
-    
+
         if let dataTaskWillCacheResponse = dataTaskWillCacheResponse {
             cachedResponse = dataTaskWillCacheResponse(session, dataTask, proposedResponse)
         }
@@ -361,17 +310,9 @@ class DownloadTaskDelegate: TaskDelegate, URLSessionDownloadDelegate {
     var progress: Progress
     var progressHandler: (closure: Request.ProgressHandler, queue: DispatchQueue)?
 
-    /*
-     在上面TaskDelegate中，didCompletment withError的时候有说明。当请求失败，如果是DownloadTaskDelegate，那么会取出error中的
-     resumeDate保存起来。
-     */
     var resumeData: Data?
     override var data: Data? { return resumeData }
 
-    /*
-     非常巧妙的设计。通过urlSession：dowloadTask: didFinishDownloadingTo：方法回调，我们可以获取tempUrl，和response。然后通过该闭包，
-     就能获取destinationUrl和options.
-     */
     var destination: DownloadRequest.DownloadFileDestination?
 
     var temporaryURL: URL?
@@ -399,11 +340,6 @@ class DownloadTaskDelegate: TaskDelegate, URLSessionDownloadDelegate {
     var downloadTaskDidWriteData: ((URLSession, URLSessionDownloadTask, Int64, Int64, Int64) -> Void)?
     var downloadTaskDidResumeAtOffset: ((URLSession, URLSessionDownloadTask, Int64, Int64) -> Void)?
 
-    /*
-     下载结束时候调用。
-     如果下载结束，URLSession会将下载的数据保存在临时location的地方。该方法的作用就是把临时的数据存放在destination中。
-     核心方法。FileManager.default.moveItem(at: location, to: destinationURL)。
-     */
     func urlSession(
         _ session: URLSession,
         downloadTask: URLSessionDownloadTask,
@@ -416,7 +352,6 @@ class DownloadTaskDelegate: TaskDelegate, URLSessionDownloadDelegate {
             let response = downloadTask.response as? HTTPURLResponse
         else { return }
 
-       
         let result = destination(location, response)
         let destinationURL = result.destinationURL
         let options = result.options
@@ -438,10 +373,7 @@ class DownloadTaskDelegate: TaskDelegate, URLSessionDownloadDelegate {
             self.error = error
         }
     }
-    
-    /*
-     下载过程中会调用。主要是提供下载进度的。
-     */
+
     func urlSession(
         _ session: URLSession,
         downloadTask: URLSessionDownloadTask,
@@ -469,9 +401,6 @@ class DownloadTaskDelegate: TaskDelegate, URLSessionDownloadDelegate {
         }
     }
 
-    /*
-     下载被暂停会调用该方法。
-     */
     func urlSession(
         _ session: URLSession,
         downloadTask: URLSessionDownloadTask,
@@ -514,9 +443,6 @@ class UploadTaskDelegate: DataTaskDelegate {
 
     var taskDidSendBodyData: ((URLSession, URLSessionTask, Int64, Int64, Int64) -> Void)?
 
-    /*
-     上传的核心方法。
-     */
     func URLSession(
         _ session: URLSession,
         task: URLSessionTask,

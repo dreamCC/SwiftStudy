@@ -8,6 +8,7 @@
 
 import Moya
 
+let homeProvider = MoyaProvider<SSHomeAPI>()
 
 //MARK: -----------
 enum SSHomeAPI {

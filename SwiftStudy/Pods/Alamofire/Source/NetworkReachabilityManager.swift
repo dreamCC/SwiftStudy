@@ -33,11 +33,6 @@ import SystemConfiguration
 /// Reachability can be used to determine background information about why a network operation failed, or to retry
 /// network requests when a connection is established. It should not be used to prevent a user from initiating a network
 /// request, as it's possible that an initial request may be required to establish reachability.
-/*
- 这里我们其实主要学习一下设计思路。比如如果让我们开发一个网络监测工具类，那么我们可能会设计成当前网络状态：unknown、notReachable、wify、wwan但是
- 作者做了优化，将unknown、notReachable、reabhable归为reachabilityStatus将wify、wwan归为conntionType使代码结构更加清晰。
- 
- */
 open class NetworkReachabilityManager {
     /// Defines the various states of network reachability.
     ///

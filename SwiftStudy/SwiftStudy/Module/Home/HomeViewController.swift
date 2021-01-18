@@ -60,7 +60,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }else if indexPath.row == 2 {
             navigationController?.pushViewController(SSThirdFrameworkVC(), animated: true)
         }else if indexPath.row == 3 {
-            navigationController?.pushViewController(SSMvvmVC(), animated: true)
+            navigationController?.pushViewController(MvvmViewController(), animated: true)
         }else if indexPath.row == 4 {
             navigationController?.pushViewController(MvpViewController(), animated: true)
         }else {

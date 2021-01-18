@@ -14,3 +14,5 @@
 #import "QMUIConfigurationTemplateGrass.h"
 #import "QMUIConfigurationTemplatePinkRose.h"
 #import "QMUIConfigurationTemplateGrapefruit.h"
+
+#import <RxSwift/RxSwift-Swift.h>
