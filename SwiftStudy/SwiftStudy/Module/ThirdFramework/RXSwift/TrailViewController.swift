@@ -20,7 +20,6 @@ class TrailViewController: SSBaseViewController {
         super.viewDidLoad()
         
     
-    
     }
 
     /*
@@ -209,6 +208,7 @@ class TrailViewController: SSBaseViewController {
         }.disposed(by: disposeBag)
 
     
+        
     }
     
     
@@ -218,6 +218,7 @@ class TrailViewController: SSBaseViewController {
         // UITextField中的text就属于ControlProperty。
         inputField.rx.text.bind(to: desLab.rx.text).disposed(by: disposeBag)
     }
+    
     
     
     @IBAction func controlEvent(_ sender: UIButton) {

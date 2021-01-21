@@ -29,9 +29,9 @@ class SubjectsViewController: SSBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        publishSubject()
+//        publishSubject()
 //        behaviorSubject()
-//        replaySubject()
+        replaySubject()
     }
     
     private func publishSubject() {
@@ -50,7 +50,7 @@ class SubjectsViewController: SSBaseViewController {
         
         publishSubject.onNext("hello")
         publishSubject.onNext("world")
-        //publishSubject.onError(NSError(domain: "publish error", code: 100, userInfo: nil))
+        publishSubject.onError(NSError(domain: "publish error", code: 100, userInfo: nil))
         publishSubject.onCompleted()
         
         // 不会受到这个event
@@ -86,6 +86,10 @@ class SubjectsViewController: SSBaseViewController {
         
         let replaySubject = ReplaySubject<String>.create(bufferSize: 2)
         
+        replaySubject.onNext("-hello")
+        replaySubject.onNext("-world")
+        replaySubject.onNext("-enha")
+
         replaySubject.subscribe { (value) in
             print("接收到值:" + value)
         } onError: { (error) in
@@ -97,16 +101,12 @@ class SubjectsViewController: SSBaseViewController {
         replaySubject.onNext("hello")
         replaySubject.onNext("world")
         replaySubject.onNext("enha")
+        replaySubject.onError(NSError(domain: "publish error", code: 100, userInfo: nil))
         replaySubject.onCompleted()
         
         replaySubject.onNext("enha")
     }
     
-    private func variable() {
-        
-        // Variable 是BehaviorSubject的封装。现在已经遗弃。
-        let varialble = Variable<String>.init("")
-
-    }
+   
     
 }
