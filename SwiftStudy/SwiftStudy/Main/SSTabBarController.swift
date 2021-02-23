@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QMUIKit
 
 class SSTabBarController: UITabBarController {
     
@@ -16,6 +17,7 @@ class SSTabBarController: UITabBarController {
         
         let homeVc = HomeViewController()
         let homeNavi = SSNavigationController(rootViewController: homeVc)
+        // homeNavi.navigationBar.backIndicatorImage =  UIImage(named: "icon_tabbar_lab_selected")
         
         let secondVc = UIViewController()
         let secondNavi = SSNavigationController(rootViewController: secondVc)
@@ -25,6 +27,7 @@ class SSTabBarController: UITabBarController {
         
         let forthVc = UIViewController()
         let forthNavi = SSNavigationController(rootViewController: forthVc)
+        
         
         viewControllers = [homeNavi, secondNavi, thirdNavi, forthNavi]
         homeNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)

@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SSBaseViewController: UIViewController {
+class SSBaseViewController: QMUICommonViewController {
 
     
     var titleName: String? {
@@ -23,11 +23,12 @@ class SSBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initSubViews()
     }
     
-    private func initSubViews() {
-        
+
+    
+    override func initSubviews() {
+        super.initSubviews()
         UITabBar.appearance().barStyle = .black
         
         view.backgroundColor = UIColor.white
@@ -43,5 +44,7 @@ class SSBaseViewController: UIViewController {
             make.bottom.lessThanOrEqualTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
         }
     }
+    
+   
 
 }

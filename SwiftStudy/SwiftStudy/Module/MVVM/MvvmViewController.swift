@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MvvmViewController: UIViewController {
+class MvvmViewController: SSBaseViewController {
 
     lazy var observableBtn: UIButton = {
         let btn = UIButton(type: .system)
@@ -27,6 +27,8 @@ class MvvmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         view.backgroundColor = UIColor.white
         view.addSubview(observableBtn)
         observableBtn.snp.makeConstraints { (make) in

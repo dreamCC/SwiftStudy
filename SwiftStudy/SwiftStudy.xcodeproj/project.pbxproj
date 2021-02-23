@@ -174,6 +174,7 @@
 		A6DAFE3923ACB397007E02EA /* OCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DAFE3823ACB397007E02EA /* OCClass.m */; };
 		A6DC03FB24907E40002E72E4 /* SSLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC03FA24907E40002E72E4 /* SSLayer.swift */; };
 		A6DC03FD2490CFB8002E72E4 /* SSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC03FC2490CFB8002E72E4 /* SSView.swift */; };
+		A6DE8BB225C42A52000BA1A8 /* UIBezelPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE8BB125C42A52000BA1A8 /* UIBezelPathViewController.swift */; };
 		A6E8597E24AF03CD00AA31C1 /* SSSearchControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8597D24AF03CC00AA31C1 /* SSSearchControllerVC.swift */; };
 		A6E8598024AF07B000AA31C1 /* SSSearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8597F24AF07B000AA31C1 /* SSSearchResultVC.swift */; };
 		A6E9F6212499C0E800718F5D /* SSRunloopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E9F6202499C0E800718F5D /* SSRunloopVC.swift */; };
@@ -416,6 +417,7 @@
 		A6DAFE3823ACB397007E02EA /* OCClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCClass.m; sourceTree = "<group>"; };
 		A6DC03FA24907E40002E72E4 /* SSLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLayer.swift; sourceTree = "<group>"; };
 		A6DC03FC2490CFB8002E72E4 /* SSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSView.swift; sourceTree = "<group>"; };
+		A6DE8BB125C42A52000BA1A8 /* UIBezelPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezelPathViewController.swift; sourceTree = "<group>"; };
 		A6E8597D24AF03CC00AA31C1 /* SSSearchControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSearchControllerVC.swift; sourceTree = "<group>"; };
 		A6E8597F24AF07B000AA31C1 /* SSSearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSearchResultVC.swift; sourceTree = "<group>"; };
 		A6E9F6202499C0E800718F5D /* SSRunloopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSRunloopVC.swift; sourceTree = "<group>"; };
@@ -670,6 +672,7 @@
 		A610626424507708004B9A9A /* KnowledgePoint */ = {
 			isa = PBXGroup;
 			children = (
+				A6DE8BB025C42A2C000BA1A8 /* UIBezelPath */,
 				A6809DC72566012E00EFC7C6 /* Extention */,
 				A6EFA9CE24AD79FA00D609B5 /* Countainer */,
 				A64D28C524A89557005DF222 /* SizeThatFits */,
@@ -1481,6 +1484,14 @@
 			path = Genericity;
 			sourceTree = "<group>";
 		};
+		A6DE8BB025C42A2C000BA1A8 /* UIBezelPath */ = {
+			isa = PBXGroup;
+			children = (
+				A6DE8BB125C42A52000BA1A8 /* UIBezelPathViewController.swift */,
+			);
+			path = UIBezelPath;
+			sourceTree = "<group>";
+		};
 		A6E8597C24AF03A900AA31C1 /* UISearchController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1935,6 +1946,7 @@
 				A6F7D40F25490F4C0061EF67 /* SSKingfisherViewController.swift in Sources */,
 				A618A1CF23B2F94700C97FD9 /* SSAlamofireVC.swift in Sources */,
 				A600C4A024B41A500083FC02 /* QDCommonListViewController.m in Sources */,
+				A6DE8BB225C42A52000BA1A8 /* UIBezelPathViewController.swift in Sources */,
 				A6983D4123CD996B006F720F /* SSUserAPI.swift in Sources */,
 				A6EABB2524920240006B7EB1 /* SSModalPresentVC.swift in Sources */,
 				A62739F324A2E98100AB20E6 /* SSQuartzAndCoreGraphicsVC.swift in Sources */,
@@ -2174,6 +2186,7 @@
 				DEVELOPMENT_TEAM = EYF7S6R84B;
 				GCC_PREFIX_HEADER = SwiftStudy/PrefixHeader.pch;
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2198,6 +2211,7 @@
 				DEVELOPMENT_TEAM = EYF7S6R84B;
 				GCC_PREFIX_HEADER = SwiftStudy/PrefixHeader.pch;
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

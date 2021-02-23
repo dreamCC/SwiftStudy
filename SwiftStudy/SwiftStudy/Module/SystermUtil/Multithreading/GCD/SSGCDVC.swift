@@ -37,11 +37,11 @@ class SSGCDVC: UIViewController {
         }
         
         //gcdFunc()
-        //gcdBarrierFunc()
+        gcdBarrierFunc()
         //gcdTargetFunc()
         //gcdWorkItemFunc()
         //gcdGroupFunc()
-        gcdTimeFunc()
+        //gcdTimeFunc()
         //gcdSemaphoreFunc()
         
     }

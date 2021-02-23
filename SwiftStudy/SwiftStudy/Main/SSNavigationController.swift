@@ -9,14 +9,9 @@
 import Foundation
 import UIKit
 
-class SSNavigationController : UINavigationController {
+class SSNavigationController : QMUINavigationController {
 
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-
-        if self.viewControllers.count > 0 {
-            viewController.hidesBottomBarWhenPushed = true
-        }
-        super.pushViewController(viewController, animated: animated)
-    }
+    
+   
 }
 

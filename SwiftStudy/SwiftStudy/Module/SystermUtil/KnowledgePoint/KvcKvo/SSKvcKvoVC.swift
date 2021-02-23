@@ -23,7 +23,6 @@ class SSKvcKvoVC: SSBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
 
     }
         
@@ -32,17 +31,28 @@ class SSKvcKvoVC: SSBaseViewController {
         
         kvcClass.setValue("yes", forKey: "name")
         print(kvcClass.name)
+    
+        
     }
     
     @IBAction func kvoBtnClick(_ sender: UIButton) {
         
         
         
-        print("kvo 之前", type(of: kvoClass))
-        kvoClass.addObserver(kvoClass, forKeyPath: #keyPath(name), options: [.new, .old], context: nil)
-    
-        print("kvo 之后", object_getClass(self)!)
+        print("kvo 之前", object_getClass(kvoClass)!)
+        kvoClass.addObserver(self, forKeyPath: #keyPath(name), options: [.new, .old], context: nil)
+        print("kvo 之后", object_getClass(kvoClass)!)
+        
         kvoClass.name = "newVlaue"
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print("observeValue：==", keyPath ?? "嗯哈")
+        
     }
     
 }
@@ -55,7 +65,7 @@ class SSKvcKvoVC: SSBaseViewController {
  
  这里牵扯到kvc的原理问题：
  1、查找模型中有没有setName:方法，如果有就直接赋值。
- 2、如果没有，就会继续查找模型中有没有_name成员变量，有就_name = value赋值。
+ 2、如果没有，就会查看accessInstanceVariablesDirectly是否返回true，如果返回true，继续模型中的属性列表中是否有_key, key等，如果有就直接赋值。
  3、如果没有，就会查找模型中有没有isName属性，有就直接赋值。
  4、如果都没有，就会直接报错。 setValue： forUndefineKey:
  
@@ -108,11 +118,7 @@ class KvoClass: NSObject {
     
     
     @objc dynamic var name: String = ""
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print("observeValue", keyPath ?? "嗯哈")
-        
-    }
+
     
     
     override func willChangeValue(forKey key: String) {

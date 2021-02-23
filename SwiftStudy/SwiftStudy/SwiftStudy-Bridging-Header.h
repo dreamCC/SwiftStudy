@@ -3,6 +3,7 @@
 //
 
 #import "OCClass.h"
+#import "SSXiuShiFu.h"
 
 #import "OCClass+Category.h"
 

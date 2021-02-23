@@ -196,7 +196,7 @@ import UIKit
  };
  
  
- class_ro_t 是只读的，保存的是类的原始方法、属性和协议。
+ class_ro_t 是只读的，保存的是类的原始方法、属性和协议。 存储这编译时候就确定的属性和方法。
  struct class_ro_t {
      uint32_t flags;
      uint32_t instanceStart;
@@ -344,20 +344,23 @@ import UIKit
  swift类的extention定义的方法，是以硬编码的形式存在的。这也是swift中extention无法进行runtime的method swizzling的原因，我们想要使用runtime就必须借助@objc关键字修饰。
 
 */
-class SSRuntimeVC: UIViewController {
+class SSRuntimeVC: SSBaseViewController {
 
     let swiftClass = SwiftClass()
-    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        
     }
     
     @IBAction func ivarBtnClick(_ sender: UIButton) {
         ivarList()
+        
+        swiftClass.setValue(199.9, forKey: "height")
+//        print(swiftClass.height)
     }
     
     @IBAction func propertyBtnClick(_ sender: UIButton) {
@@ -435,7 +438,7 @@ class SSRuntimeVC: UIViewController {
     
 }
 
-class SwiftClass {
+class SwiftClass: NSObject {
     var height: Double = 177.5
     @objc var name: String = "swift"
     @objc dynamic var age: Int = 12
@@ -443,20 +446,36 @@ class SwiftClass {
     private func swiftClassFunc() {
         
     }
+    
+    @objc private func objcFunc() {
+        
+    }
+    
+    override class var accessInstanceVariablesDirectly: Bool {
+        return true
+    }
 }
 
 
 /*
  分类增加属性
+ 
 */
+
+private var lastURLKey: Void?
+private var indicatorKey: Void?
+private var indicatorTypeKey: Void?
+private var placeholderKey: Void?
+private var imageTaskKey: Void?
+
 extension SwiftClass {
     
     private struct AssociatedKey {
         static var propertyName = "propertyName"
     }
-    
+
     var runtimeProperty: String? {
-        
+
         set {
             objc_setAssociatedObject(self, &AssociatedKey.propertyName, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
@@ -474,14 +493,14 @@ extension SwiftClass {
 */
 
 extension SwiftClass {
-    
+
     func methodSwizzing() {
         let orgSelector = #selector(orgFunc)
         let swzSelector = #selector(swizzingFunc)
-        
+
         let orgMethod = class_getInstanceMethod(type(of: self), orgSelector)!
         let swzMethod = class_getInstanceMethod(type(of: self), swzSelector)!
-        
+
         // 防止org方式是从父类继承过来的。
         let didAddidMehod = class_addMethod(type(of: self),
                                             orgSelector,
@@ -495,14 +514,14 @@ extension SwiftClass {
         }else {
             method_exchangeImplementations(orgMethod, swzMethod)
         }
-        
+
     }
-    
-    
+
+
     @objc func orgFunc() {
         print("orgFunc")
     }
-    
+
     @objc  func swizzingFunc() {
         print("swizzingFunc")
     }

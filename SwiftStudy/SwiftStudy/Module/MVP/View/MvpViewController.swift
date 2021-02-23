@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MvpViewController: UIViewController {
+class MvpViewController: SSBaseViewController {
 
     
     lazy var mvpPresenter = MvpPresenter()
@@ -19,10 +19,11 @@ class MvpViewController: UIViewController {
         super.viewDidLoad()
 
 
-        didInitialize()
     }
     
-    private func didInitialize() {
+    override func initSubviews() {
+        super.initSubviews()
+        
         view.backgroundColor = UIColor.white
         
         self.mvpPresenter.delegate = self
@@ -54,6 +55,8 @@ class MvpViewController: UIViewController {
     deinit {
         print("MvpViewController=:释放-")
     }
+    
+    
 }
 
 extension MvpViewController: MvpPresenterDelegate {

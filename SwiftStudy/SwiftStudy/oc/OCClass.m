@@ -66,6 +66,7 @@
     if(!self) return nil;
     self.name = name;
     
+    
     return self;
 }
 
@@ -73,8 +74,8 @@
 
 
 -(BOOL)numberNoto:(NSString *)name age:(NSString *)age {
-    
-    
+
+   
     return YES;
 }
 

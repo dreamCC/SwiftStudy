@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 
-class SSThirdFrameworkVC: UIViewController {
+class SSThirdFrameworkVC: SSBaseViewController {
 
     lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI", "RxSwift", "Kingfisher", "MJRefresh", "---"]
   

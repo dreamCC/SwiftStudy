@@ -27,21 +27,13 @@ extension MyKfCompatible {
         return MyKf.init(base: self)
     }
 }
-extension NSObject: MyKfCompatible {}
-
-
-
-struct Sx<Base> {
-    private let base: Base
-    init(_ base: Base) {
-        self.base = base
-    }
-}
-
-protocol SxCompatible {
+extension UIView: MyKfCompatible {}
+extension MyKf where Base == UIView {
     
-    var sx: Sx<Self> {get}
+    func testFunc() {}
 }
+
+
 
 
 class SSGenericityVC: SSBaseViewController {
@@ -58,8 +50,7 @@ class SSGenericityVC: SSBaseViewController {
         
         print(self.objectValue, Self.staticValue, SSGenericityVC.staticValue)
         
-        let sf: MyKf = MyKf<String>.init(base: "")
-        print(sf.base, self)
+        
         
     
         

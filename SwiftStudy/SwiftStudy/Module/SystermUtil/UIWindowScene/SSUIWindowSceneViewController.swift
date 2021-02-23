@@ -27,26 +27,30 @@ import UIKit
  
  */
 
+
+
 class SSUIWindowSceneViewController: SSBaseViewController {
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let windows = UIApplication.shared.windows
-        print(windows)
         
-        let keyWindow = UIApplication.shared.keyWindow
-        print(keyWindow)
-
-        if #available(iOS 13.0, *) {
-            let windowScene = keyWindow!.windowScene
-            print(windowScene)
-        } else {
-
-        }
         
-       
+            
     }
+}
+
+
+
+
+class Outter {
+    let age: Int = 20
     
+    class Inner {
+        
+        func testMethod() {
+            
+            
+        }
+    }
 }

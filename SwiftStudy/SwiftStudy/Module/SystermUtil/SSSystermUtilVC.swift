@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Alamofire
 
-class SSSystermUtilVC: UIViewController {
+class SSSystermUtilVC: SSBaseViewController {
     
 
     var datas = ["Multithreading","CoreFoundation","KnowledgePoint","UserInterfaceStyle","QuartzAndCoreGraphics","UIWindowScene"]

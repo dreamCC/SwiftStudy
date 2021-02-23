@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SSXiuShiFu : NSObject
+@interface SSXiuShiFu : NSObject {
+    int _age;
+}
 
 
 // NS_UNAVAILABLE 表示不能使用该方法。

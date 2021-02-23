@@ -15,7 +15,6 @@ class SSNotoViewController: SSBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
         
     }
     
