@@ -16,10 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)origiClassMethod;
 
--(instancetype)initName:(NSString *)name;
 
 
 +(instancetype)shareInstance;
+
++(__kindof OCClass *)kindofInstance;
+
 @end
 
 

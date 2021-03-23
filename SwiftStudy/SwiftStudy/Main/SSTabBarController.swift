@@ -19,7 +19,7 @@ class SSTabBarController: UITabBarController {
         let homeNavi = SSNavigationController(rootViewController: homeVc)
         // homeNavi.navigationBar.backIndicatorImage =  UIImage(named: "icon_tabbar_lab_selected")
         
-        let secondVc = UIViewController()
+        let secondVc = SecondViewController()
         let secondNavi = SSNavigationController(rootViewController: secondVc)
         
         let thirdVc = UIViewController()

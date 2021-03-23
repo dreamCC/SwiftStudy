@@ -356,3 +356,14 @@ URLComponts可以很好的拆解url。其中，提供了获取url各个部分的
     json字符串就是json格式的字符串。比如"{StudentID:'100',Name:'tmac',Hometown:'usa'}"。
     普通字符串只是用双引号包裹起来的，比如"hello"。
     json对象就是指定具有json格式的对象。比如json字符串、数组、字典都是可以充当json对象的。
+
+
+
+3.1
+1、编译器。
+    前端：语法分析
+    后端：生成相应平台的二进制代码。
+    
+    clang。 llvm。
+    
+    

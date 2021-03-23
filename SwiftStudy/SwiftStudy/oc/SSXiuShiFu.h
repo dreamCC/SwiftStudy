@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
     int _age;
 }
 
+@property(atomic, assign) NSString *name;
 
 // NS_UNAVAILABLE 表示不能使用该方法。
 -(instancetype)init NS_UNAVAILABLE;

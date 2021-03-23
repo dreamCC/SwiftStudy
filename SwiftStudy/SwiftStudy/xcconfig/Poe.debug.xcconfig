@@ -1,0 +1,18 @@
+//
+//  Poe.debug.xcconfig
+//  SwiftStudy
+//
+//  Created by Zhu ChaoJun on 2021/3/9.
+//  Copyright © 2021 Zhu ChaoJun. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-SwiftStudy/Pods-SwiftStudy.debug.xcconfig"
+
+APP_NAME = Poe(Debug)
+CONFIG_FLAG = DEBUG
+
+// 系统，urse-define
+//GCC_PREPROCESSOR_DEFINITIONS = $(inherited) BASE_URL = "www.debug.com"

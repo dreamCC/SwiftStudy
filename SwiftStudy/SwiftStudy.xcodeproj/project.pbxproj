@@ -28,6 +28,7 @@
 		A60564EE23C6B7C500720AC3 /* SSUniversalLinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60564ED23C6B7C500720AC3 /* SSUniversalLinksVC.swift */; };
 		A60564F023C6B7F200720AC3 /* SSUniversalLinksVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A60564EF23C6B7F200720AC3 /* SSUniversalLinksVC.xib */; };
 		A60598E7245875B2007B71CB /* SSKvcKvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60598E6245875B2007B71CB /* SSKvcKvoVC.swift */; };
+		A60639B325F6212800324F00 /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60639B225F6212800324F00 /* Mems.swift */; };
 		A60BD7B623CC7999007E753B /* OCClass+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = A60BD7B523CC7999007E753B /* OCClass+Category.m */; };
 		A60D006E24AACAC500577F95 /* SSViewShowWayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D006D24AACAC500577F95 /* SSViewShowWayController.swift */; };
 		A60D007024AACE0B00577F95 /* SSShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D006F24AACE0B00577F95 /* SSShowView.swift */; };
@@ -70,6 +71,7 @@
 		A6333E3323AF16A500774E5A /* SSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6333E3223AF16A500774E5A /* SSNavigationController.swift */; };
 		A638C98B25772B2C00196147 /* SSFrameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A638C98A25772B2C00196147 /* SSFrameTableViewCell.swift */; };
 		A638C98F25777DF300196147 /* SSClassAndStructVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A638C98E25777DF300196147 /* SSClassAndStructVC.swift */; };
+		A6394D4E25EE3D670078D7C1 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6394D4D25EE3D670078D7C1 /* AssemblyViewController.swift */; };
 		A63BE0B625B13330002FF174 /* Observable+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63BE0B325B13330002FF174 /* Observable+Response.swift */; };
 		A63BE0B725B13330002FF174 /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63BE0B425B13330002FF174 /* MoyaProvider+Rx.swift */; };
 		A63BE0B825B13330002FF174 /* Single+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63BE0B525B13330002FF174 /* Single+Response.swift */; };
@@ -108,6 +110,9 @@
 		A672A799247F46C6005AC5F5 /* SSXiuShiFu.m in Sources */ = {isa = PBXBuildFile; fileRef = A672A798247F46C6005AC5F5 /* SSXiuShiFu.m */; };
 		A673F29824868A1D00CC35FA /* SSQMUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673F29724868A1D00CC35FA /* SSQMUIViewController.swift */; };
 		A673F29A2486946000CC35FA /* SSQMUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673F2992486946000CC35FA /* SSQMUIView.swift */; };
+		A674C65925F70AFD00F6D611 /* IdfaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674C65825F70AFD00F6D611 /* IdfaViewController.swift */; };
+		A674C6B425F752B000F6D611 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674C6B325F752B000F6D611 /* SecondViewController.swift */; };
+		A674C6BA25F754E200F6D611 /* XcConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A674C6B925F754E200F6D611 /* XcConfigViewController.swift */; };
 		A6755CC123CEF6540041C753 /* manifest.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6755CC023CEF6540041C753 /* manifest.plist */; };
 		A67C0C4D247610320009531A /* SSNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C0C4C247610320009531A /* SSNetworkManager.swift */; };
 		A67DCD91246BA3A20079C5FA /* SSTuplesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67DCD90246BA3A20079C5FA /* SSTuplesVC.swift */; };
@@ -149,6 +154,7 @@
 		A6AA770F25A2E62200DE9ED0 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AA770E25A2E62200DE9ED0 /* RegexTests.swift */; };
 		A6AA773825A30D9400DE9ED0 /* MvpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AA773725A30D9400DE9ED0 /* MvpInputView.swift */; };
 		A6AC3C35259083CF00F3820E /* SSWKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC3C34259083CF00F3820E /* SSWKWebViewController.swift */; };
+		A6AC5BB025E7810200EA727C /* SSArithmeticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC5BAF25E7810200EA727C /* SSArithmeticViewController.swift */; };
 		A6ACD5FE23B1E09D009533DC /* SSArraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ACD5FD23B1E09D009533DC /* SSArraryVC.swift */; };
 		A6ACD60123B2001F009533DC /* SSGCDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ACD60023B2001F009533DC /* SSGCDVC.swift */; };
 		A6AEE03B2595C96A0085FFDE /* OCChild.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AEE03A2595C96A0085FFDE /* OCChild.m */; };
@@ -174,6 +180,7 @@
 		A6DAFE3923ACB397007E02EA /* OCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DAFE3823ACB397007E02EA /* OCClass.m */; };
 		A6DC03FB24907E40002E72E4 /* SSLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC03FA24907E40002E72E4 /* SSLayer.swift */; };
 		A6DC03FD2490CFB8002E72E4 /* SSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC03FC2490CFB8002E72E4 /* SSView.swift */; };
+		A6DE1EF125EF1AC300A0B496 /* PointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE1EF025EF1AC300A0B496 /* PointViewController.swift */; };
 		A6DE8BB225C42A52000BA1A8 /* UIBezelPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DE8BB125C42A52000BA1A8 /* UIBezelPathViewController.swift */; };
 		A6E8597E24AF03CD00AA31C1 /* SSSearchControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8597D24AF03CC00AA31C1 /* SSSearchControllerVC.swift */; };
 		A6E8598024AF07B000AA31C1 /* SSSearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8597F24AF07B000AA31C1 /* SSSearchResultVC.swift */; };
@@ -249,6 +256,7 @@
 		A60564ED23C6B7C500720AC3 /* SSUniversalLinksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUniversalLinksVC.swift; sourceTree = "<group>"; };
 		A60564EF23C6B7F200720AC3 /* SSUniversalLinksVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSUniversalLinksVC.xib; sourceTree = "<group>"; };
 		A60598E6245875B2007B71CB /* SSKvcKvoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSKvcKvoVC.swift; sourceTree = "<group>"; };
+		A60639B225F6212800324F00 /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
 		A60BD7B423CC7999007E753B /* OCClass+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCClass+Category.h"; sourceTree = "<group>"; };
 		A60BD7B523CC7999007E753B /* OCClass+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OCClass+Category.m"; sourceTree = "<group>"; };
 		A60D006D24AACAC500577F95 /* SSViewShowWayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSViewShowWayController.swift; sourceTree = "<group>"; };
@@ -295,6 +303,7 @@
 		A6333E3223AF16A500774E5A /* SSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNavigationController.swift; sourceTree = "<group>"; };
 		A638C98A25772B2C00196147 /* SSFrameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSFrameTableViewCell.swift; sourceTree = "<group>"; };
 		A638C98E25777DF300196147 /* SSClassAndStructVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSClassAndStructVC.swift; sourceTree = "<group>"; };
+		A6394D4D25EE3D670078D7C1 /* AssemblyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyViewController.swift; sourceTree = "<group>"; };
 		A63BE0B325B13330002FF174 /* Observable+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Response.swift"; sourceTree = "<group>"; };
 		A63BE0B425B13330002FF174 /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
 		A63BE0B525B13330002FF174 /* Single+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Single+Response.swift"; sourceTree = "<group>"; };
@@ -343,6 +352,11 @@
 		A672A798247F46C6005AC5F5 /* SSXiuShiFu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSXiuShiFu.m; sourceTree = "<group>"; };
 		A673F29724868A1D00CC35FA /* SSQMUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSQMUIViewController.swift; sourceTree = "<group>"; };
 		A673F2992486946000CC35FA /* SSQMUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSQMUIView.swift; sourceTree = "<group>"; };
+		A674C65825F70AFD00F6D611 /* IdfaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdfaViewController.swift; sourceTree = "<group>"; };
+		A674C66D25F71C7400F6D611 /* Poe.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Poe.debug.xcconfig; sourceTree = "<group>"; };
+		A674C66E25F71C8300F6D611 /* Poe.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Poe.release.xcconfig; sourceTree = "<group>"; };
+		A674C6B325F752B000F6D611 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A674C6B925F754E200F6D611 /* XcConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcConfigViewController.swift; sourceTree = "<group>"; };
 		A6755CC023CEF6540041C753 /* manifest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = manifest.plist; sourceTree = "<group>"; };
 		A67C0C4C247610320009531A /* SSNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSNetworkManager.swift; sourceTree = "<group>"; };
 		A67DCD90246BA3A20079C5FA /* SSTuplesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTuplesVC.swift; sourceTree = "<group>"; };
@@ -389,6 +403,7 @@
 		A6AA770E25A2E62200DE9ED0 /* RegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
 		A6AA773725A30D9400DE9ED0 /* MvpInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvpInputView.swift; sourceTree = "<group>"; };
 		A6AC3C34259083CF00F3820E /* SSWKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSWKWebViewController.swift; sourceTree = "<group>"; };
+		A6AC5BAF25E7810200EA727C /* SSArithmeticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSArithmeticViewController.swift; sourceTree = "<group>"; };
 		A6ACD5FD23B1E09D009533DC /* SSArraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSArraryVC.swift; sourceTree = "<group>"; };
 		A6ACD60023B2001F009533DC /* SSGCDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSGCDVC.swift; sourceTree = "<group>"; };
 		A6AEE0392595C96A0085FFDE /* OCChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCChild.h; sourceTree = "<group>"; };
@@ -417,6 +432,7 @@
 		A6DAFE3823ACB397007E02EA /* OCClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCClass.m; sourceTree = "<group>"; };
 		A6DC03FA24907E40002E72E4 /* SSLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLayer.swift; sourceTree = "<group>"; };
 		A6DC03FC2490CFB8002E72E4 /* SSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSView.swift; sourceTree = "<group>"; };
+		A6DE1EF025EF1AC300A0B496 /* PointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointViewController.swift; sourceTree = "<group>"; };
 		A6DE8BB125C42A52000BA1A8 /* UIBezelPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezelPathViewController.swift; sourceTree = "<group>"; };
 		A6E8597D24AF03CC00AA31C1 /* SSSearchControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSearchControllerVC.swift; sourceTree = "<group>"; };
 		A6E8597F24AF07B000AA31C1 /* SSSearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSearchResultVC.swift; sourceTree = "<group>"; };
@@ -514,6 +530,8 @@
 		A60113D523B0537C00E6E5EF /* SystermUtil */ = {
 			isa = PBXGroup;
 			children = (
+				A6DE1EEF25EF1AB100A0B496 /* Point */,
+				A6394D4C25EE3D040078D7C1 /* Assembly */,
 				A691033125A407FF000D3D1F /* Noto */,
 				A6204CAE255138740076A19A /* UIWindowScene */,
 				A657A87C2455319100571E82 /* UserInterfaceStyle */,
@@ -672,6 +690,8 @@
 		A610626424507708004B9A9A /* KnowledgePoint */ = {
 			isa = PBXGroup;
 			children = (
+				A674C65425F70AD000F6D611 /* Idfa */,
+				A6AC5BA225E7809900EA727C /* Arithmetic */,
 				A6DE8BB025C42A2C000BA1A8 /* UIBezelPath */,
 				A6809DC72566012E00EFC7C6 /* Extention */,
 				A6EFA9CE24AD79FA00D609B5 /* Countainer */,
@@ -886,12 +906,8 @@
 		A6333E2723AF12F000774E5A /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				A6A77AD2259D61A0009F7C5C /* MVP */,
-				A69FDA6823D19649000F3568 /* MVVM */,
-				A618A1CA23B2F8A900C97FD9 /* ThirdFramework */,
+				A674C6B225F7529900F6D611 /* Second */,
 				A6333E2823AF12FF00774E5A /* Home */,
-				A60113D523B0537C00E6E5EF /* SystermUtil */,
-				A60113D623B0539500E6E5EF /* UIKit */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -899,6 +915,11 @@
 		A6333E2823AF12FF00774E5A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A6A77AD2259D61A0009F7C5C /* MVP */,
+				A69FDA6823D19649000F3568 /* MVVM */,
+				A618A1CA23B2F8A900C97FD9 /* ThirdFramework */,
+				A60113D523B0537C00E6E5EF /* SystermUtil */,
+				A60113D623B0539500E6E5EF /* UIKit */,
 				A697A24823AB8F3A00B16AEA /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -947,6 +968,14 @@
 				A638C98E25777DF300196147 /* SSClassAndStructVC.swift */,
 			);
 			path = classAndStruct;
+			sourceTree = "<group>";
+		};
+		A6394D4C25EE3D040078D7C1 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				A6394D4D25EE3D670078D7C1 /* AssemblyViewController.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		A63BE06525B11CFB002FF174 /* Net */ = {
@@ -1168,6 +1197,40 @@
 			path = SwiftUI;
 			sourceTree = "<group>";
 		};
+		A674C65425F70AD000F6D611 /* Idfa */ = {
+			isa = PBXGroup;
+			children = (
+				A674C65825F70AFD00F6D611 /* IdfaViewController.swift */,
+			);
+			path = Idfa;
+			sourceTree = "<group>";
+		};
+		A674C66925F718AE00F6D611 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				A674C66D25F71C7400F6D611 /* Poe.debug.xcconfig */,
+				A674C66E25F71C8300F6D611 /* Poe.release.xcconfig */,
+			);
+			path = xcconfig;
+			sourceTree = "<group>";
+		};
+		A674C6B225F7529900F6D611 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				A674C6B825F754D000F6D611 /* Xcconfig */,
+				A674C6B325F752B000F6D611 /* SecondViewController.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
+		A674C6B825F754D000F6D611 /* Xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				A674C6B925F754E200F6D611 /* XcConfigViewController.swift */,
+			);
+			path = Xcconfig;
+			sourceTree = "<group>";
+		};
 		A67DCD8F246BA3840079C5FA /* Tuples */ = {
 			isa = PBXGroup;
 			children = (
@@ -1248,6 +1311,7 @@
 			isa = PBXGroup;
 			children = (
 				A6245B60254FA958005D06D8 /* SwiftStudy.entitlements */,
+				A674C66925F718AE00F6D611 /* xcconfig */,
 				A63BE0B125B1331B002FF174 /* Vender */,
 				A63BE06525B11CFB002FF174 /* Net */,
 				A6AA76F825A2BE1C00DE9ED0 /* Util */,
@@ -1384,6 +1448,14 @@
 			path = WKWebView;
 			sourceTree = "<group>";
 		};
+		A6AC5BA225E7809900EA727C /* Arithmetic */ = {
+			isa = PBXGroup;
+			children = (
+				A6AC5BAF25E7810200EA727C /* SSArithmeticViewController.swift */,
+			);
+			path = Arithmetic;
+			sourceTree = "<group>";
+		};
 		A6ACD5FC23B1E088009533DC /* Array */ = {
 			isa = PBXGroup;
 			children = (
@@ -1482,6 +1554,15 @@
 				A6D5850523BD826F00F11F14 /* SSGenericityVC.xib */,
 			);
 			path = Genericity;
+			sourceTree = "<group>";
+		};
+		A6DE1EEF25EF1AB100A0B496 /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				A60639B225F6212800324F00 /* Mems.swift */,
+				A6DE1EF025EF1AC300A0B496 /* PointViewController.swift */,
+			);
+			path = Point;
 			sourceTree = "<group>";
 		};
 		A6DE8BB025C42A2C000BA1A8 /* UIBezelPath */ = {
@@ -1861,6 +1942,7 @@
 				A67DCD91246BA3A20079C5FA /* SSTuplesVC.swift in Sources */,
 				A6333E2C23AF137700774E5A /* AppDelegate+extension.swift in Sources */,
 				A69E785825A5AB1100A82480 /* SubjectsViewController.swift in Sources */,
+				A6AC5BB025E7810200EA727C /* SSArithmeticViewController.swift in Sources */,
 				A60D007024AACE0B00577F95 /* SSShowView.swift in Sources */,
 				A6BE7BA623B4458F00F82DC5 /* SSFunctionVC.swift in Sources */,
 				A681F00523C87909002574E2 /* SSNetwork.swift in Sources */,
@@ -1882,6 +1964,7 @@
 				A69E784E25A598F300A82480 /* ObservableViewController.swift in Sources */,
 				A6945CF5254FFC95007C673F /* SSCollectionViewController.swift in Sources */,
 				A64333BF248F699300D8C919 /* QMUIConfigurationTemplateDark.m in Sources */,
+				A674C65925F70AFD00F6D611 /* IdfaViewController.swift in Sources */,
 				A6A77AD4259D68B8009F7C5C /* CodeView.swift in Sources */,
 				A60113DB23B0558400E6E5EF /* SSEnumVC.swift in Sources */,
 				A61B9C3024872DC500289351 /* SSHitTestAndPointInsideVC.swift in Sources */,
@@ -1898,6 +1981,7 @@
 				A6F7EBA8254EF011002557C9 /* SSBundleViewController.swift in Sources */,
 				A6A1C68623CE071D00167BE2 /* SSErrorVC.swift in Sources */,
 				A638C98B25772B2C00196147 /* SSFrameTableViewCell.swift in Sources */,
+				A60639B325F6212800324F00 /* Mems.swift in Sources */,
 				A60598E7245875B2007B71CB /* SSKvcKvoVC.swift in Sources */,
 				A62C406423BB2F9A001584CF /* SSObjectMapperVC.swift in Sources */,
 				A6BA982523B6D99B00DDD06C /* SSProtocolVC.swift in Sources */,
@@ -1921,9 +2005,11 @@
 				A6945CFC255000A5007C673F /* SSCollectionReusableViewHeader.swift in Sources */,
 				A6042AA524A084DE00147D62 /* SSSystermUIVC.swift in Sources */,
 				A6B6A43D25AFEECC00A98495 /* MvvmViewController.swift in Sources */,
+				A674C6BA25F754E200F6D611 /* XcConfigViewController.swift in Sources */,
 				A6E8597E24AF03CD00AA31C1 /* SSSearchControllerVC.swift in Sources */,
 				A6A77AE9259DB642009F7C5C /* MvpViewController.swift in Sources */,
 				A600C4A124B41A500083FC02 /* QDNavigationController.m in Sources */,
+				A6394D4E25EE3D670078D7C1 /* AssemblyViewController.swift in Sources */,
 				A60D006E24AACAC500577F95 /* SSViewShowWayController.swift in Sources */,
 				A6333E3123AF14D300774E5A /* SSTabBarController.swift in Sources */,
 				A6204CB0255138920076A19A /* SSUIWindowSceneViewController.swift in Sources */,
@@ -1943,6 +2029,7 @@
 				A67C0C4D247610320009531A /* SSNetworkManager.swift in Sources */,
 				A697A24723AB8F3A00B16AEA /* AppDelegate.swift in Sources */,
 				A6945D00255001B6007C673F /* SSCollectionReusableViewFooter.swift in Sources */,
+				A674C6B425F752B000F6D611 /* SecondViewController.swift in Sources */,
 				A6F7D40F25490F4C0061EF67 /* SSKingfisherViewController.swift in Sources */,
 				A618A1CF23B2F94700C97FD9 /* SSAlamofireVC.swift in Sources */,
 				A600C4A024B41A500083FC02 /* QDCommonListViewController.m in Sources */,
@@ -2000,6 +2087,7 @@
 				A600C4A524B41A500083FC02 /* QDCommonUI.m in Sources */,
 				A6BA982823B6EC2500DDD06C /* SSRuntimeVC.swift in Sources */,
 				A6809DD72566061F00EFC7C6 /* UIView+EmptyView.swift in Sources */,
+				A6DE1EF125EF1AC300A0B496 /* PointViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2177,21 +2265,24 @@
 		};
 		A697A25623AB8F3B00B16AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D7275BAFE87F10ACC810582 /* Pods-SwiftStudy.debug.xcconfig */;
+			baseConfigurationReference = A674C66D25F71C7400F6D611 /* Poe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftStudy/SwiftStudy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EYF7S6R84B;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = TQA3G2DZ62;
 				GCC_PREFIX_HEADER = SwiftStudy/PrefixHeader.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(CONFIG_FLAG)=1";
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zcj.cn;
+				OTHER_SWIFT_FLAGS = "-D $(CONFIG_FLAG)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.poe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStudy/SwiftStudy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2202,21 +2293,23 @@
 		};
 		A697A25723AB8F3B00B16AEA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21CC8CEDFEBC3DFB40A29F73 /* Pods-SwiftStudy.release.xcconfig */;
+			baseConfigurationReference = A674C66E25F71C8300F6D611 /* Poe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftStudy/SwiftStudy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EYF7S6R84B;
+				DEVELOPMENT_TEAM = TQA3G2DZ62;
 				GCC_PREFIX_HEADER = SwiftStudy/PrefixHeader.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(CONFIG_FLAG)=1";
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zcj.cn;
+				OTHER_SWIFT_FLAGS = "-D $(CONFIG_FLAG)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.poe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStudy/SwiftStudy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

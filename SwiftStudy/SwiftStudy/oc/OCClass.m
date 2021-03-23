@@ -9,6 +9,7 @@
 #import "OCClass.h"
 #import "SwiftStudy-Swift.h"
 #import <objc/runtime.h>
+#import "OCChild.h"
 
 
 
@@ -17,21 +18,34 @@
 
 @property(nonatomic, strong) NSString *name;
 
-
 @end
 
 
 @interface OCClass ()
 
+
+@property(nonatomic, strong) NSString *dynamic;
+
+@property(nonatomic, strong) NSString *  synthesize;
 @end
 
 @implementation OCClass
+
+// MARK:
+@synthesize synthesize = _synSynthesize;
+
+@dynamic dynamic;
 
 +(instancetype)shareInstance {
     static dispatch_once_t  onceToken;
     static OCClass *instance = nil;
     dispatch_once(&onceToken, ^{
-        instance = [[OCClass allocWithZone:NULL] init];
+        instance = [[super allocWithZone:NULL] init];
+    
+        if (DEBUG == 1) {
+            
+        }
+    
     });
     return instance;
 }
@@ -49,26 +63,16 @@
 -(instancetype)init {
     self = [super init];
     if (self) {
-       
-       
-        @synchronized (self) {
-        
-            
-        }
+    
+    
     }
-    return self;
-}
-
-
-
--(instancetype)initName:(NSString *)name {
-    self = [super init];
-    if(!self) return nil;
-    self.name = name;
-    
     
     return self;
 }
+
+
+
+
 
 
 

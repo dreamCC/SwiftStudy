@@ -12,11 +12,13 @@
 
 -(void)setName:(NSString *)name {
     
+    
 }
 
 -(NSString *)name {
     return @"name---";
 }
+
 
 
 

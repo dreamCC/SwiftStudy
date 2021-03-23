@@ -39,6 +39,12 @@ target 'SwiftStudy' do
   # 新手指南
   pod 'Instructions'
   
+  # yykit
+  pod 'YYKit'
+  
+  # 视频播放
+  pod 'ZFPlayer'
+  
 end
 
 # 用于UITest
