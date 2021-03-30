@@ -13,7 +13,7 @@ import Alamofire
 class SSSystermUtilVC: SSBaseViewController {
     
 
-    var datas = ["Multithreading","CoreFoundation","KnowledgePoint","UserInterfaceStyle","QuartzAndCoreGraphics","UIWindowScene", "Assembly", "Point"]
+    var datas = ["Multithreading","CoreFoundation","KnowledgePoint","UserInterfaceStyle","QuartzAndCoreGraphics","UIWindowScene", "Assembly", "Point", "AirDrop"]
     
    
 
@@ -91,6 +91,8 @@ extension SSSystermUtilVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(AssemblyViewController(), animated: true)
         case "Point":
             navigationController?.pushViewController(PointViewController(), animated: true)
+        case "AirDrop":
+            navigationController?.pushViewController(AirDropViewController(), animated: true)
         default:
             return
         }

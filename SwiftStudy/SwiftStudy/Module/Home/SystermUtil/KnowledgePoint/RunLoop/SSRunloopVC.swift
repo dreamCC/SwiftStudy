@@ -13,7 +13,6 @@ class SSRunloopVC: QMUICommonViewController {
     var tTread: Thread!
     var tRunloop: RunLoop!
     var timer: Timer!
-    
 
     
     override func didInitialize() {

@@ -104,6 +104,7 @@
 		A65B7D0D23C492C8002312EA /* SSProgressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65B7D0B23C492C8002312EA /* SSProgressVC.xib */; };
 		A667D4D025748A3600D9C1CB /* SSSequenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A667D4CF25748A3600D9C1CB /* SSSequenceViewController.swift */; };
 		A668036124570F8000A0D335 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A668036024570F8000A0D335 /* SwiftUIView.swift */; };
+		A669BD752612FB3E0082B740 /* AirDropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669BD742612FB3E0082B740 /* AirDropViewController.swift */; };
 		A66D985A25A83216006E3750 /* OperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D985925A83216006E3750 /* OperatorViewController.swift */; };
 		A66D986225A83309006E3750 /* TrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D986125A83309006E3750 /* TrailViewController.swift */; };
 		A672A796247F445E005AC5F5 /* SSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = A672A795247F445E005AC5F5 /* SSSingleton.m */; };
@@ -344,6 +345,7 @@
 		A65B7D0B23C492C8002312EA /* SSProgressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSProgressVC.xib; sourceTree = "<group>"; };
 		A667D4CF25748A3600D9C1CB /* SSSequenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSequenceViewController.swift; sourceTree = "<group>"; };
 		A668036024570F8000A0D335 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		A669BD742612FB3E0082B740 /* AirDropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDropViewController.swift; sourceTree = "<group>"; };
 		A66D985925A83216006E3750 /* OperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorViewController.swift; sourceTree = "<group>"; };
 		A66D986125A83309006E3750 /* TrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailViewController.swift; sourceTree = "<group>"; };
 		A672A794247F445E005AC5F5 /* SSSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSSingleton.h; sourceTree = "<group>"; };
@@ -530,6 +532,7 @@
 		A60113D523B0537C00E6E5EF /* SystermUtil */ = {
 			isa = PBXGroup;
 			children = (
+				A669BD732612FB1E0082B740 /* AirDrop */,
 				A6DE1EEF25EF1AB100A0B496 /* Point */,
 				A6394D4C25EE3D040078D7C1 /* Assembly */,
 				A691033125A407FF000D3D1F /* Noto */,
@@ -1195,6 +1198,14 @@
 				A668036024570F8000A0D335 /* SwiftUIView.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		A669BD732612FB1E0082B740 /* AirDrop */ = {
+			isa = PBXGroup;
+			children = (
+				A669BD742612FB3E0082B740 /* AirDropViewController.swift */,
+			);
+			path = AirDrop;
 			sourceTree = "<group>";
 		};
 		A674C65425F70AD000F6D611 /* Idfa */ = {
@@ -1981,6 +1992,7 @@
 				A6F7EBA8254EF011002557C9 /* SSBundleViewController.swift in Sources */,
 				A6A1C68623CE071D00167BE2 /* SSErrorVC.swift in Sources */,
 				A638C98B25772B2C00196147 /* SSFrameTableViewCell.swift in Sources */,
+				A669BD752612FB3E0082B740 /* AirDropViewController.swift in Sources */,
 				A60639B325F6212800324F00 /* Mems.swift in Sources */,
 				A60598E7245875B2007B71CB /* SSKvcKvoVC.swift in Sources */,
 				A62C406423BB2F9A001584CF /* SSObjectMapperVC.swift in Sources */,

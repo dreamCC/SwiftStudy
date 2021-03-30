@@ -26,7 +26,6 @@ class SSWKWebViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        
     }
     
 

@@ -11,22 +11,10 @@ import Alamofire
 import Moya
 
 
-struct Poe<Base> {
-   private let base: Base
-    init(_ base: Base) {
-        self.base = base
-    }
+class PoeC {
+    var age: Int = 0
+    
 }
-
-protocol PoeNameComposible {
-    associatedtype composible
-    var rx: composible {get}
-}
-
-extension PoeNameComposible {
-    var rx
-}
-
 
 class PointViewController: SSBaseViewController {
 
@@ -43,9 +31,14 @@ class PointViewController: SSBaseViewController {
             return UnsafeRawPointer(p)
         }
         
-        print(ptr, rawPtr.load(as: UTF8.self), separator: "||")
+        print(ptr, rawPtr, separator: "||")
         
-        
+    
+        var poe = PoeC()
+        print(Mems.ptr(ofRef: poe), Mems.ptr(ofVal: &poe))
+        print(withUnsafePointer(to: &poe) { $0 }, UnsafeRawPointer(&poe), UnsafePointer(&poe))
+        print(UnsafeRawPointer(bitPattern: unsafeBitCast(poe, to: Int.self)))
+    
     }
     
     
