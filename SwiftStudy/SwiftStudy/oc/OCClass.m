@@ -42,9 +42,7 @@
     dispatch_once(&onceToken, ^{
         instance = [[super allocWithZone:NULL] init];
     
-        if (DEBUG == 1) {
-            
-        }
+       
     
     });
     return instance;

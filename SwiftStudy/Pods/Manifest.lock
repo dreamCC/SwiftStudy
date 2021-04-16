@@ -303,6 +303,9 @@ PODS:
     - QMUIKit/QMUICore
     - QMUIKit/QMUILog
   - QMUIKit/QMUIWeakObjectContainer (4.0.3)
+  - R.swift (5.2.2):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
   - Result (4.1.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -333,6 +336,7 @@ DEPENDENCIES:
   - ObjectMapper
   - pop
   - QMUIKit
+  - R.swift
   - RxCocoa
   - RxDataSources
   - RxSwift
@@ -354,6 +358,8 @@ SPEC REPOS:
     - ObjectMapper
     - pop
     - QMUIKit
+    - R.swift
+    - R.swift.Library
     - Result
     - RxCocoa
     - RxDataSources
@@ -376,6 +382,8 @@ SPEC CHECKSUMS:
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   QMUIKit: 92b1ac5112562aa4a788d786940c3e84f054aa1e
+  R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
@@ -386,6 +394,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: 1310252c253b9958e4fcd411e706b99c31834eaf
 
-PODFILE CHECKSUM: 87aa5fa8a6a844540ccfe4fbaf755b143c909d9f
+PODFILE CHECKSUM: 41f4ba302a97d880a1919084265efeb9843791d4
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

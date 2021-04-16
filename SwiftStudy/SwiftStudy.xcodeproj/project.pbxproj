@@ -22,6 +22,8 @@
 		A60113DB23B0558400E6E5EF /* SSEnumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60113DA23B0558400E6E5EF /* SSEnumVC.swift */; };
 		A60113DE23B05BB300E6E5EF /* SSAnyAnyObjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60113DD23B05BB300E6E5EF /* SSAnyAnyObjectVC.swift */; };
 		A60113E123B06E7600E6E5EF /* SSStringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60113E023B06E7600E6E5EF /* SSStringVC.swift */; };
+		A60151E626292554003BDCB0 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60151E526292554003BDCB0 /* R.swift */; };
+		A60151EB262925AD003BDCB0 /* RViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60151EA262925AD003BDCB0 /* RViewController.swift */; };
 		A6042AA524A084DE00147D62 /* SSSystermUIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6042AA424A084DE00147D62 /* SSSystermUIVC.swift */; };
 		A6042AA724A0883200147D62 /* SSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6042AA624A0883200147D62 /* SSTableViewController.swift */; };
 		A6042AA924A0A98D00147D62 /* SSHeaderV.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6042AA824A0A98D00147D62 /* SSHeaderV.swift */; };
@@ -102,6 +104,7 @@
 		A657A87E245531B900571E82 /* SSUserInterfaceStyleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657A87D245531B900571E82 /* SSUserInterfaceStyleVC.swift */; };
 		A65B7D0C23C492C8002312EA /* SSProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B7D0A23C492C8002312EA /* SSProgressVC.swift */; };
 		A65B7D0D23C492C8002312EA /* SSProgressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65B7D0B23C492C8002312EA /* SSProgressVC.xib */; };
+		A6616ADB2627E4F50081465F /* TestKvo.m in Sources */ = {isa = PBXBuildFile; fileRef = A6616ADA2627E4F50081465F /* TestKvo.m */; };
 		A667D4D025748A3600D9C1CB /* SSSequenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A667D4CF25748A3600D9C1CB /* SSSequenceViewController.swift */; };
 		A668036124570F8000A0D335 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A668036024570F8000A0D335 /* SwiftUIView.swift */; };
 		A669BD752612FB3E0082B740 /* AirDropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669BD742612FB3E0082B740 /* AirDropViewController.swift */; };
@@ -143,6 +146,7 @@
 		A6A1C68623CE071D00167BE2 /* SSErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A1C68423CE071D00167BE2 /* SSErrorVC.swift */; };
 		A6A1C68723CE071D00167BE2 /* SSErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A1C68523CE071D00167BE2 /* SSErrorVC.xib */; };
 		A6A234FE248E0DA800CB81AD /* SSAppearanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A234FD248E0DA800CB81AD /* SSAppearanceVC.swift */; };
+		A6A3215E26292E2B00CD146E /* OCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A3215D26292E2B00CD146E /* OCViewController.m */; };
 		A6A77AD4259D68B8009F7C5C /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A77AD3259D68B8009F7C5C /* CodeView.swift */; };
 		A6A77AD9259D695A009F7C5C /* SSUIKeyInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A77AD8259D695A009F7C5C /* SSUIKeyInputViewController.swift */; };
 		A6A77AE9259DB642009F7C5C /* MvpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A77AE8259DB642009F7C5C /* MvpViewController.swift */; };
@@ -251,6 +255,8 @@
 		A60113DA23B0558400E6E5EF /* SSEnumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSEnumVC.swift; sourceTree = "<group>"; };
 		A60113DD23B05BB300E6E5EF /* SSAnyAnyObjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAnyAnyObjectVC.swift; sourceTree = "<group>"; };
 		A60113E023B06E7600E6E5EF /* SSStringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSStringVC.swift; sourceTree = "<group>"; };
+		A60151E526292554003BDCB0 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		A60151EA262925AD003BDCB0 /* RViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RViewController.swift; sourceTree = "<group>"; };
 		A6042AA424A084DE00147D62 /* SSSystermUIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSystermUIVC.swift; sourceTree = "<group>"; };
 		A6042AA624A0883200147D62 /* SSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSTableViewController.swift; sourceTree = "<group>"; };
 		A6042AA824A0A98D00147D62 /* SSHeaderV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHeaderV.swift; sourceTree = "<group>"; };
@@ -343,6 +349,8 @@
 		A657A87D245531B900571E82 /* SSUserInterfaceStyleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUserInterfaceStyleVC.swift; sourceTree = "<group>"; };
 		A65B7D0A23C492C8002312EA /* SSProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSProgressVC.swift; sourceTree = "<group>"; };
 		A65B7D0B23C492C8002312EA /* SSProgressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSProgressVC.xib; sourceTree = "<group>"; };
+		A6616AD92627E4F50081465F /* TestKvo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestKvo.h; sourceTree = "<group>"; };
+		A6616ADA2627E4F50081465F /* TestKvo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKvo.m; sourceTree = "<group>"; };
 		A667D4CF25748A3600D9C1CB /* SSSequenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSequenceViewController.swift; sourceTree = "<group>"; };
 		A668036024570F8000A0D335 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		A669BD742612FB3E0082B740 /* AirDropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirDropViewController.swift; sourceTree = "<group>"; };
@@ -391,6 +399,8 @@
 		A6A1C68423CE071D00167BE2 /* SSErrorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSErrorVC.swift; sourceTree = "<group>"; };
 		A6A1C68523CE071D00167BE2 /* SSErrorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSErrorVC.xib; sourceTree = "<group>"; };
 		A6A234FD248E0DA800CB81AD /* SSAppearanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppearanceVC.swift; sourceTree = "<group>"; };
+		A6A3215C26292E2B00CD146E /* OCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
+		A6A3215D26292E2B00CD146E /* OCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCViewController.m; sourceTree = "<group>"; };
 		A6A77AD3259D68B8009F7C5C /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		A6A77AD8259D695A009F7C5C /* SSUIKeyInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUIKeyInputViewController.swift; sourceTree = "<group>"; };
 		A6A77AE8259DB642009F7C5C /* MvpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MvpViewController.swift; sourceTree = "<group>"; };
@@ -595,6 +605,15 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		A60151E426292545003BDCB0 /* R */ = {
+			isa = PBXGroup;
+			children = (
+				A60151E526292554003BDCB0 /* R.swift */,
+				A60151EA262925AD003BDCB0 /* RViewController.swift */,
+			);
+			path = R;
+			sourceTree = "<group>";
+		};
 		A6042AA324A0831600147D62 /* UITableViewDynamicH */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +640,8 @@
 			children = (
 				A60598E6245875B2007B71CB /* SSKvcKvoVC.swift */,
 				A656F8622463B87300B7A8B5 /* SSKvcKvoVC.xib */,
+				A6616AD92627E4F50081465F /* TestKvo.h */,
+				A6616ADA2627E4F50081465F /* TestKvo.m */,
 			);
 			path = KvcKvo;
 			sourceTree = "<group>";
@@ -738,6 +759,7 @@
 		A618A1CA23B2F8A900C97FD9 /* ThirdFramework */ = {
 			isa = PBXGroup;
 			children = (
+				A60151E426292545003BDCB0 /* R */,
 				A6945D0225500DFD007C673F /* MJRefresh */,
 				A6F7D40C25490F080061EF67 /* Kingfisher */,
 				A613066124B6AF04001260C4 /* RXSwift */,
@@ -943,6 +965,8 @@
 				A672A795247F445E005AC5F5 /* SSSingleton.m */,
 				A672A797247F46C6005AC5F5 /* SSXiuShiFu.h */,
 				A672A798247F46C6005AC5F5 /* SSXiuShiFu.m */,
+				A6A3215C26292E2B00CD146E /* OCViewController.h */,
+				A6A3215D26292E2B00CD146E /* OCViewController.m */,
 			);
 			path = oc;
 			sourceTree = "<group>";
@@ -1705,6 +1729,7 @@
 				A697A24023AB8F3A00B16AEA /* Frameworks */,
 				A697A24123AB8F3A00B16AEA /* Resources */,
 				8E27535C83CC69A3C65330FF /* [CP] Embed Pods Frameworks */,
+				A6A3213C26292AE200CD146E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1908,6 +1933,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftStudy/Pods-SwiftStudy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A6A3213C26292AE200CD146E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		D97877C38A714C8F8808E371 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1970,6 +2014,7 @@
 				A697A24923AB8F3A00B16AEA /* HomeViewController.swift in Sources */,
 				A647055425AFE46000BCE382 /* GitHubRepositoryViewModel.swift in Sources */,
 				A62F1E5C25AAA79C00D85B02 /* SchedulersViewController.swift in Sources */,
+				A6A3215E26292E2B00CD146E /* OCViewController.m in Sources */,
 				A6EFA9D024AD7A1A00D609B5 /* SSCountainerVC.swift in Sources */,
 				A63CE77C248A2DF400041D22 /* SSButton.swift in Sources */,
 				A69E784E25A598F300A82480 /* ObservableViewController.swift in Sources */,
@@ -2057,6 +2102,7 @@
 				A6AA773825A30D9400DE9ED0 /* MvpInputView.swift in Sources */,
 				A672A799247F46C6005AC5F5 /* SSXiuShiFu.m in Sources */,
 				A60BD7B623CC7999007E753B /* OCClass+Category.m in Sources */,
+				A60151E626292554003BDCB0 /* R.swift in Sources */,
 				A6809DC92566014800EFC7C6 /* SSExtentsionViewController.swift in Sources */,
 				A6042AA724A0883200147D62 /* SSTableViewController.swift in Sources */,
 				A6C6D5EA23B4A14C000370C4 /* SSRangeVC.swift in Sources */,
@@ -2084,7 +2130,9 @@
 				A6245B68254FB546005D06D8 /* SSPageViewController.swift in Sources */,
 				A6E9F6212499C0E800718F5D /* SSRunloopVC.swift in Sources */,
 				A6A234FE248E0DA800CB81AD /* SSAppearanceVC.swift in Sources */,
+				A60151EB262925AD003BDCB0 /* RViewController.swift in Sources */,
 				A6AA76FA25A2BE5900DE9ED0 /* RegexUtil.swift in Sources */,
+				A6616ADB2627E4F50081465F /* TestKvo.m in Sources */,
 				A6ACD5FE23B1E09D009533DC /* SSArraryVC.swift in Sources */,
 				A63BE0B825B13330002FF174 /* Single+Response.swift in Sources */,
 				A600C49E24B41A500083FC02 /* QDCommonGridViewController.m in Sources */,

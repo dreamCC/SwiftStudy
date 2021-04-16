@@ -17,3 +17,5 @@
 #import "QMUIConfigurationTemplateGrapefruit.h"
 
 #import <RxSwift/RxSwift-Swift.h>
+
+#import "TestKvo.h"

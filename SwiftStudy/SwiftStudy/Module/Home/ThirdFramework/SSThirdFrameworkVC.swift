@@ -12,7 +12,7 @@ import SnapKit
 
 class SSThirdFrameworkVC: SSBaseViewController {
 
-    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI", "RxSwift", "Kingfisher", "MJRefresh", "---"]
+    lazy var datas = ["Alamofire","HandyJson","SwiftJson","ObjectMapper","Moya","QMUI", "RxSwift", "Kingfisher", "MJRefresh", "R", "---"]
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +78,8 @@ extension SSThirdFrameworkVC : UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(SSKingfisherViewController(), animated: true)
         case "MJRefresh":
             navigationController?.pushViewController(SSMJRefreshViewController(), animated: true)
+        case "R":
+            navigationController?.pushViewController(RViewController(), animated: true)
         default:
            
             let fisher = SSKingfisherViewController()

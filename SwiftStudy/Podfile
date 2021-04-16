@@ -5,6 +5,9 @@ use_frameworks!
 
 target 'SwiftStudy' do
 
+  # 资源管理
+  pod 'R.swift'
+
   #pod 'Alamofire'
   pod 'SnapKit'
 
