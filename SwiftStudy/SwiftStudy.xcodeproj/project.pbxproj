@@ -2341,6 +2341,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2.0;
 				OTHER_SWIFT_FLAGS = "-D $(CONFIG_FLAG)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2368,6 +2369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2.0;
 				OTHER_SWIFT_FLAGS = "-D $(CONFIG_FLAG)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
