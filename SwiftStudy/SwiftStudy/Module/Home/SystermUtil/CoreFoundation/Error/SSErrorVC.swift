@@ -8,6 +8,39 @@
 
 import UIKit
 
+enum PoeError: Int, Error {
+    case noHome = 99
+    case noCode = -100
+}
+
+extension PoeError: CustomNSError {
+    
+    var errorCode: Int {  rawValue }
+    public static var errorDomain: String { return "com.swiftyjson.SwiftyJSON" }
+}
+
+extension PoeError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .noHome:
+           return "noHome====就是没有首页"
+        case .noCode:
+            return "noCode ==== 就是没有源码"
+        }
+    }
+    
+    var failureReason: String? {
+        switch self {
+        case .noCode:
+            return "可能是没有code"
+        case .noHome:
+            return "可能是没home"
+        }
+    }
+    
+}
+
+
 /*
  Error在 swift中其实是一个协议。
  Error衍生出的协议，LocalizedError、CustomNSError。
@@ -18,6 +51,7 @@ class SSErrorVC: SSBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    
         
         titleName = "Error"
      

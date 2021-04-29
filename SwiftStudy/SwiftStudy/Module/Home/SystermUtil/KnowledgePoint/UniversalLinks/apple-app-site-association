@@ -3,12 +3,8 @@
         "apps": [],
         "details": [
             {
-                "appID": "MNARL96.com.hangge.demo",
-                "paths": [ "NOT /blog/support/*", "/blog/*", "/app/"]
-            },
-            {
-                "appID": "ABCDEFG12.com.hangge.demo",
-                "paths": [ "*" ]
+                "appID": "8XGD33DAAX.com.aboout.flashplay",
+                "paths": [ "/flashPlay/*"]
             }
         ]
     }

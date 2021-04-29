@@ -9,6 +9,10 @@
 import UIKit
 import SwiftyJSON
 
+
+
+
+
 /*
  SwiftJson 其实更像是对自带jsonSeriars的优化。
  
@@ -17,10 +21,12 @@ import SwiftyJSON
  */
 class SSSwiftJsonVC: SSBaseViewController {
 
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
     /*
@@ -29,6 +35,7 @@ class SSSwiftJsonVC: SSBaseViewController {
     @IBAction func modelToJson(_ sender: UIButton) {
         let dic:[String:Any] = ["age":12]
 
+        
         
         
         let jsonData = JSON(dic)
@@ -43,7 +50,6 @@ class SSSwiftJsonVC: SSBaseViewController {
         let jsonString = "[{\"name\": \"hangge\", \"age\": \"100\", \"phones\": [{\"name\": \"公司\",\"number\": \"123456\"}, {\"name\": \"家庭\",\"number\": \"001\"}]}, {\"name\": \"big boss\",\"age\": 1,\"phones\": [{ \"name\": \"公司\",\"number\": \"111111\"}]}]"
         let jsonData = jsonString.data(using: String.Encoding.utf8)
         let swiftJson = try! JSON(data: jsonData!)
-        
         let swiftJsonModle = SwiftJsonModle(swiftJson[0])
         print(swiftJsonModle.name, "name---")
         print(swiftJsonModle.name, "age---")

@@ -71,9 +71,12 @@ class SSUserInterfaceStyleVC: QMUICommonViewController {
         let gridView = QMUIFloatLayoutView()
         gridView.layer.borderWidth = 1
         gridView.layer.borderColor = UIColor.qmui_color(themeProvider: { (manager, identify, theme) -> UIColor in
+        
+            print(type(of: theme))
             guard let theme = theme as? QDThemeProtocol else {
                 return UIColor.red
             }
+            
             return theme.themeBackgroundColor()
             }).cgColor
         gridView.padding = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

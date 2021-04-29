@@ -17,6 +17,7 @@ target 'SwiftStudy' do
   pod 'HandyJSON'
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
+  pod 'KakaJSON'
   
   pod 'QMUIKit'
   pod 'iVersion'

@@ -11,7 +11,16 @@ import UIKit
 
 class SSNavigationController : QMUINavigationController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //navigationBar.backIndicatorImage =  UIImage(named: "icon_tabbar_lab_selected")
+        
+    }
     
-   
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        super.pushViewController(viewController, animated: true)
+        
+    }
 }
 

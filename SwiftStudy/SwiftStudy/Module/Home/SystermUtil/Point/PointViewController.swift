@@ -16,29 +16,27 @@ class PoeC {
     
 }
 
+var all = 10
+
+
 class PointViewController: SSBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
+       
         var age = 10
        
-        
-        let ptr = withUnsafePointer(to: &age) { $0 }
-
-        let rawPtr = withUnsafePointer(to: &age) { (p) -> UnsafeRawPointer in
-            return UnsafeRawPointer(p)
-        }
-        
-        print(ptr, rawPtr, separator: "||")
-        
-    
         var poe = PoeC()
         print(Mems.ptr(ofRef: poe), Mems.ptr(ofVal: &poe))
-        print(withUnsafePointer(to: &poe) { $0 }, UnsafeRawPointer(&poe), UnsafePointer(&poe))
-        print(UnsafeRawPointer(bitPattern: unsafeBitCast(poe, to: Int.self)))
+        print(Mems.ptr(ofVal: &age))
     
+        var poeType = PoeC.self
+        print(Mems.ptr(ofVal: &poeType), Mems.ptr(ofRef: poeType))
+        print(Mems.ptr(ofVal: &all))
+        
+       
+
     }
     
     

@@ -69,6 +69,7 @@ extension SSSystermUtilVC: UITableViewDelegate, UITableViewDataSource {
             cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
         }
         cell?.textLabel?.text = datas[indexPath.row]
+    
         return cell!
     }
     

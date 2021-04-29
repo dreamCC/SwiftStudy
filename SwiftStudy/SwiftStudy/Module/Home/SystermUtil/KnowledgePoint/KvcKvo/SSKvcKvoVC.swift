@@ -9,8 +9,6 @@
 import UIKit
 
 
-
-
 class SSKvcKvoVC: SSBaseViewController {
 
     
@@ -38,10 +36,10 @@ class SSKvcKvoVC: SSBaseViewController {
     
     @IBAction func kvoBtnClick(_ sender: UIButton) {
         
-        
+    
         
         print("kvo 之前", object_getClass(kvoClass)!)
-        kvoClass.addObserver(self, forKeyPath: #keyPath(name), options: [.new, .old], context: nil)
+        kvoClass.addObserver(self, forKeyPath: #keyPath(name), options: [.new], context: nil)
         print("kvo 之后", object_getClass(kvoClass)!)
         
         kvoClass.name = "newVlaue"
@@ -52,7 +50,7 @@ class SSKvcKvoVC: SSBaseViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        print("observeValue：==", keyPath ?? "嗯哈")
+        print("observeValue：==", keyPath , change)
         
     }
     

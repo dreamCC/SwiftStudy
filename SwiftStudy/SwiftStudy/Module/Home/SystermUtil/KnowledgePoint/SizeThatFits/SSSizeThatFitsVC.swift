@@ -16,14 +16,14 @@ class SSSizeThatFitsVC: QMUICommonViewController {
         v = SSSizeThatFitView()
         v.backgroundColor = UIColor.qmui_random()
         v.frame = CGRect(x: 10, y: 100, width: 200, height: 50)
-        v.text = "hello,world"
-        v.textAlignment = .center
+//        v.text = "hello,world"
+//        v.textAlignment = .center
         view.addSubview(v)
-//        v.snp.makeConstraints { (make) in
-//            make.center.equalToSuperview()
+        v.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
 //            make.width.equalTo(200)
-//            make.height.equalTo(50)
-//        }
+//            make.height.equalTo(200)
+        }
         
         
     }
@@ -47,12 +47,12 @@ class SSSizeThatFitView: UILabel {
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         print("size that fits")
-        return CGSize(width: 200, height: 50)
+        return CGSize(width: 100, height: 100)
     }
     
     override var intrinsicContentSize: CGSize {
         print("intrinsicContentSize")
 
-        return super.intrinsicContentSize
+        return CGSize(width: 180, height: 40)
     }
 }

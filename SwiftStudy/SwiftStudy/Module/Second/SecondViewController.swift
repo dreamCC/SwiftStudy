@@ -15,7 +15,7 @@ class SecondViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSources = ["xcConfig"]
+        dataSources = ["xcConfig", "mvp", "mvvm", "metadata"]
     
         tableView.tableFooterView = UIView()
     }
@@ -44,6 +44,12 @@ extension SecondViewController {
         switch selectStr {
         case "xcConfig":
             navigationController?.pushViewController(XcConfigViewController(), animated: true)
+        case "mvp":
+            navigationController?.pushViewController(MvpViewController(), animated: true)
+        case "mvvm":
+            navigationController?.pushViewController(MvvmViewController(), animated: true)
+        case "metadata":
+            navigationController?.pushViewController(MetadataViewController(), animated: true)
         default:
             return
         }

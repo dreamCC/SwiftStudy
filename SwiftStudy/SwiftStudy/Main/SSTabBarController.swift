@@ -11,41 +11,28 @@ import QMUIKit
 
 class SSTabBarController: UITabBarController {
     
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let homeVc = HomeViewController()
-        let homeNavi = SSNavigationController(rootViewController: homeVc)
-        // homeNavi.navigationBar.backIndicatorImage =  UIImage(named: "icon_tabbar_lab_selected")
+       
         
-        let secondVc = SecondViewController()
-        let secondNavi = SSNavigationController(rootViewController: secondVc)
-        
-        let thirdVc = UIViewController()
-        let thirdNavi = SSNavigationController(rootViewController: thirdVc)
-        
-        let forthVc = UIViewController()
-        let forthNavi = SSNavigationController(rootViewController: forthVc)
-        
-        
-        viewControllers = [homeNavi, secondNavi, thirdNavi, forthNavi]
-        homeNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
-        secondNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
-        thirdNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
-        forthNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 3)
+        add("first", .contacts, 0, HomeViewController.self)
+        add("second", .bookmarks, 1, SecondViewController.self)
+        add("third", .downloads, 2, UIViewController.self)
+        add("fourth", .featured, 3, UIViewController.self)
 
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func add(_ title: String,
+             _ sysItem: UITabBarItem.SystemItem,
+             _ tag: Int,
+             _ type: UIViewController.Type) {
+        let navi = SSNavigationController(rootViewController: type.init())
+        navi.tabBarItem = UITabBarItem(tabBarSystemItem: sysItem, tag: tag)
+        addChild(navi)
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        get {
-            return .lightContent
-        }
-    }
+ 
+    override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     
 }
 
