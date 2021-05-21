@@ -150,6 +150,8 @@
 		A6983D3E23CD6EE6006F720F /* SSMoyaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6983D3C23CD6EE6006F720F /* SSMoyaVC.swift */; };
 		A6983D3F23CD6EE6006F720F /* SSMoyaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6983D3D23CD6EE6006F720F /* SSMoyaVC.xib */; };
 		A6983D4123CD996B006F720F /* SSUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6983D4023CD996B006F720F /* SSUserAPI.swift */; };
+		A69E5DA2265354A40006A4F9 /* SkeletonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E5DA1265354A40006A4F9 /* SkeletonViewController.swift */; };
+		A69E5DA6265360D50006A4F9 /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E5DA5265360D50006A4F9 /* InstructionsVC.swift */; };
 		A69E784E25A598F300A82480 /* ObservableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E784D25A598F300A82480 /* ObservableViewController.swift */; };
 		A69E785325A59AC100A82480 /* ObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E785225A59AC100A82480 /* ObserverViewController.swift */; };
 		A69E785825A5AB1100A82480 /* SubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E785725A5AB1100A82480 /* SubjectsViewController.swift */; };
@@ -420,6 +422,8 @@
 		A6983D3C23CD6EE6006F720F /* SSMoyaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSMoyaVC.swift; sourceTree = "<group>"; };
 		A6983D3D23CD6EE6006F720F /* SSMoyaVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSMoyaVC.xib; sourceTree = "<group>"; };
 		A6983D4023CD996B006F720F /* SSUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUserAPI.swift; sourceTree = "<group>"; };
+		A69E5DA1265354A40006A4F9 /* SkeletonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonViewController.swift; sourceTree = "<group>"; };
+		A69E5DA5265360D50006A4F9 /* InstructionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsVC.swift; sourceTree = "<group>"; };
 		A69E784D25A598F300A82480 /* ObservableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableViewController.swift; sourceTree = "<group>"; };
 		A69E785225A59AC100A82480 /* ObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverViewController.swift; sourceTree = "<group>"; };
 		A69E785725A5AB1100A82480 /* SubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
@@ -794,6 +798,8 @@
 		A618A1CA23B2F8A900C97FD9 /* ThirdFramework */ = {
 			isa = PBXGroup;
 			children = (
+				A69E5DA4265360370006A4F9 /* Instructions */,
+				A69E5DA02653544A0006A4F9 /* SkeletonView */,
 				A60151E426292545003BDCB0 /* R */,
 				A6945D0225500DFD007C673F /* MJRefresh */,
 				A6F7D40C25490F080061EF67 /* Kingfisher */,
@@ -1447,6 +1453,22 @@
 			path = Moya;
 			sourceTree = "<group>";
 		};
+		A69E5DA02653544A0006A4F9 /* SkeletonView */ = {
+			isa = PBXGroup;
+			children = (
+				A69E5DA1265354A40006A4F9 /* SkeletonViewController.swift */,
+			);
+			path = SkeletonView;
+			sourceTree = "<group>";
+		};
+		A69E5DA4265360370006A4F9 /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				A69E5DA5265360D50006A4F9 /* InstructionsVC.swift */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
 		A69FDA6823D19649000F3568 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -2098,6 +2120,7 @@
 				A647055E25AFE95A00BCE382 /* ImportModule.swift in Sources */,
 				A6EF9B1D25B012540015C289 /* GitHubApi.swift in Sources */,
 				A647054C25AFE41000BCE382 /* GitHubRepositoryViewController.swift in Sources */,
+				A69E5DA2265354A40006A4F9 /* SkeletonViewController.swift in Sources */,
 				A6E8598024AF07B000AA31C1 /* SSSearchResultVC.swift in Sources */,
 				A64D28C424A881FF005DF222 /* SSFloatLayoutViewController.swift in Sources */,
 				A647055925AFE48A00BCE382 /* GitHubRepository.swift in Sources */,
@@ -2150,6 +2173,7 @@
 				A6A1C68623CE071D00167BE2 /* SSErrorVC.swift in Sources */,
 				A638C98B25772B2C00196147 /* SSFrameTableViewCell.swift in Sources */,
 				A669BD752612FB3E0082B740 /* AirDropViewController.swift in Sources */,
+				A69E5DA6265360D50006A4F9 /* InstructionsVC.swift in Sources */,
 				A60639B325F6212800324F00 /* Mems.swift in Sources */,
 				A60598E7245875B2007B71CB /* SSKvcKvoVC.swift in Sources */,
 				A62C406423BB2F9A001584CF /* SSObjectMapperVC.swift in Sources */,

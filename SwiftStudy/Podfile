@@ -49,6 +49,9 @@ target 'SwiftStudy' do
   # 视频播放
   pod 'ZFPlayer'
   
+  # 骨架屏
+  pod 'SkeletonView'
+  
 end
 
 # 用于UITest
